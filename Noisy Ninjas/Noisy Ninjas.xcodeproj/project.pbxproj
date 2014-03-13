@@ -21,6 +21,7 @@
 		6DB7F66F18D1E98700C422C3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DB7F65118D1E98700C422C3 /* UIKit.framework */; };
 		6DB7F67718D1E98700C422C3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6DB7F67518D1E98700C422C3 /* InfoPlist.strings */; };
 		6DB7F67918D1E98700C422C3 /* Noisy_NinjasTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB7F67818D1E98700C422C3 /* Noisy_NinjasTests.m */; };
+		6DB7F68E18D2067300C422C3 /* MultipeerConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DB7F68D18D2067300C422C3 /* MultipeerConnectivity.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		6DB7F67618D1E98700C422C3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6DB7F67818D1E98700C422C3 /* Noisy_NinjasTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Noisy_NinjasTests.m; sourceTree = "<group>"; };
 		6DB7F68A18D1F56700C422C3 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		6DB7F68D18D2067300C422C3 /* MultipeerConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MultipeerConnectivity.framework; path = System/Library/Frameworks/MultipeerConnectivity.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DB7F68E18D2067300C422C3 /* MultipeerConnectivity.framework in Frameworks */,
 				6DB7F65018D1E98700C422C3 /* CoreGraphics.framework in Frameworks */,
 				6DB7F65218D1E98700C422C3 /* UIKit.framework in Frameworks */,
 				6DB7F64E18D1E98700C422C3 /* Foundation.framework in Frameworks */,
@@ -102,6 +105,7 @@
 		6DB7F64C18D1E98700C422C3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6DB7F68D18D2067300C422C3 /* MultipeerConnectivity.framework */,
 				6DB7F64D18D1E98700C422C3 /* Foundation.framework */,
 				6DB7F64F18D1E98700C422C3 /* CoreGraphics.framework */,
 				6DB7F65118D1E98700C422C3 /* UIKit.framework */,
@@ -201,6 +205,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = YangShun;
 				TargetAttributes = {
+					6DB7F64918D1E98700C422C3 = {
+						DevelopmentTeam = 3P69678SU8;
+					};
 					6DB7F66A18D1E98700C422C3 = {
 						TestTargetID = 6DB7F64918D1E98700C422C3;
 					};
@@ -382,6 +389,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Noisy Ninjas/Noisy Ninjas-Prefix.pch";
 				INFOPLIST_FILE = "Noisy Ninjas/Noisy Ninjas-Info.plist";
@@ -395,6 +403,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Noisy Ninjas/Noisy Ninjas-Prefix.pch";
 				INFOPLIST_FILE = "Noisy Ninjas/Noisy Ninjas-Info.plist";
