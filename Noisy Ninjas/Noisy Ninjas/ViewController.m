@@ -21,6 +21,8 @@
     UIImageView *enemyNinja;
     NSMutableArray *enemyShurikens;
     
+    UIView *healthBar;
+    
     BOOL connected;
 }
 
@@ -50,8 +52,15 @@
     directionIsUp = YES;
     
     selfNinja = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ninja-blue"]];
-    selfNinja.frame = CGRectMake(0, 0, NINJA_HEIGHT, NINJA_WIDTH);
+    selfNinja.frame = CGRectMake(0, SCREEN_HEIGHT/2 - NINJA_HEIGHT/2, NINJA_HEIGHT, NINJA_WIDTH);
     [self.view addSubview:selfNinja];
+    
+    healthBar = [[UIView alloc] initWithFrame:CGRectMake(20, 20, 200, 20)];
+    healthBar.backgroundColor = [UIColor colorWithRed:27.f/255.f
+                                                green:214.f/255.f
+                                                 blue:254.f/255.f
+                                                alpha:1.0f];
+    [self.view addSubview:healthBar];
     
     shurikens = [NSMutableArray new];
 }
@@ -86,8 +95,10 @@
 
 - (void)dismissBrowserVC{
     if ([[self.mySession connectedPeers] count] > 0) {
-        connected = YES;
-        [self setUpEnemy];
+        if (!connected) {
+            connected = YES;
+            [self setUpEnemy];
+        }
     }
     [self.browserVC dismissViewControllerAnimated:YES completion:nil];
 }
@@ -111,11 +122,25 @@
        fromPeer:(MCPeerID *)peerID {
     NSString *message = [[NSString alloc] initWithData:data
                                               encoding:NSUTF8StringEncoding];
-    dispatch_async(dispatch_get_main_queue(),^{
-        [self updateNinjaPosition:enemyNinja
-                      toNewCenter:CGPointFromString(message)];
-    });
     
+    NSArray *messageComponents = [message componentsSeparatedByString:@":"];
+    NSString *key = messageComponents[0];
+    if ([key isEqualToString:@"ninja"]) {
+        float newY = [messageComponents[1] floatValue];
+        dispatch_async(dispatch_get_main_queue(),^{
+            [self updateNinjaPosition:enemyNinja
+                          toNewCenter:CGPointMake(enemyNinja.center.x, newY)];
+        });
+    } else if ([key isEqualToString:@"shuriken"]) {
+        float shurikenY = [messageComponents[1] floatValue];
+        dispatch_async(dispatch_get_main_queue(),^{
+            UIImageView *shuriken = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"shuriken-4-point-star"]];
+            shuriken.frame = CGRectMake(0, 0, SHURIKEN_SIZE, SHURIKEN_SIZE);
+            shuriken.center = CGPointMake(enemyNinja.center.x - 40.f, shurikenY);
+            [enemyShurikens addObject:shuriken];
+            [self.view addSubview:shuriken];
+        });
+    }
 }
 
 - (void)session:(MCSession *)session
@@ -129,7 +154,10 @@
 
 - (void)setUpEnemy {
     enemyNinja = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ninja-red"]];
-    enemyNinja.frame = CGRectMake(SCREEN_WIDTH - NINJA_WIDTH, 0, NINJA_HEIGHT, NINJA_WIDTH);
+    enemyNinja.frame = CGRectMake(SCREEN_WIDTH - NINJA_WIDTH,
+                                  SCREEN_HEIGHT/2 - NINJA_HEIGHT/2,
+                                  NINJA_HEIGHT,
+                                  NINJA_WIDTH);
     enemyNinja.transform = CGAffineTransformMakeScale(-1.f, 1.f);
     [self.view addSubview:enemyNinja];
 
@@ -143,13 +171,12 @@
                       toNewCenter:CGPointMake(selfNinja.center.x,
                                               selfNinja.center.y + movement)];
         if (connected) {
-            NSString *message = NSStringFromCGPoint(CGPointMake(enemyNinja.center.x,
-                                                                selfNinja.center.y));
+            NSString *message = [NSString stringWithFormat:@"ninja:%f", selfNinja.center.y];
             NSData *data = [message dataUsingEncoding:NSUTF8StringEncoding];
             NSError *error = nil;
             if (![self.mySession sendData:data
                                   toPeers:[self.mySession connectedPeers]
-                                 withMode:MCSessionSendDataUnreliable
+                                 withMode:MCSessionSendDataReliable
                                     error:&error]) {
                 NSLog(@"[Error] %@", error);
             }
@@ -157,6 +184,7 @@
     }
     
     [self updateShurikensPosition];
+    [self checkCollisionWithSelfNinja];
 }
 
 - (void)updateNinjaPosition:(UIImageView *)ninja
@@ -165,6 +193,24 @@
     newY = MIN(newY, SCREEN_HEIGHT - NINJA_HEIGHT/2);
     newY = MAX(NINJA_HEIGHT/2, newY);
     ninja.center = CGPointMake(ninja.center.x, newY);
+}
+
+- (void)checkCollisionWithSelfNinja {
+    NSMutableArray *outOfBoundsEnemyShurikens = [NSMutableArray new];
+    for (UIImageView *shuriken in enemyShurikens) {
+        if (sqrt(pow(shuriken.center.x - selfNinja.center.x, 2) +
+                 pow(shuriken.center.y - selfNinja.center.y, 2)) <
+            SHURIKEN_SIZE/2 + NINJA_WIDTH/2) {
+            
+            healthBar.frame = CGRectMake(healthBar.frame.origin.x,
+                                         healthBar.frame.origin.y,
+                                         healthBar.frame.size.width - 20,
+                                         healthBar.frame.size.height);
+            [outOfBoundsEnemyShurikens addObject:shuriken];
+            [shuriken removeFromSuperview];
+        }
+    }
+    [enemyShurikens removeObjectsInArray:outOfBoundsEnemyShurikens];
 }
 
 - (void)updateShurikensPosition {
@@ -183,6 +229,21 @@
     }
     
     [shurikens removeObjectsInArray:outOfBoundsShurikens];
+    
+    NSMutableArray *outOfBoundsEnemyShurikens = [NSMutableArray new];
+    
+    for (UIImageView *shuriken in enemyShurikens) {
+        shuriken.center = CGPointMake(shuriken.center.x - 20.f,
+                                      shuriken.center.y);
+        shuriken.transform = CGAffineTransformRotate(shuriken.transform, -10.f);
+        
+        if (shuriken.center.x < 0) {
+            [outOfBoundsEnemyShurikens addObject:shuriken];
+            [shuriken removeFromSuperview];
+        }
+    }
+    
+    [enemyShurikens removeObjectsInArray:outOfBoundsEnemyShurikens];
 }
 
 - (void)didReceiveMemoryWarning
@@ -213,6 +274,17 @@
     shuriken.center = CGPointMake(selfNinja.center.x + 40.f, selfNinja.center.y);
     [shurikens addObject:shuriken];
     [self.view addSubview:shuriken];
+    
+    NSString *message = [NSString stringWithFormat:@"shuriken:%f", selfNinja.center.y];
+    NSData *data = [message dataUsingEncoding:NSUTF8StringEncoding];
+    NSError *error = nil;
+
+    if (![self.mySession sendData:data
+                          toPeers:[self.mySession connectedPeers]
+                         withMode:MCSessionSendDataReliable
+                            error:&error]) {
+        NSLog(@"[Error] %@", error);
+    }
 }
 
 @end
