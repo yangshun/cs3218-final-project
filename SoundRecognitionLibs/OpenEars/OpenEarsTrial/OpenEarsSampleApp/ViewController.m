@@ -8,34 +8,51 @@
 @implementation ViewController
 
 @synthesize pocketsphinxController;
+@synthesize openEarsEventsObserver;
+@synthesize thresholds;
+
+@synthesize sourceSwitch;
 @synthesize statusTextView;
 @synthesize heardTextView;
 @synthesize scoreTextView;
-@synthesize pocketsphinxDbLabel;
-@synthesize openEarsEventsObserver;
+@synthesize commandTextView;
+@synthesize lightningSlider;
+@synthesize waterSlider;
+@synthesize leafSlider;
+@synthesize fireSlider;
+@synthesize novaSlider;
+@synthesize pauseSlider;
+@synthesize lightningLabel;
+@synthesize waterLabel;
+@synthesize leafLabel;
+@synthesize fireLabel;
+@synthesize novaLabel;
+@synthesize pauseLabel;
+
 @synthesize pathToGrammarToStartAppWith;
 @synthesize pathToDictionaryToStartAppWith;
 @synthesize pathToDynamicallyGeneratedGrammar;
 @synthesize pathToDynamicallyGeneratedDictionary;
-@synthesize uiUpdateTimer;
+
 @synthesize restartAttemptsDueToPermissionRequests;
 @synthesize startupFailedDueToLackOfPermissions;
 
+@synthesize uiUpdateTimer;
+
 #define kLevelUpdatesPerSecond 18
 
-//#define kGetNbest // Uncomment this if you want to try out nbest
+//#define kGetNbest
 #pragma mark - 
 #pragma mark Memory Management
 
 - (void)dealloc {
-	[self stopDisplayingLevels];
+    NSLog(@"dealloc!");
 	openEarsEventsObserver.delegate = nil;
 }
 
 #pragma mark -
 #pragma mark Lazy Allocation
 
-// Lazily allocated PocketsphinxController.
 - (PocketsphinxController *)pocketsphinxController { 
 	if (pocketsphinxController == nil) {
 		pocketsphinxController = [[PocketsphinxController alloc] init];
@@ -58,11 +75,41 @@
 }
 
 - (void) startListening {
-    
     [self.pocketsphinxController startListeningWithLanguageModelAtPath:self.pathToGrammarToStartAppWith dictionaryAtPath:self.pathToDictionaryToStartAppWith acousticModelAtPath:[AcousticModel pathToModel:@"AcousticModelEnglish"] languageModelIsJSGF:FALSE];
-    
-    [self.pocketsphinxController changeLanguageModelToFile:self.pathToDynamicallyGeneratedGrammar withDictionary:self.pathToDynamicallyGeneratedDictionary];
-    
+    if (self.sourceSwitch.on) {
+        NSLog(@"Using dynamic language model");
+        [self.pocketsphinxController changeLanguageModelToFile:self.pathToDynamicallyGeneratedGrammar withDictionary:self.pathToDynamicallyGeneratedDictionary];
+    }
+}
+
+- (void)lightningSliderChanged:(UISlider *)slider {
+    [self.thresholds replaceObjectAtIndex:0 withObject:[NSNumber numberWithInt:(int)slider.value]];
+    self.lightningLabel.text = [NSString stringWithFormat:@"%d", (int)slider.value];
+}
+
+- (void)waterSliderChanged:(UISlider *)slider {
+    [self.thresholds replaceObjectAtIndex:1 withObject:[NSNumber numberWithInt:(int)slider.value]];
+    self.waterLabel.text = [NSString stringWithFormat:@"%d", (int)slider.value];
+}
+
+- (void)leafSliderChanged:(UISlider *)slider {
+    [self.thresholds replaceObjectAtIndex:2 withObject:[NSNumber numberWithInt:(int)slider.value]];
+    self.leafLabel.text = [NSString stringWithFormat:@"%d", (int)slider.value];
+}
+
+- (void)fireSliderChanged:(UISlider *)slider {
+    [self.thresholds replaceObjectAtIndex:3 withObject:[NSNumber numberWithInt:(int)slider.value]];
+    self.fireLabel.text = [NSString stringWithFormat:@"%d", (int)slider.value];
+}
+
+- (void)novaSliderChanged:(UISlider *)slider {
+    [self.thresholds replaceObjectAtIndex:4 withObject:[NSNumber numberWithInt:(int)slider.value]];
+    self.novaLabel.text = [NSString stringWithFormat:@"%d", (int)slider.value];
+}
+
+- (void)pauseSliderChanged:(UISlider *)slider {
+    [self.thresholds replaceObjectAtIndex:5 withObject:[NSNumber numberWithInt:(int)slider.value]];
+    self.pauseLabel.text = [NSString stringWithFormat:@"%d", (int)slider.value];
 }
 
 #pragma mark -
@@ -70,21 +117,58 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-	
+    
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    NSArray *temp = [prefs arrayForKey:@"threshold"];
+    if (temp) {
+        NSLog(@"Got saved thresholds");
+        self.thresholds = [NSMutableArray arrayWithArray:temp];
+    } else {
+        // lightning, water, leaf, fire, nova, pause
+        self.thresholds = [NSMutableArray arrayWithObjects:[NSNumber numberWithInteger:-900],
+                           [NSNumber numberWithInteger:-10000],
+                           [NSNumber numberWithInteger:-7000],
+                           [NSNumber numberWithInteger:-3000],
+                           [NSNumber numberWithInteger:-1000],
+                           [NSNumber numberWithInteger:-1000], nil];
+    }
+    
+    self.lightningSlider.value = [[self.thresholds objectAtIndex:0] integerValue];
+    self.waterSlider.value = [[self.thresholds objectAtIndex:1] integerValue];
+    self.leafSlider.value = [[self.thresholds objectAtIndex:2] integerValue];
+    self.fireSlider.value = [[self.thresholds objectAtIndex:3] integerValue];
+    self.novaSlider.value = [[self.thresholds objectAtIndex:4] integerValue];
+    self.pauseSlider.value = [[self.thresholds objectAtIndex:5] integerValue];
+    
+    self.lightningLabel.text = [NSString stringWithFormat:@"%d", (int)self.lightningSlider.value];
+    self.waterLabel.text = [NSString stringWithFormat:@"%d", (int)self.waterSlider.value];
+    self.leafLabel.text = [NSString stringWithFormat:@"%d", (int)self.leafSlider.value];
+    self.fireLabel.text = [NSString stringWithFormat:@"%d", (int)self.fireSlider.value];
+    self.novaLabel.text = [NSString stringWithFormat:@"%d", (int)self.novaSlider.value];
+    self.pauseLabel.text = [NSString stringWithFormat:@"%d", (int)self.pauseSlider.value];
+    
+    [self.lightningSlider addTarget:self action:@selector(lightningSliderChanged:) forControlEvents:UIControlEventValueChanged];
+    [self.waterSlider addTarget:self action:@selector(waterSliderChanged:) forControlEvents:UIControlEventValueChanged];
+    [self.leafSlider addTarget:self action:@selector(leafSliderChanged:) forControlEvents:UIControlEventValueChanged];
+    [self.fireSlider addTarget:self action:@selector(fireSliderChanged:) forControlEvents:UIControlEventValueChanged];
+    [self.novaSlider addTarget:self action:@selector(novaSliderChanged:) forControlEvents:UIControlEventValueChanged];
+    [self.pauseSlider addTarget:self action:@selector(pauseSliderChanged:) forControlEvents:UIControlEventValueChanged];
+    
+
     self.restartAttemptsDueToPermissionRequests = 0;
     self.startupFailedDueToLackOfPermissions = FALSE;
     
 	[self.openEarsEventsObserver setDelegate:self];
-	self.pathToGrammarToStartAppWith = [NSString stringWithFormat:@"%@/%@",[[NSBundle mainBundle] resourcePath], @"OpenEars1.languagemodel"];
-	self.pathToDictionaryToStartAppWith = [NSString stringWithFormat:@"%@/%@",[[NSBundle mainBundle] resourcePath], @"OpenEars1.dic"];
-	
+	self.pathToGrammarToStartAppWith = [NSString stringWithFormat:@"%@/%@",[[NSBundle mainBundle] resourcePath], @"appgrammar.arpa"];
+	self.pathToDictionaryToStartAppWith = [NSString stringWithFormat:@"%@/%@",[[NSBundle mainBundle] resourcePath], @"appvocab.dic"];
 	
 	NSArray *languageArray = [[NSArray alloc] initWithArray:[NSArray arrayWithObjects:
-                                                             @"UP",
-                                                             @"DOWN",
-                                                             @"SHOOT",
+                                                             @"LIGHTNING",
+                                                             @"WATER",
+                                                             @"LEAF",
                                                              @"FIRE",
-                                                             @"PEW",
+                                                             @"NOVA",
+                                                             @"PAUSE",
                                                              nil]];
     
 	LanguageModelGenerator *languageModelGenerator = [[LanguageModelGenerator alloc] init];
@@ -110,22 +194,53 @@
 	if(dynamicLanguageGenerationResultsDictionary) {
         [self startListening];
 	}
-	
-	[self startDisplayingLevels];
 }
+
 
 #pragma mark -
 #pragma mark OpenEarsEventsObserver delegate methods
 
 - (void) pocketsphinxDidReceiveHypothesis:(NSString *)hypothesis recognitionScore:(NSString *)recognitionScore utteranceID:(NSString *)utteranceID {
-	NSLog(@"The received hypothesis is %@ with a score of %@ and an ID of %@", hypothesis, recognitionScore, utteranceID);
-	self.heardTextView.text = [NSString stringWithFormat:@"Heard: \"%@\"", hypothesis];
-    self.scoreTextView.text = [NSString stringWithFormat:@"Score: \"%@\"", recognitionScore];
+    NSString *heard = [NSString stringWithFormat:@"Heard: \"%@\"", hypothesis];
+	NSString *scoreText = [NSString stringWithFormat:@"Score: \"%@\"", recognitionScore];
+    self.heardTextView.text = heard;
+    self.scoreTextView.text = scoreText;
+    
+    NSString *command = [[hypothesis componentsSeparatedByString:@" "] lastObject];
+    int score = [recognitionScore intValue];
+    NSLog(@"Command is %@, score is %d", command, score);
+    
+    self.commandTextView.text = @"UNKNOWN";
+    if ([command isEqualToString:@"LIGHTNING"]) {
+        if (score >= self.lightningSlider.value) {
+            commandTextView.text = @"LIGHTNING";
+        }
+    } else if([command isEqualToString:@"WATER"]) {
+        if (score >= self.waterSlider.value) {
+            self.commandTextView.text = @"WATER";
+        }
+    } else if([command isEqualToString:@"FIRE"]) {
+        if (score >= self.fireSlider.value) {
+            self.commandTextView.text = @"FIRE";
+        }
+    } else if([command isEqualToString:@"LEAF"]) {
+        if (score >= self.leafSlider.value) {
+            self.commandTextView.text = @"LEAF";
+        }
+    } else if([command isEqualToString:@"NOVA"]) {
+        if (score >= self.novaSlider.value) {
+            self.commandTextView.text = @"NOVA";
+        }
+    } else if([command isEqualToString:@"PAUSE"]) {
+        if (score >= self.pauseSlider.value) {
+            self.commandTextView.text = @"PAUSE";
+        }
+    }
 }
 
 #ifdef kGetNbest   
-- (void) pocketsphinxDidReceiveNBestHypothesisArray:(NSArray *)hypothesisArray { // Pocketsphinx has an n-best hypothesis dictionary.
-    NSLog(@"hypothesisArray is %@",hypothesisArray);   
+- (void) pocketsphinxDidReceiveNBestHypothesisArray:(NSArray *)hypothesisArray {
+    NSLog(@"hypothesisArray is %@", hypothesisArray);
 }
 #endif
 
@@ -149,18 +264,14 @@
 	[self.pocketsphinxController stopListening];
 }
 
-// An optional delegate method of OpenEarsEventsObserver which informs that there was a change to the audio route (e.g. headphones were plugged in or unplugged).
 - (void) audioRouteDidChangeToRoute:(NSString *)newRoute {
-	NSLog(@"Audio route change. The new audio route is %@", newRoute); // Log it.
-	self.statusTextView.text = [NSString stringWithFormat:@"Status: Audio route change. The new audio route is %@",newRoute]; // Show it in the status box.
-    
-	[self.pocketsphinxController stopListening]; // React to it by telling the Pocketsphinx loop to shut down and then start listening again on the new route
+	NSLog(@"Audio route change. The new audio route is %@", newRoute);
+	self.statusTextView.text = [NSString stringWithFormat:@"Status: Audio route change. The new audio route is %@",newRoute];
+	[self.pocketsphinxController stopListening];
     [self startListening];
 }
 
-
 - (void) pocketsphinxDidStartCalibration {
-    // avoid playing sound here
 	self.statusTextView.text = @"Status: Pocketsphinx calibration has started.";
 }
 
@@ -212,24 +323,19 @@
     }
 }
 
-#pragma mark -
-#pragma mark Example for reading out Pocketsphinx levels without locking the UI by using an NSTimer
-
-- (void) startDisplayingLevels {
-	[self stopDisplayingLevels];
-	self.uiUpdateTimer = [NSTimer scheduledTimerWithTimeInterval:1.0/kLevelUpdatesPerSecond target:self selector:@selector(updateLevelsUI) userInfo:nil repeats:YES];
+- (IBAction)sourceSwitchChanged:(id)sender {
+    if (((UISwitch *)sender).on) {
+        NSLog(@"Using dynamic language model");
+        [self.pocketsphinxController changeLanguageModelToFile:self.pathToDynamicallyGeneratedGrammar withDictionary:self.pathToDynamicallyGeneratedDictionary];
+    } else {
+        NSLog(@"Using static language model");
+        [self.pocketsphinxController changeLanguageModelToFile:self.pathToGrammarToStartAppWith withDictionary:self.pathToDictionaryToStartAppWith];
+    }
 }
 
-- (void) stopDisplayingLevels {
-	if(self.uiUpdateTimer && [self.uiUpdateTimer isValid]) {
-		[self.uiUpdateTimer invalidate];
-		self.uiUpdateTimer = nil;
-	}
+- (IBAction)saveButtonPressed:(id)sender {
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    [prefs setObject:self.thresholds forKey:@"threshold"];
+    NSLog(@"Threshold saved %@", self.thresholds);
 }
-
-- (void) updateLevelsUI {
-	self.pocketsphinxDbLabel.text = [NSString stringWithFormat:@"Pocketsphinx Input level:%f",[self.pocketsphinxController pocketsphinxInputLevel]];
-}
-
-
 @end
