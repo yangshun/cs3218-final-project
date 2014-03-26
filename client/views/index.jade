@@ -8,16 +8,13 @@ block content
   canvas#canvas
 
   script(src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js")
-  script(src="/javascripts/leapcanvas.js")
   script(src="/socket.io/socket.io.js")
+  script(src="/javascripts/leapcanvas.js")
   script.
     var socket = io.connect('http://' + window.location.host);
     socket.on('command', function(data) {
       console.log(data);
-      var body = document.querySelectorAll('#commands');
-      var span = document.createElement('span');
-      span.innerHTML = data + ' ';
-      body[0].appendChild(span);
+      LeapEx.onCommand(data);
     });
     $(document).ready(function() {
       LeapEx.init('#canvas', '#debug');

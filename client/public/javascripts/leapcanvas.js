@@ -12,6 +12,7 @@ var LeapEx = {
   leapMinZ: -180,
   leapMaxZ: 180,
   started: false,
+  color: "#000",
 
   init: function(el, debugEl) {
     LeapEx.el = $(el);
@@ -106,5 +107,30 @@ var LeapEx = {
     if (LeapEx.debugEl) {
       LeapEx.debugEl.text(message);
     }
+  },
+
+  onCommand: function(command) {
+    console.log(command);
+    switch (command) {
+      case "FIRE":
+        LeapEx.color = "#f00";
+        break;
+      case "WATER":
+        LeapEx.color = "#00f";
+        break;
+      case "LEAF":
+        LeapEx.color = "#0f0";
+        break;
+      case "LIGHTNING":
+        LeapEx.color = "#f6f311";
+        break;
+      case "NOVA":
+        LeapEx.color = "#a107a7";
+        break;
+      case "PAUSE":
+        alert('Pause!');
+        break;
+    }
+    LeapEx.ctx.fillStyle = LeapEx.color;
   }
 };
