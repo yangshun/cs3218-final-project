@@ -57,26 +57,23 @@
     NSLog(@"didReceiveEvent()");
 
     // test acknowledge
-    SocketIOCallback cb = ^(id argsData) {
-        NSDictionary *response = argsData;
-        // do something with response
-        NSLog(@"ack arrived: %@", response);
-        
-        // test forced disconnect
-//        [socketIO disconnectForced];
-    };
-    [socketIO sendMessage:@"hello back!" withAcknowledge:cb];
+//    SocketIOCallback cb = ^(id argsData) {
+//        NSDictionary *response = argsData;
+//        // do something with response
+//        NSLog(@"ack arrived: %@", response);
+//    };
+//    [socketIO sendMessage:@"hello back!" withAcknowledge:cb];
     
-    // test different event data types
-    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-    [dict setObject:@"test1" forKey:@"key1"];
-    [dict setObject:@"test2" forKey:@"key2"];
-    [socketIO sendEvent:@"welcome" withData:dict];
-    
-    [socketIO sendEvent:@"welcome" withData:@"testWithString"];
-    
-    NSArray *arr = [NSArray arrayWithObjects:@"test1", @"test2", nil];
-    [socketIO sendEvent:@"welcome" withData:arr];
+//    // test different event data types
+//    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+//    [dict setObject:@"test1" forKey:@"key1"];
+//    [dict setObject:@"test2" forKey:@"key2"];
+//    [socketIO sendEvent:@"welcome" withData:dict];
+//    
+//    [socketIO sendEvent:@"welcome" withData:@"testWithString"];
+//    
+//    NSArray *arr = [NSArray arrayWithObjects:@"test1", @"test2", nil];
+//    [socketIO sendEvent:@"welcome" withData:arr];
 }
 
 - (void) socketIO:(SocketIO *)socket onError:(NSError *)error

@@ -3,12 +3,16 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
+  div#commands
 
   script(src="/socket.io/socket.io.js")
   script.
     var socket = io.connect('http://' + window.location.host);
-    socket.on('news', function (data) {
+    socket.on('command', function(data) {
       console.log(data);
-      socket.emit('my other event', { my: 'data' });
+      var body = document.querySelectorAll('#commands');
+      var span = document.createElement('span');
+      span.innerHTML = data + ' ';
+      body[0].appendChild(span);
     });
 

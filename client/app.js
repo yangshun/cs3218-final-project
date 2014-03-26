@@ -39,14 +39,15 @@ server.listen(app.get('port'), function(){
 var io = require('socket.io').listen(server);
 
 io.sockets.on('connection', function (socket) {
-  socket.emit('news', { hello: 'world' });
+  
   socket.on('my other event', function (data) {
     console.log(data);
   });
   socket.on('welcome', function(data) {
-  	console.log('welcome', data);
-  })
+    console.log('welcome', data);
+  });
   socket.on('command', function(data) {
-  	console.log('command:', data);
+    console.log('Received command:', data);
+    socket.broadcast.emit('command', data);
   });
 });
