@@ -17,5 +17,9 @@ DerivedData
 *.hmap
 *.xccheckout
 
-#CocoaPods
+# CocoaPods
 Pods
+
+# Node
+*/node_modules
+*.css
