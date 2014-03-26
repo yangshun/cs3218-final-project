@@ -46,5 +46,7 @@ io.sockets.on('connection', function (socket) {
   socket.on('welcome', function(data) {
   	console.log('welcome', data);
   })
-  console.log('connected');
+  socket.on('command', function(data) {
+  	console.log('command:', data);
+  });
 });
