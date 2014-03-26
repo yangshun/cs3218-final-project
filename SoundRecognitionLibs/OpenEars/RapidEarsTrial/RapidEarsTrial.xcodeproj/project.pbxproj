@@ -131,9 +131,6 @@
 			isa = PBXGroup;
 			children = (
 				8C2996AA15ECEAF900C2B0B6 /* Framework */,
-				8C72BB3315C1664F008BDED4 /* SystemConfiguration.framework */,
-				8C2F9BC41507BF2A0031011A /* AudioToolbox.framework */,
-				8C2F9BC51507BF2A0031011A /* AVFoundation.framework */,
 				8C2F9B761507BEF20031011A /* OpenEarsSampleApp */,
 				8C2F9B971507BEF30031011A /* OpenEarsSampleAppTests */,
 				8C2F9B6F1507BEF20031011A /* Frameworks */,
@@ -153,6 +150,9 @@
 		8C2F9B6F1507BEF20031011A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8C72BB3315C1664F008BDED4 /* SystemConfiguration.framework */,
+				8C2F9BC41507BF2A0031011A /* AudioToolbox.framework */,
+				8C2F9BC51507BF2A0031011A /* AVFoundation.framework */,
 				8C2F9B701507BEF20031011A /* UIKit.framework */,
 				8C2F9B721507BEF20031011A /* Foundation.framework */,
 				8C2F9B741507BEF20031011A /* CoreGraphics.framework */,
