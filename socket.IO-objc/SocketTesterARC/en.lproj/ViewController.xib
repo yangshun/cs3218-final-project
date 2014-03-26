@@ -16,13 +16,75 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="fdy-zX-7AO">
-                    <rect key="frame" x="145" y="225" width="30" height="30"/>
+                    <rect key="frame" x="87" y="45" width="146" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.65882354970000001" green="0.094117648900000003" blue="0.2941176593" alpha="1" colorSpace="calibratedRGB"/>
                     <state key="normal" title="Fire">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
                         <action selector="sendFire:" destination="-1" eventType="touchUpInside" id="qxS-dK-egF"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="iAI-JM-zRU">
+                    <rect key="frame" x="87" y="112" width="146" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.0" green="0.32941177490000001" blue="0.65098041299999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="Water">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="sendWater:" destination="-1" eventType="touchUpInside" id="e6j-3L-rcR"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ZVN-HP-hR7">
+                    <rect key="frame" x="87" y="178" width="146" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="1" green="0.89566391369999998" blue="0.1442124474" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="Lightning">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="sendLightning:" destination="-1" eventType="touchUpInside" id="PdJ-qP-Jsi"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="NZN-aD-prG">
+                    <rect key="frame" x="87" y="248" width="146" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.24127075492407224" green="1" blue="0.18938520458371777" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="Leaf">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="sendLeaf:" destination="-1" eventType="touchUpInside" id="xCC-dr-aFG"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="iTf-Hn-kU6">
+                    <rect key="frame" x="87" y="323" width="146" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.96056174679999995" green="0.99783699410000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="Pause">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="sendPause:" destination="-1" eventType="touchUpInside" id="MCR-Qn-E5L"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="K1i-Yc-j85">
+                    <rect key="frame" x="87" y="396" width="146" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.90328821235671375" green="0.28128611648180868" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="Nova">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="sendNova:" destination="-1" eventType="touchUpInside" id="OJx-md-Z97"/>
                     </connections>
                 </button>
             </subviews>
