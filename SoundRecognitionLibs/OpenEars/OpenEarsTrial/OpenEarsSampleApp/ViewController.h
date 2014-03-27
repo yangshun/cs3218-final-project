@@ -2,8 +2,9 @@
 
 @class PocketsphinxController;
 #import <OpenEars/OpenEarsEventsObserver.h>
+#import "SocketIO.h"
 
-@interface ViewController : UIViewController <OpenEarsEventsObserverDelegate> {
+@interface ViewController : UIViewController <OpenEarsEventsObserverDelegate, SocketIODelegate> {
     
 	OpenEarsEventsObserver *openEarsEventsObserver;
 	PocketsphinxController *pocketsphinxController;
@@ -23,6 +24,8 @@
 	NSString *pathToDynamicallyGeneratedDictionary;
 
 	NSTimer *uiUpdateTimer;
+    
+    SocketIO *socketIO;
 }
 
 @property (nonatomic, strong) OpenEarsEventsObserver *openEarsEventsObserver;
@@ -52,6 +55,12 @@
 
 - (IBAction)sourceSwitchChanged:(id)sender;
 - (IBAction)saveButtonPressed:(id)sender;
+- (IBAction)sendLightning;
+- (IBAction)sendWater;
+- (IBAction)sendFire;
+- (IBAction)sendLeaf;
+- (IBAction)sendPause;
+- (IBAction)sendNova;
 
 @property (nonatomic, copy) NSString *pathToGrammarToStartAppWith;
 @property (nonatomic, copy) NSString *pathToDictionaryToStartAppWith;

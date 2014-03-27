@@ -118,6 +118,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    socketIO = [[SocketIO alloc] initWithDelegate:self];
+    NSDictionary *properties = [NSDictionary dictionaryWithObjectsAndKeys:
+                                @"localhost", NSHTTPCookieDomain,
+                                @"/", NSHTTPCookiePath,
+                                @"auth", NSHTTPCookieName,
+                                @"56cdea636acdf132", NSHTTPCookieValue,
+                                nil];
+    NSHTTPCookie *cookie = [NSHTTPCookie cookieWithProperties:properties];
+    NSArray *cookies = [NSArray arrayWithObjects:cookie, nil];
+    socketIO.cookies = cookies;
+    [socketIO connectToHost:@"192.168.0.100" onPort:3218];
+    
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     NSArray *temp = [prefs arrayForKey:@"threshold"];
     if (temp) {
@@ -214,26 +226,32 @@
     if ([command isEqualToString:@"LIGHTNING"]) {
         if (score >= self.lightningSlider.value) {
             commandTextView.text = @"LIGHTNING";
+            [self sendLightning];
         }
     } else if([command isEqualToString:@"WATER"]) {
         if (score >= self.waterSlider.value) {
             self.commandTextView.text = @"WATER";
+            [self sendWater];
         }
     } else if([command isEqualToString:@"FIRE"]) {
         if (score >= self.fireSlider.value) {
             self.commandTextView.text = @"FIRE";
+            [self sendFire];
         }
     } else if([command isEqualToString:@"LEAF"]) {
         if (score >= self.leafSlider.value) {
             self.commandTextView.text = @"LEAF";
+            [self sendLeaf];
         }
     } else if([command isEqualToString:@"NOVA"]) {
         if (score >= self.novaSlider.value) {
             self.commandTextView.text = @"NOVA";
+            [self sendNova];
         }
     } else if([command isEqualToString:@"PAUSE"]) {
         if (score >= self.pauseSlider.value) {
             self.commandTextView.text = @"PAUSE";
+            [self sendPause];
         }
     }
 }
@@ -289,6 +307,7 @@
 
 - (void) pocketsphinxDidDetectSpeech {
 	self.statusTextView.text = @"Status: Pocketsphinx has detected speech.";
+    [socketIO sendEvent:@"detected" withData:nil];
 }
 
 - (void) pocketsphinxDidDetectFinishedSpeech {
@@ -333,9 +352,56 @@
     }
 }
 
+# pragma mark -
+# pragma mark socket.IO-objc delegate methods
+
+- (void) socketIODidConnect:(SocketIO *)socket {
+    NSLog(@"socket.io connected.");
+}
+
+- (void) socketIO:(SocketIO *)socket didReceiveEvent:(SocketIOPacket *)packet {
+    NSLog(@"didReceiveEvent()");
+}
+
+- (void) socketIO:(SocketIO *)socket onError:(NSError *)error {
+    if ([error code] == SocketIOUnauthorized) {
+        NSLog(@"not authorized");
+    } else {
+        NSLog(@"onError() %@", error);
+    }
+}
+
+# pragma mark -
+# pragma mark UI
+
 - (IBAction)saveButtonPressed:(id)sender {
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     [prefs setObject:self.thresholds forKey:@"threshold"];
     NSLog(@"Threshold saved %@", self.thresholds);
 }
+
+- (IBAction)sendLightning {
+    [socketIO sendEvent:@"command" withData:@"LIGHTNING"];
+}
+
+- (IBAction)sendWater {
+    [socketIO sendEvent:@"command" withData:@"WATER"];
+}
+
+- (IBAction)sendFire {
+    [socketIO sendEvent:@"command" withData:@"FIRE"];
+}
+
+- (IBAction)sendLeaf {
+    [socketIO sendEvent:@"command" withData:@"LEAF"];
+}
+
+- (IBAction)sendPause {
+    [socketIO sendEvent:@"command" withData:@"PAUSE"];
+}
+
+- (IBAction)sendNova {
+    [socketIO sendEvent:@"command" withData:@"NOVA"];
+}
+
 @end

@@ -50,4 +50,7 @@ io.sockets.on('connection', function (socket) {
     console.log('Received command:', data);
     socket.broadcast.emit('command', data);
   });
+  socket.on('detected', function(data) {
+    console.log('Speech detected');
+  });
 });

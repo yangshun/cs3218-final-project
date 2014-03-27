@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		104674E618E4711500FB1EFC /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 104674E518E4711500FB1EFC /* Security.framework */; };
+		104674E818E4712900FB1EFC /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 104674E718E4712900FB1EFC /* libicucore.dylib */; };
+		104674EA18E4713B00FB1EFC /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 104674E918E4713B00FB1EFC /* MobileCoreServices.framework */; };
+		104674EC18E4714800FB1EFC /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 104674EB18E4714800FB1EFC /* CFNetwork.framework */; };
+		104674F818E471A100FB1EFC /* SocketIO.m in Sources */ = {isa = PBXBuildFile; fileRef = 104674EE18E471A100FB1EFC /* SocketIO.m */; };
+		104674F918E471A100FB1EFC /* SocketIOJSONSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 104674F018E471A100FB1EFC /* SocketIOJSONSerialization.m */; };
+		104674FA18E471A100FB1EFC /* SocketIOPacket.m in Sources */ = {isa = PBXBuildFile; fileRef = 104674F218E471A100FB1EFC /* SocketIOPacket.m */; };
+		104674FB18E471A100FB1EFC /* SocketIOTransportWebsocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 104674F518E471A100FB1EFC /* SocketIOTransportWebsocket.m */; };
+		104674FC18E471A100FB1EFC /* SocketIOTransportXHR.m in Sources */ = {isa = PBXBuildFile; fileRef = 104674F718E471A100FB1EFC /* SocketIOTransportXHR.m */; };
+		1046750518E4721000FB1EFC /* base64.c in Sources */ = {isa = PBXBuildFile; fileRef = 104674FE18E4721000FB1EFC /* base64.c */; };
+		1046750618E4721000FB1EFC /* NSData+SRB64Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1046750118E4721000FB1EFC /* NSData+SRB64Additions.m */; };
+		1046750718E4721000FB1EFC /* SRWebSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 1046750418E4721000FB1EFC /* SRWebSocket.m */; };
 		10E713C418DE8DF60031B2AC /* appgrammar.arpa in Resources */ = {isa = PBXBuildFile; fileRef = 10E713C218DE8DF60031B2AC /* appgrammar.arpa */; };
 		10E713C518DE8DF60031B2AC /* appvocab.dic in Resources */ = {isa = PBXBuildFile; fileRef = 10E713C318DE8DF60031B2AC /* appvocab.dic */; };
 		10E713C718DE8E850031B2AC /* ViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10E713C618DE8E850031B2AC /* ViewController_iPhone.xib */; };
@@ -47,11 +59,33 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		104674E518E4711500FB1EFC /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		104674E718E4712900FB1EFC /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
+		104674E918E4713B00FB1EFC /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		104674EB18E4714800FB1EFC /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		104674ED18E471A100FB1EFC /* SocketIO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketIO.h; sourceTree = "<group>"; };
+		104674EE18E471A100FB1EFC /* SocketIO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketIO.m; sourceTree = "<group>"; };
+		104674EF18E471A100FB1EFC /* SocketIOJSONSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketIOJSONSerialization.h; sourceTree = "<group>"; };
+		104674F018E471A100FB1EFC /* SocketIOJSONSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketIOJSONSerialization.m; sourceTree = "<group>"; };
+		104674F118E471A100FB1EFC /* SocketIOPacket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketIOPacket.h; sourceTree = "<group>"; };
+		104674F218E471A100FB1EFC /* SocketIOPacket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketIOPacket.m; sourceTree = "<group>"; };
+		104674F318E471A100FB1EFC /* SocketIOTransport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketIOTransport.h; sourceTree = "<group>"; };
+		104674F418E471A100FB1EFC /* SocketIOTransportWebsocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketIOTransportWebsocket.h; sourceTree = "<group>"; };
+		104674F518E471A100FB1EFC /* SocketIOTransportWebsocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketIOTransportWebsocket.m; sourceTree = "<group>"; };
+		104674F618E471A100FB1EFC /* SocketIOTransportXHR.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketIOTransportXHR.h; sourceTree = "<group>"; };
+		104674F718E471A100FB1EFC /* SocketIOTransportXHR.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketIOTransportXHR.m; sourceTree = "<group>"; };
+		104674FE18E4721000FB1EFC /* base64.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = base64.c; sourceTree = "<group>"; };
+		104674FF18E4721000FB1EFC /* base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = base64.h; sourceTree = "<group>"; };
+		1046750018E4721000FB1EFC /* NSData+SRB64Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+SRB64Additions.h"; sourceTree = "<group>"; };
+		1046750118E4721000FB1EFC /* NSData+SRB64Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+SRB64Additions.m"; sourceTree = "<group>"; };
+		1046750218E4721000FB1EFC /* SocketRocket-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SocketRocket-Prefix.pch"; sourceTree = "<group>"; };
+		1046750318E4721000FB1EFC /* SRWebSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRWebSocket.h; sourceTree = "<group>"; };
+		1046750418E4721000FB1EFC /* SRWebSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRWebSocket.m; sourceTree = "<group>"; };
 		10E713C218DE8DF60031B2AC /* appgrammar.arpa */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = appgrammar.arpa; sourceTree = "<group>"; };
 		10E713C318DE8DF60031B2AC /* appvocab.dic */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = appvocab.dic; sourceTree = "<group>"; };
 		10E713C618DE8E850031B2AC /* ViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController_iPhone.xib; sourceTree = "<group>"; };
-		8C2996B415ECEAF900C2B0B6 /* OpenEars.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OpenEars.framework; sourceTree = "<group>"; };
-		8C2996BA15ECEAF900C2B0B6 /* Slt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Slt.framework; sourceTree = "<group>"; };
+		8C2996B415ECEAF900C2B0B6 /* OpenEars.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenEars.framework; path = ../Framework/OpenEars.framework; sourceTree = "<group>"; };
+		8C2996BA15ECEAF900C2B0B6 /* Slt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Slt.framework; path = ../Framework/Slt.framework; sourceTree = "<group>"; };
 		8C2F9B6C1507BEF20031011A /* OpenEarsTrial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenEarsTrial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C2F9B701507BEF20031011A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		8C2F9B721507BEF20031011A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -70,13 +104,13 @@
 		8C2F9BC41507BF2A0031011A /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		8C2F9BC51507BF2A0031011A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		8C72BB3315C1664F008BDED4 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		8C875AD917BBCBE400C24D0C /* AcousticModelEnglish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AcousticModelEnglish.bundle; sourceTree = "<group>"; };
+		8C875AD917BBCBE400C24D0C /* AcousticModelEnglish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AcousticModelEnglish.bundle; path = ../Framework/AcousticModelEnglish.bundle; sourceTree = "<group>"; };
 		8C875ADC17BBCC1900C24D0C /* OpenEars1.dic */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OpenEars1.dic; sourceTree = "<group>"; };
 		8C875ADD17BBCC1900C24D0C /* OpenEars1.gram */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OpenEars1.gram; sourceTree = "<group>"; };
 		8C875ADE17BBCC1900C24D0C /* OpenEars1.languagemodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OpenEars1.languagemodel; sourceTree = "<group>"; };
 		8C875ADF17BBCC1900C24D0C /* OpenEars2.gram */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OpenEars2.gram; sourceTree = "<group>"; };
 		8C875AE017BBCC1900C24D0C /* OpenEarsCorpus.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OpenEarsCorpus.txt; sourceTree = "<group>"; };
-		8C875B0817BBDE0A00C24D0C /* AcousticModelSpanish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AcousticModelSpanish.bundle; sourceTree = "<group>"; };
+		8C875B0817BBDE0A00C24D0C /* AcousticModelSpanish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AcousticModelSpanish.bundle; path = ../Framework/AcousticModelSpanish.bundle; sourceTree = "<group>"; };
 		8CA7340B1507D00A0016931D /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -85,6 +119,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				104674EC18E4714800FB1EFC /* CFNetwork.framework in Frameworks */,
+				104674EA18E4713B00FB1EFC /* MobileCoreServices.framework in Frameworks */,
+				104674E818E4712900FB1EFC /* libicucore.dylib in Frameworks */,
+				104674E618E4711500FB1EFC /* Security.framework in Frameworks */,
 				8C72BB3415C1664F008BDED4 /* SystemConfiguration.framework in Frameworks */,
 				8C2F9BC61507BF2A0031011A /* AudioToolbox.framework in Frameworks */,
 				8C2F9BC71507BF2A0031011A /* AVFoundation.framework in Frameworks */,
@@ -109,22 +147,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8C2996AA15ECEAF900C2B0B6 /* Framework */ = {
+		104674FD18E4721000FB1EFC /* SocketRocket */ = {
 			isa = PBXGroup;
 			children = (
-				8C875B0817BBDE0A00C24D0C /* AcousticModelSpanish.bundle */,
-				8C875AD917BBCBE400C24D0C /* AcousticModelEnglish.bundle */,
-				8C2996B415ECEAF900C2B0B6 /* OpenEars.framework */,
-				8C2996BA15ECEAF900C2B0B6 /* Slt.framework */,
+				104674FE18E4721000FB1EFC /* base64.c */,
+				104674FF18E4721000FB1EFC /* base64.h */,
+				1046750018E4721000FB1EFC /* NSData+SRB64Additions.h */,
+				1046750118E4721000FB1EFC /* NSData+SRB64Additions.m */,
+				1046750218E4721000FB1EFC /* SocketRocket-Prefix.pch */,
+				1046750318E4721000FB1EFC /* SRWebSocket.h */,
+				1046750418E4721000FB1EFC /* SRWebSocket.m */,
 			);
-			name = Framework;
-			path = ../Framework;
+			name = SocketRocket;
+			path = VocabularyFiles/SocketRocket;
 			sourceTree = "<group>";
 		};
 		8C2F9B611507BEF20031011A = {
 			isa = PBXGroup;
 			children = (
-				8C2996AA15ECEAF900C2B0B6 /* Framework */,
 				8C2F9B761507BEF20031011A /* OpenEarsTrial */,
 				8C2F9B6F1507BEF20031011A /* Frameworks */,
 				8C2F9B6D1507BEF20031011A /* Products */,
@@ -143,6 +183,14 @@
 		8C2F9B6F1507BEF20031011A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				104674EB18E4714800FB1EFC /* CFNetwork.framework */,
+				104674E918E4713B00FB1EFC /* MobileCoreServices.framework */,
+				104674E718E4712900FB1EFC /* libicucore.dylib */,
+				104674E518E4711500FB1EFC /* Security.framework */,
+				8C875B0817BBDE0A00C24D0C /* AcousticModelSpanish.bundle */,
+				8C875AD917BBCBE400C24D0C /* AcousticModelEnglish.bundle */,
+				8C2996B415ECEAF900C2B0B6 /* OpenEars.framework */,
+				8C2996BA15ECEAF900C2B0B6 /* Slt.framework */,
 				8C72BB3315C1664F008BDED4 /* SystemConfiguration.framework */,
 				8C2F9BC41507BF2A0031011A /* AudioToolbox.framework */,
 				8C2F9BC51507BF2A0031011A /* AVFoundation.framework */,
@@ -157,6 +205,7 @@
 		8C2F9B761507BEF20031011A /* OpenEarsTrial */ = {
 			isa = PBXGroup;
 			children = (
+				104674FD18E4721000FB1EFC /* SocketRocket */,
 				8C875ADB17BBCC1900C24D0C /* VocabularyFiles */,
 				8C2F9B7F1507BEF20031011A /* AppDelegate.h */,
 				8C2F9B801507BEF20031011A /* AppDelegate.m */,
@@ -164,6 +213,17 @@
 				8C2F9B831507BEF20031011A /* ViewController.m */,
 				10E713C618DE8E850031B2AC /* ViewController_iPhone.xib */,
 				8C2F9B881507BEF30031011A /* ViewController_iPad.xib */,
+				104674ED18E471A100FB1EFC /* SocketIO.h */,
+				104674EE18E471A100FB1EFC /* SocketIO.m */,
+				104674EF18E471A100FB1EFC /* SocketIOJSONSerialization.h */,
+				104674F018E471A100FB1EFC /* SocketIOJSONSerialization.m */,
+				104674F118E471A100FB1EFC /* SocketIOPacket.h */,
+				104674F218E471A100FB1EFC /* SocketIOPacket.m */,
+				104674F318E471A100FB1EFC /* SocketIOTransport.h */,
+				104674F418E471A100FB1EFC /* SocketIOTransportWebsocket.h */,
+				104674F518E471A100FB1EFC /* SocketIOTransportWebsocket.m */,
+				104674F618E471A100FB1EFC /* SocketIOTransportXHR.h */,
+				104674F718E471A100FB1EFC /* SocketIOTransportXHR.m */,
 				8C2F9B771507BEF20031011A /* Supporting Files */,
 			);
 			name = OpenEarsTrial;
@@ -318,8 +378,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1046750618E4721000FB1EFC /* NSData+SRB64Additions.m in Sources */,
 				8C2F9B7D1507BEF20031011A /* main.m in Sources */,
+				104674FC18E471A100FB1EFC /* SocketIOTransportXHR.m in Sources */,
+				104674FB18E471A100FB1EFC /* SocketIOTransportWebsocket.m in Sources */,
 				8C2F9B811507BEF20031011A /* AppDelegate.m in Sources */,
+				1046750718E4721000FB1EFC /* SRWebSocket.m in Sources */,
+				1046750518E4721000FB1EFC /* base64.c in Sources */,
+				104674FA18E471A100FB1EFC /* SocketIOPacket.m in Sources */,
+				104674F918E471A100FB1EFC /* SocketIOJSONSerialization.m in Sources */,
+				104674F818E471A100FB1EFC /* SocketIO.m in Sources */,
 				8C2F9B841507BEF20031011A /* ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -427,7 +495,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OpenEarsSampleApp/OpenEarsTrial-Prefix.pch";
 				INFOPLIST_FILE = "OpenEarsSampleApp/OpenEarsTrial-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SDKROOT)/usr/lib/system\"",
@@ -454,7 +522,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OpenEarsSampleApp/OpenEarsTrial-Prefix.pch";
 				INFOPLIST_FILE = "OpenEarsSampleApp/OpenEarsTrial-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SDKROOT)/usr/lib/system\"",
