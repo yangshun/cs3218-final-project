@@ -128,7 +128,7 @@
     NSHTTPCookie *cookie = [NSHTTPCookie cookieWithProperties:properties];
     NSArray *cookies = [NSArray arrayWithObjects:cookie, nil];
     socketIO.cookies = cookies;
-    [socketIO connectToHost:@"192.168.0.100" onPort:3218];
+    [socketIO connectToHost:@"192.168.0.103" onPort:3218];
     
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     NSArray *temp = [prefs arrayForKey:@"threshold"];

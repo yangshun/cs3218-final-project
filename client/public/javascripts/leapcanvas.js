@@ -30,7 +30,7 @@ var LeapEx = {
     $(el).css('position', 'absolute').css('left', '0').css('top', '0');
 
     LeapEx.ctx = $(el)[0].getContext("2d");
-    LeapEx.ws = new WebSocket("ws://localhost:6437/");
+    LeapEx.ws = new WebSocket("ws://localhost:3218/");
 
     LeapEx.ws.onopen = function(event) {
       LeapEx.debug("WebSocket connection open!");
