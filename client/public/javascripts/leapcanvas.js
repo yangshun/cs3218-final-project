@@ -30,7 +30,7 @@ var LeapEx = {
     $(el).css('position', 'absolute').css('left', '0').css('top', '0');
 
     LeapEx.ctx = $(el)[0].getContext("2d");
-    LeapEx.ws = new WebSocket("ws://localhost:3218/");
+    LeapEx.ws = new WebSocket("ws://localhost:6437/");
 
     LeapEx.ws.onopen = function(event) {
       LeapEx.debug("WebSocket connection open!");
@@ -86,6 +86,9 @@ var LeapEx = {
       LeapEx.ctx.arc(LeapEx.scale(target.x, LeapEx.leapMinX, LeapEx.leapMaxX, -100, LeapEx.width),
                      LeapEx.scale(target.y, LeapEx.leapMinY, LeapEx.leapMaxY, LeapEx.height, -100),
                      target.z, 0, Math.PI*2, true);
+      // LeapEx.ctx.arc(LeapEx.scale(target.x, LeapEx.leapMinX, LeapEx.leapMaxX, -100, LeapEx.width),
+      //                LeapEx.scale(target.y, LeapEx.leapMinY, LeapEx.leapMaxY, LeapEx.height, -100),
+      //                20, 0, Math.PI*2, true);
       LeapEx.ctx.closePath();
       LeapEx.ctx.fill();
     }
