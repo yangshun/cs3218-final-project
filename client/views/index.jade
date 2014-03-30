@@ -1,22 +1,39 @@
 extends layout
 
 block content
+  body
+    div#canvas
 
-  h1 Leap Canvas
-  div(id="debug") WebSocket not connected
-
-  canvas#canvas
-
-  script(src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js")
-  script(src="/socket.io/socket.io.js")
-  script(src="/javascripts/leapcanvas.js")
-  script.
-    var socket = io.connect('http://' + window.location.host);
-    socket.on('command', function(data) {
-      console.log(data);
-      LeapEx.onCommand(data);
-    });
-    $(document).ready(function() {
-      LeapEx.init('#canvas', '#debug');
-    });
+    script(src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js")
+    script(src="/js/underscore-min.js")
+    script(src="/js/transforms.js")
+    script(src="/js/utils.js")
+    script(src="/socket.io/socket.io.js")
+    script(src="/js/leapcanvas.js")
+    script.
+      //- var socket = io.connect('http://' + window.location.host);
+      //- socket.on('command', function(data) {
+      //-   console.log(data);
+      //-   LeapEx.onCommand(data);
+      //- });
+      //- $(document).ready(function() {
+      //-   LeapEx.init('#canvas', '#debug');
+      //- });
+      $(function() {
+        rockets = [];
+        for (var i = 0; i < 5; i++) {
+          (function(i) {
+            var rocket = $.initWithFrame('rocket.png', [100 + i * 80, 100, 50], 45);
+            rockets.push(rocket);
+            $('#canvas').append(rocket);
+              var a = setInterval(function() {
+                rockets[i].translateY(getRandomInt(-3, 3));
+                rockets[i].translateX(getRandomInt(-5, 5));
+              }, 16);
+            rocket.on('click', function() {
+              $(this).remove();
+            });
+          })(i);
+        }
+      });
 
