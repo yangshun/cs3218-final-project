@@ -75,7 +75,6 @@
     if (currentWordIndex < self.wordsArray.count - 1) {
         currentWordIndex++;
     }
-    [cheerPlayer play];
     [self clearBlackBoard];
     [self setUpViewForWordIndex:currentWordIndex];
 }
@@ -103,7 +102,8 @@
     [self clearBlackBoard];
     word = [word uppercaseString];
     NSUInteger numberOfLetters = [word length];
-    
+    self.view.userInteractionEnabled = YES;
+
     for (int i = 0; i < numberOfLetters; i++) {
         UILabel *letter = [[UILabel alloc] initWithFrame:CGRectMake(i * letterWidth, 0,
                                                                     letterWidth, HEIGHT_OF_LETTER)];
@@ -159,6 +159,13 @@
         letterIsDragged = NO;
         [lettersArray insertObject:letter atIndex:draggedLetterCurrentIndex];
         [self snapLettersToFinalPosition];
+        if ([self compareWord]) {
+            self.view.userInteractionEnabled = NO;
+            [cheerPlayer play];
+            [self performSelector:@selector(nextWord:)
+                    withObject:nil
+                       afterDelay:1.f];
+        }
     }
 }
 
@@ -194,6 +201,15 @@
     // caution, autoreleased. Allocate explicitly above or retain below to
     // keep the string.
     return scrambledWord;
+}
+
+- (BOOL)compareWord {
+    NSMutableString *word = [NSMutableString string];
+    for (UILabel *l in lettersArray) {
+        [word appendString:[NSString stringWithFormat:@"%@", l.text]];
+    }
+    BOOL correct = [word isEqualToString:originalWord];
+    return correct;
 }
 
 - (IBAction)scramble:(id)sender {

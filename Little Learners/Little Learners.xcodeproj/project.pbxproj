@@ -29,6 +29,20 @@
 		6D84DC4218ED46AB00963638 /* GameAudioManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D84DC4118ED46AB00963638 /* GameAudioManager.m */; };
 		6D84DC4418ED46BE00963638 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D84DC4318ED46BE00963638 /* AVFoundation.framework */; };
 		6D84DC4618ED473800963638 /* audio in Resources */ = {isa = PBXBuildFile; fileRef = 6D84DC4518ED473800963638 /* audio */; };
+		6D84DC5718ED53CC00963638 /* background-kitchen.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6D84DC4918ED53CC00963638 /* background-kitchen.jpg */; };
+		6D84DC5818ED53CC00963638 /* fruit-apple.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D84DC4A18ED53CC00963638 /* fruit-apple.png */; };
+		6D84DC5918ED53CC00963638 /* fruit-banana.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D84DC4B18ED53CC00963638 /* fruit-banana.png */; };
+		6D84DC5A18ED53CC00963638 /* fruit-blueberry.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D84DC4C18ED53CC00963638 /* fruit-blueberry.png */; };
+		6D84DC5B18ED53CC00963638 /* fruit-cherry.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D84DC4D18ED53CC00963638 /* fruit-cherry.png */; };
+		6D84DC5C18ED53CC00963638 /* fruit-coconut.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D84DC4E18ED53CC00963638 /* fruit-coconut.png */; };
+		6D84DC5D18ED53CC00963638 /* fruit-lemon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D84DC4F18ED53CC00963638 /* fruit-lemon.png */; };
+		6D84DC5E18ED53CC00963638 /* fruit-lime.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D84DC5018ED53CC00963638 /* fruit-lime.png */; };
+		6D84DC5F18ED53CC00963638 /* fruit-orange.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D84DC5118ED53CC00963638 /* fruit-orange.png */; };
+		6D84DC6018ED53CC00963638 /* fruit-peach.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D84DC5218ED53CC00963638 /* fruit-peach.png */; };
+		6D84DC6118ED53CC00963638 /* fruit-pear.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D84DC5318ED53CC00963638 /* fruit-pear.png */; };
+		6D84DC6218ED53CC00963638 /* fruit-pineapple.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D84DC5418ED53CC00963638 /* fruit-pineapple.png */; };
+		6D84DC6318ED53CC00963638 /* fruit-strawberry.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D84DC5518ED53CC00963638 /* fruit-strawberry.png */; };
+		6D84DC6418ED53CC00963638 /* fruit-watermelon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D84DC5618ED53CC00963638 /* fruit-watermelon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +87,20 @@
 		6D84DC4118ED46AB00963638 /* GameAudioManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameAudioManager.m; sourceTree = "<group>"; };
 		6D84DC4318ED46BE00963638 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		6D84DC4518ED473800963638 /* audio */ = {isa = PBXFileReference; lastKnownFileType = folder; path = audio; sourceTree = "<group>"; };
+		6D84DC4918ED53CC00963638 /* background-kitchen.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "background-kitchen.jpg"; path = "images/background-kitchen.jpg"; sourceTree = "<group>"; };
+		6D84DC4A18ED53CC00963638 /* fruit-apple.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "fruit-apple.png"; path = "images/fruit-apple.png"; sourceTree = "<group>"; };
+		6D84DC4B18ED53CC00963638 /* fruit-banana.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "fruit-banana.png"; path = "images/fruit-banana.png"; sourceTree = "<group>"; };
+		6D84DC4C18ED53CC00963638 /* fruit-blueberry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "fruit-blueberry.png"; path = "images/fruit-blueberry.png"; sourceTree = "<group>"; };
+		6D84DC4D18ED53CC00963638 /* fruit-cherry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "fruit-cherry.png"; path = "images/fruit-cherry.png"; sourceTree = "<group>"; };
+		6D84DC4E18ED53CC00963638 /* fruit-coconut.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "fruit-coconut.png"; path = "images/fruit-coconut.png"; sourceTree = "<group>"; };
+		6D84DC4F18ED53CC00963638 /* fruit-lemon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "fruit-lemon.png"; path = "images/fruit-lemon.png"; sourceTree = "<group>"; };
+		6D84DC5018ED53CC00963638 /* fruit-lime.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "fruit-lime.png"; path = "images/fruit-lime.png"; sourceTree = "<group>"; };
+		6D84DC5118ED53CC00963638 /* fruit-orange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "fruit-orange.png"; path = "images/fruit-orange.png"; sourceTree = "<group>"; };
+		6D84DC5218ED53CC00963638 /* fruit-peach.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "fruit-peach.png"; path = "images/fruit-peach.png"; sourceTree = "<group>"; };
+		6D84DC5318ED53CC00963638 /* fruit-pear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "fruit-pear.png"; path = "images/fruit-pear.png"; sourceTree = "<group>"; };
+		6D84DC5418ED53CC00963638 /* fruit-pineapple.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "fruit-pineapple.png"; path = "images/fruit-pineapple.png"; sourceTree = "<group>"; };
+		6D84DC5518ED53CC00963638 /* fruit-strawberry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "fruit-strawberry.png"; path = "images/fruit-strawberry.png"; sourceTree = "<group>"; };
+		6D84DC5618ED53CC00963638 /* fruit-watermelon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "fruit-watermelon.png"; path = "images/fruit-watermelon.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +177,7 @@
 				6D84DC4018ED46AB00963638 /* GameAudioManager.h */,
 				6D84DC4118ED46AB00963638 /* GameAudioManager.m */,
 				6D84DC3B18ED36D300963638 /* Noun List.plist */,
+				6D84DC6518ED53DA00963638 /* Images */,
 				6D84DC4518ED473800963638 /* audio */,
 				6D84DC1818EC737900963638 /* Images.xcassets */,
 				6D84DC0418EC737900963638 /* Supporting Files */,
@@ -185,6 +214,27 @@
 				6D84DC2818EC737900963638 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6D84DC6518ED53DA00963638 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				6D84DC4918ED53CC00963638 /* background-kitchen.jpg */,
+				6D84DC4A18ED53CC00963638 /* fruit-apple.png */,
+				6D84DC4B18ED53CC00963638 /* fruit-banana.png */,
+				6D84DC4C18ED53CC00963638 /* fruit-blueberry.png */,
+				6D84DC4D18ED53CC00963638 /* fruit-cherry.png */,
+				6D84DC4E18ED53CC00963638 /* fruit-coconut.png */,
+				6D84DC4F18ED53CC00963638 /* fruit-lemon.png */,
+				6D84DC5018ED53CC00963638 /* fruit-lime.png */,
+				6D84DC5118ED53CC00963638 /* fruit-orange.png */,
+				6D84DC5218ED53CC00963638 /* fruit-peach.png */,
+				6D84DC5318ED53CC00963638 /* fruit-pear.png */,
+				6D84DC5418ED53CC00963638 /* fruit-pineapple.png */,
+				6D84DC5518ED53CC00963638 /* fruit-strawberry.png */,
+				6D84DC5618ED53CC00963638 /* fruit-watermelon.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,12 +316,26 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D84DC5718ED53CC00963638 /* background-kitchen.jpg in Resources */,
 				6D84DC3C18ED36D300963638 /* Noun List.plist in Resources */,
 				6D84DC1418EC737900963638 /* Main_iPad.storyboard in Resources */,
 				6D84DC1918EC737900963638 /* Images.xcassets in Resources */,
+				6D84DC5D18ED53CC00963638 /* fruit-lemon.png in Resources */,
 				6D84DC4618ED473800963638 /* audio in Resources */,
+				6D84DC6218ED53CC00963638 /* fruit-pineapple.png in Resources */,
+				6D84DC6418ED53CC00963638 /* fruit-watermelon.png in Resources */,
+				6D84DC6118ED53CC00963638 /* fruit-pear.png in Resources */,
+				6D84DC5F18ED53CC00963638 /* fruit-orange.png in Resources */,
+				6D84DC5A18ED53CC00963638 /* fruit-blueberry.png in Resources */,
 				6D84DC1118EC737900963638 /* Main_iPhone.storyboard in Resources */,
+				6D84DC5C18ED53CC00963638 /* fruit-coconut.png in Resources */,
 				6D84DC0818EC737900963638 /* InfoPlist.strings in Resources */,
+				6D84DC5818ED53CC00963638 /* fruit-apple.png in Resources */,
+				6D84DC6018ED53CC00963638 /* fruit-peach.png in Resources */,
+				6D84DC5918ED53CC00963638 /* fruit-banana.png in Resources */,
+				6D84DC5B18ED53CC00963638 /* fruit-cherry.png in Resources */,
+				6D84DC5E18ED53CC00963638 /* fruit-lime.png in Resources */,
+				6D84DC6318ED53CC00963638 /* fruit-strawberry.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -49,9 +49,9 @@
     // Get the new view controller using
     SpellViewController *vc = [segue destinationViewController];
     
-    NSArray *fruits = @[@"APPLE", @"BANANA", @"CHERRY", @"STRAWBERRY", @"BLUEBERRY", @"PEAR", @"ORANGE", @"LEMON", @"LIME", @"PEACH", @"WATERMELON", @"COCONUT", @"PINEAPPLE"];
-    NSArray *fiveRandomFruits = [[[Utils sharedManager] shuffle:fruits] subarrayWithRange:NSMakeRange(0, 5)];
-    vc.wordsArray = fiveRandomFruits;
+    NSArray *items = @[@"APPLE", @"BANANA", @"CHERRY", @"STRAWBERRY", @"BLUEBERRY", @"PEAR", @"ORANGE", @"LEMON", @"LIME", @"PEACH", @"WATERMELON", @"COCONUT", @"PINEAPPLE"];
+    NSArray *fiveRandomItems = [[[Utils sharedManager] shuffle:items] subarrayWithRange:NSMakeRange(0, 5)];
+    vc.wordsArray = fiveRandomItems;
     
     // Pass the selected object to the new view controller.
     

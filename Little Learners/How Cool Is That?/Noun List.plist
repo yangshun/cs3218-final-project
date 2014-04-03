@@ -16,6 +16,8 @@
 	<string>fruit-lemon.png</string>
 	<key>LIME</key>
 	<string>fruit-lime.png</string>
+	<key>ORANGE</key>
+	<string>fruit-orange.png</string>
 	<key>PEACH</key>
 	<string>fruit-peach.png</string>
 	<key>PEAR</key>
