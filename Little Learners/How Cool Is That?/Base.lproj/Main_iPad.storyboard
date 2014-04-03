@@ -147,11 +147,16 @@
                                     <action selector="previousWord:" destination="IMv-8d-Z1X" eventType="touchUpInside" id="IbW-mO-tH1"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cqa-XF-UAd">
+                                <rect key="frame" x="236" y="204" width="297" height="295"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="blackBoard" destination="cZ7-Eo-to8" id="SDk-TY-jzp"/>
+                        <outlet property="wordImage" destination="Cqa-XF-UAd" id="4sm-WQ-JvK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MI7-64-F2o" userLabel="First Responder" sceneMemberID="firstResponder"/>

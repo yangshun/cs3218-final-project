@@ -3,9 +3,28 @@
 <plist version="1.0">
 <dict>
 	<key>APPLE</key>
-	<dict>
-		<key>Image</key>
-		<string></string>
-	</dict>
+	<string>fruit-apple.png</string>
+	<key>BANANA</key>
+	<string>fruit-banana.png</string>
+	<key>BLUEBERRY</key>
+	<string>fruit-blueberry.png</string>
+	<key>CHERRY</key>
+	<string>fruit-cherry.png</string>
+	<key>COCONUT</key>
+	<string>fruit-coconut.png</string>
+	<key>LEMON</key>
+	<string>fruit-lemon.png</string>
+	<key>LIME</key>
+	<string>fruit-lime.png</string>
+	<key>PEACH</key>
+	<string>fruit-peach.png</string>
+	<key>PEAR</key>
+	<string>fruit-pear.png</string>
+	<key>PINEAPPLE</key>
+	<string>fruit-pineapple.png</string>
+	<key>STRAWBERRY</key>
+	<string>fruit-strawberry.png</string>
+	<key>WATERMELON</key>
+	<string>fruit-watermelon.png</string>
 </dict>
 </plist>

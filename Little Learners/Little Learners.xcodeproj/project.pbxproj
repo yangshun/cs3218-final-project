@@ -26,6 +26,9 @@
 		6D84DC3A18EC768200963638 /* SpellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D84DC3918EC768200963638 /* SpellViewController.m */; };
 		6D84DC3C18ED36D300963638 /* Noun List.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6D84DC3B18ED36D300963638 /* Noun List.plist */; };
 		6D84DC3F18ED38EB00963638 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D84DC3E18ED38EB00963638 /* Utils.m */; };
+		6D84DC4218ED46AB00963638 /* GameAudioManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D84DC4118ED46AB00963638 /* GameAudioManager.m */; };
+		6D84DC4418ED46BE00963638 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D84DC4318ED46BE00963638 /* AVFoundation.framework */; };
+		6D84DC4618ED473800963638 /* audio in Resources */ = {isa = PBXBuildFile; fileRef = 6D84DC4518ED473800963638 /* audio */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +69,10 @@
 		6D84DC3B18ED36D300963638 /* Noun List.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Noun List.plist"; sourceTree = "<group>"; };
 		6D84DC3D18ED38EB00963638 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		6D84DC3E18ED38EB00963638 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
+		6D84DC4018ED46AB00963638 /* GameAudioManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameAudioManager.h; sourceTree = "<group>"; };
+		6D84DC4118ED46AB00963638 /* GameAudioManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameAudioManager.m; sourceTree = "<group>"; };
+		6D84DC4318ED46BE00963638 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		6D84DC4518ED473800963638 /* audio */ = {isa = PBXFileReference; lastKnownFileType = folder; path = audio; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D84DC4418ED46BE00963638 /* AVFoundation.framework in Frameworks */,
 				6D84DC0018EC737900963638 /* CoreGraphics.framework in Frameworks */,
 				6D84DC0218EC737900963638 /* UIKit.framework in Frameworks */,
 				6D84DBFE18EC737900963638 /* Foundation.framework in Frameworks */,
@@ -114,6 +122,7 @@
 		6D84DBFC18EC737900963638 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6D84DC4318ED46BE00963638 /* AVFoundation.framework */,
 				6D84DBFD18EC737900963638 /* Foundation.framework */,
 				6D84DBFF18EC737900963638 /* CoreGraphics.framework */,
 				6D84DC0118EC737900963638 /* UIKit.framework */,
@@ -137,7 +146,10 @@
 				6D84DC3618EC754800963638 /* CategorySelectionViewController.m */,
 				6D84DC3D18ED38EB00963638 /* Utils.h */,
 				6D84DC3E18ED38EB00963638 /* Utils.m */,
+				6D84DC4018ED46AB00963638 /* GameAudioManager.h */,
+				6D84DC4118ED46AB00963638 /* GameAudioManager.m */,
 				6D84DC3B18ED36D300963638 /* Noun List.plist */,
+				6D84DC4518ED473800963638 /* audio */,
 				6D84DC1818EC737900963638 /* Images.xcassets */,
 				6D84DC0418EC737900963638 /* Supporting Files */,
 			);
@@ -257,6 +269,7 @@
 				6D84DC3C18ED36D300963638 /* Noun List.plist in Resources */,
 				6D84DC1418EC737900963638 /* Main_iPad.storyboard in Resources */,
 				6D84DC1918EC737900963638 /* Images.xcassets in Resources */,
+				6D84DC4618ED473800963638 /* audio in Resources */,
 				6D84DC1118EC737900963638 /* Main_iPhone.storyboard in Resources */,
 				6D84DC0818EC737900963638 /* InfoPlist.strings in Resources */,
 			);
@@ -282,6 +295,7 @@
 				6D84DC3718EC754800963638 /* CategorySelectionViewController.m in Sources */,
 				6D84DC3F18ED38EB00963638 /* Utils.m in Sources */,
 				6D84DC0E18EC737900963638 /* AppDelegate.m in Sources */,
+				6D84DC4218ED46AB00963638 /* GameAudioManager.m in Sources */,
 				6D84DC0A18EC737900963638 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -499,6 +513,7 @@
 				6D84DC3118EC737900963638 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6D84DC3218EC737900963638 /* Build configuration list for PBXNativeTarget "Little LearnersTests" */ = {
 			isa = XCConfigurationList;
@@ -507,6 +522,7 @@
 				6D84DC3418EC737900963638 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

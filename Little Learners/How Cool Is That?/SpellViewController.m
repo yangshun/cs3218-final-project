@@ -7,17 +7,24 @@
 //
 
 #import "SpellViewController.h"
+#import "GameAudioManager.h"
 
 #define HEIGHT_OF_LETTER 100.0f
 
 @interface SpellViewController () {
     IBOutlet UIView *blackBoard;
+    IBOutlet UIImageView *wordImage;
+
     NSMutableArray *lettersArray;
     NSString *originalWord;
     BOOL letterIsDragged;
     UILabel *letterBeingDragged;
     float letterWidth;
     int currentWordIndex;
+    
+    AVAudioPlayer *cheerPlayer;
+    AVAudioPlayer *booPlayer;
+    NSMutableArray *imagesArray;
 }
 
 
@@ -38,8 +45,18 @@
 {
     [super viewDidLoad];
     currentWordIndex = 0;
+    cheerPlayer = [[GameAudioManager sharedInstance] playSoundWithPath:@"audio/cheer" type:@"caf"];
+    booPlayer = [[GameAudioManager sharedInstance] playSoundWithPath:@"audio/boo" type:@"caf"];
+
+    imagesArray = [NSMutableArray new];
+    NSString *path = [[NSBundle mainBundle] pathForResource:
+                      @"Noun List" ofType:@"plist"];
     
-    // Do any additional setup after loading the view.
+    NSDictionary *plistDict = [[NSDictionary alloc] initWithContentsOfFile:path];
+    for (NSString *s in self.wordsArray) {
+        UIImage *img = [UIImage imageNamed:plistDict[s]];
+        [imagesArray addObject:img];
+    }
     [self setUpViewForWordIndex:currentWordIndex];
 }
 
@@ -50,6 +67,7 @@
     letterWidth = blackBoard.frame.size.width/originalWord.length;
     letterBeingDragged = nil;
     letterIsDragged = NO;
+    wordImage.image = imagesArray[index];
     [self generateLetterFramesForWord:originalWord];
 }
 
@@ -57,6 +75,7 @@
     if (currentWordIndex < self.wordsArray.count - 1) {
         currentWordIndex++;
     }
+    [cheerPlayer play];
     [self clearBlackBoard];
     [self setUpViewForWordIndex:currentWordIndex];
 }
