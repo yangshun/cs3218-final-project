@@ -305,7 +305,7 @@
 				ORGANIZATIONNAME = Politepix;
 				TargetAttributes = {
 					8C2F9B6B1507BEF20031011A = {
-						DevelopmentTeam = EJ664WY4CE;
+						DevelopmentTeam = 3P69678SU8;
 					};
 				};
 			};

@@ -120,7 +120,7 @@
     
     socketIO = [[SocketIO alloc] initWithDelegate:self];
     NSDictionary *properties = [NSDictionary dictionaryWithObjectsAndKeys:
-                                @"localhost", NSHTTPCookieDomain,
+                                @"192.168.43.56", NSHTTPCookieDomain,
                                 @"/", NSHTTPCookiePath,
                                 @"auth", NSHTTPCookieName,
                                 @"56cdea636acdf132", NSHTTPCookieValue,
@@ -128,7 +128,7 @@
     NSHTTPCookie *cookie = [NSHTTPCookie cookieWithProperties:properties];
     NSArray *cookies = [NSArray arrayWithObjects:cookie, nil];
     socketIO.cookies = cookies;
-    [socketIO connectToHost:@"192.168.0.103" onPort:3218];
+    [socketIO connectToHost:@"192.168.43.56" onPort:3218];
     
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     NSArray *temp = [prefs arrayForKey:@"threshold"];
@@ -175,12 +175,12 @@
 	self.pathToDictionaryToStartAppWith = [NSString stringWithFormat:@"%@/%@",[[NSBundle mainBundle] resourcePath], @"appvocab.dic"];
 	
 	NSArray *languageArray = [[NSArray alloc] initWithArray:[NSArray arrayWithObjects:
-                                                             @"LIGHTNING",
-                                                             @"WATER",
-                                                             @"LEAF",
-                                                             @"FIRE",
-                                                             @"NOVA",
-                                                             @"PAUSE",
+                                                             @"A",
+                                                             @"B",
+                                                             @"C",
+                                                             @"D",
+                                                             @"E",
+                                                             @"F",
                                                              nil]];
     
 	LanguageModelGenerator *languageModelGenerator = [[LanguageModelGenerator alloc] init];
@@ -224,32 +224,32 @@
     
     self.commandTextView.text = @"UNKNOWN";
     if ([command isEqualToString:@"LIGHTNING"]) {
-        if (score >= self.lightningSlider.value) {
+        if (score >= [[self.thresholds objectAtIndex:0] integerValue]) {
             commandTextView.text = @"LIGHTNING";
             [self sendLightning];
         }
     } else if([command isEqualToString:@"WATER"]) {
-        if (score >= self.waterSlider.value) {
+        if (score >= [[self.thresholds objectAtIndex:1] integerValue]) {
             self.commandTextView.text = @"WATER";
             [self sendWater];
         }
     } else if([command isEqualToString:@"FIRE"]) {
-        if (score >= self.fireSlider.value) {
+        if (score >= [[self.thresholds objectAtIndex:2] integerValue]) {
             self.commandTextView.text = @"FIRE";
             [self sendFire];
         }
     } else if([command isEqualToString:@"LEAF"]) {
-        if (score >= self.leafSlider.value) {
+        if (score >= [[self.thresholds objectAtIndex:3] integerValue]) {
             self.commandTextView.text = @"LEAF";
             [self sendLeaf];
         }
     } else if([command isEqualToString:@"NOVA"]) {
-        if (score >= self.novaSlider.value) {
+        if (score >= [[self.thresholds objectAtIndex:4] integerValue]) {
             self.commandTextView.text = @"NOVA";
             [self sendNova];
         }
     } else if([command isEqualToString:@"PAUSE"]) {
-        if (score >= self.pauseSlider.value) {
+        if (score >= [[self.thresholds objectAtIndex:5] integerValue]) {
             self.commandTextView.text = @"PAUSE";
             [self sendPause];
         }
