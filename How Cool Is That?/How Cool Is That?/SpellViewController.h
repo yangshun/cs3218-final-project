@@ -1,6 +1,6 @@
 //
-//  GameViewController.h
-//  How Cool Is That?
+//  SpellViewController.h
+//  Little Learners
 //
 //  Created by YangShun on 3/4/14.
 //  Copyright (c) 2014 YangShun. All rights reserved.
@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GameViewController : UIViewController
+@interface SpellViewController : UIViewController
+
+@property NSArray *wordsArray;
 
 @end

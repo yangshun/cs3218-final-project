@@ -1,29 +1,29 @@
 //
-//  GameViewController.m
-//  How Cool Is That?
+//  SpellViewController.m
+//  Little Learners
 //
 //  Created by YangShun on 3/4/14.
 //  Copyright (c) 2014 YangShun. All rights reserved.
 //
 
-#import "GameViewController.h"
+#import "SpellViewController.h"
 
 #define HEIGHT_OF_LETTER 100.0f
 
-@interface GameViewController () {
-    IBOutlet UIView *entityNameArea;
+@interface SpellViewController () {
+    IBOutlet UIView *blackBoard;
     NSMutableArray *lettersArray;
     NSString *originalWord;
     BOOL letterIsDragged;
     UILabel *letterBeingDragged;
     float letterWidth;
+    int currentWordIndex;
 }
-
 
 
 @end
 
-@implementation GameViewController
+@implementation SpellViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -37,25 +37,51 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    lettersArray = [NSMutableArray new];
-    originalWord = @"Watermelon";
-    letterWidth = entityNameArea.frame.size.width/originalWord.length;
-    letterBeingDragged = nil;
-    letterIsDragged = NO;
+    currentWordIndex = 0;
     
     // Do any additional setup after loading the view.
+    [self setUpViewForWordIndex:currentWordIndex];
+}
+
+- (void)setUpViewForWordIndex:(int)index {
+    originalWord = self.wordsArray[index];
+    
+    lettersArray = [NSMutableArray new];
+    letterWidth = blackBoard.frame.size.width/originalWord.length;
+    letterBeingDragged = nil;
+    letterIsDragged = NO;
     [self generateLetterFramesForWord:originalWord];
+}
+
+- (IBAction)nextWord:(id)sender {
+    if (currentWordIndex < self.wordsArray.count - 1) {
+        currentWordIndex++;
+    }
+    [self clearBlackBoard];
+    [self setUpViewForWordIndex:currentWordIndex];
+}
+
+- (IBAction)previousWord:(id)sender {
+    if (currentWordIndex > 0) {
+        currentWordIndex--;
+    }
+    [self clearBlackBoard];
+    [self setUpViewForWordIndex:currentWordIndex];
 }
 
 #pragma mark - Letter Shuffling Methods
 
-- (void)generateLetterFramesForWord:(NSString *)word {
+- (void)clearBlackBoard {
     
     for (UIView *sb in lettersArray) {
         [sb removeFromSuperview];
     }
     [lettersArray removeAllObjects];
+}
+
+- (void)generateLetterFramesForWord:(NSString *)word {
     
+    [self clearBlackBoard];
     word = [word uppercaseString];
     NSUInteger numberOfLetters = [word length];
     
@@ -64,9 +90,10 @@
                                                                     letterWidth, HEIGHT_OF_LETTER)];
         letter.textAlignment = NSTextAlignmentCenter;
         letter.font = [UIFont fontWithName:@"Marker Felt" size:64.f];
+        letter.textColor = [UIColor whiteColor];
         letter.text = [NSString stringWithFormat:@"%c", [word characterAtIndex:i]];
         letter.userInteractionEnabled = YES;
-        [entityNameArea addSubview:letter];
+        [blackBoard addSubview:letter];
         [lettersArray addObject:letter];
         UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self
                                                                                      action:@selector(letterDrag:)];

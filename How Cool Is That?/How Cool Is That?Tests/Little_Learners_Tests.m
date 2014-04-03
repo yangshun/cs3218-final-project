@@ -1,6 +1,6 @@
 //
-//  How_Cool_Is_That_Tests.m
-//  How Cool Is That?Tests
+//  Little_Learners_Tests.m
+//  Little Learners Tests
 //
 //  Created by YangShun on 3/4/14.
 //  Copyright (c) 2014 YangShun. All rights reserved.

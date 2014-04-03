@@ -21,9 +21,11 @@
 		6D84DC2118EC737900963638 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D84DBFD18EC737900963638 /* Foundation.framework */; };
 		6D84DC2218EC737900963638 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D84DC0118EC737900963638 /* UIKit.framework */; };
 		6D84DC2A18EC737900963638 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6D84DC2818EC737900963638 /* InfoPlist.strings */; };
-		6D84DC2C18EC737900963638 /* How_Cool_Is_That_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D84DC2B18EC737900963638 /* How_Cool_Is_That_Tests.m */; };
+		6D84DC2C18EC737900963638 /* Little_Learners_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D84DC2B18EC737900963638 /* Little_Learners_Tests.m */; };
 		6D84DC3718EC754800963638 /* CategorySelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D84DC3618EC754800963638 /* CategorySelectionViewController.m */; };
-		6D84DC3A18EC768200963638 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D84DC3918EC768200963638 /* GameViewController.m */; };
+		6D84DC3A18EC768200963638 /* SpellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D84DC3918EC768200963638 /* SpellViewController.m */; };
+		6D84DC3C18ED36D300963638 /* Noun List.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6D84DC3B18ED36D300963638 /* Noun List.plist */; };
+		6D84DC3F18ED38EB00963638 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D84DC3E18ED38EB00963638 /* Utils.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,14 +39,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		6D84DBFA18EC737900963638 /* How Cool Is That?.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "How Cool Is That?.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D84DBFA18EC737900963638 /* Little Learners.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Little Learners.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D84DBFD18EC737900963638 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6D84DBFF18EC737900963638 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		6D84DC0118EC737900963638 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		6D84DC0518EC737900963638 /* How Cool Is That?-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "How Cool Is That?-Info.plist"; sourceTree = "<group>"; };
+		6D84DC0518EC737900963638 /* Little Learners-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Little Learners-Info.plist"; sourceTree = "<group>"; };
 		6D84DC0718EC737900963638 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6D84DC0918EC737900963638 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		6D84DC0B18EC737900963638 /* How Cool Is That?-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "How Cool Is That?-Prefix.pch"; sourceTree = "<group>"; };
+		6D84DC0B18EC737900963638 /* Little Learners-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Little Learners-Prefix.pch"; sourceTree = "<group>"; };
 		6D84DC0C18EC737900963638 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6D84DC0D18EC737900963638 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		6D84DC1018EC737900963638 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
@@ -52,15 +54,18 @@
 		6D84DC1518EC737900963638 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		6D84DC1618EC737900963638 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		6D84DC1818EC737900963638 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		6D84DC1E18EC737900963638 /* How Cool Is That?Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "How Cool Is That?Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D84DC1E18EC737900963638 /* Little LearnersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Little LearnersTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D84DC1F18EC737900963638 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		6D84DC2718EC737900963638 /* How Cool Is That?Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "How Cool Is That?Tests-Info.plist"; sourceTree = "<group>"; };
+		6D84DC2718EC737900963638 /* Little LearnersTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Little LearnersTests-Info.plist"; sourceTree = "<group>"; };
 		6D84DC2918EC737900963638 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		6D84DC2B18EC737900963638 /* How_Cool_Is_That_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = How_Cool_Is_That_Tests.m; sourceTree = "<group>"; };
+		6D84DC2B18EC737900963638 /* Little_Learners_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Little_Learners_Tests.m; sourceTree = "<group>"; };
 		6D84DC3518EC754800963638 /* CategorySelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategorySelectionViewController.h; sourceTree = "<group>"; };
 		6D84DC3618EC754800963638 /* CategorySelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategorySelectionViewController.m; sourceTree = "<group>"; };
-		6D84DC3818EC768200963638 /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
-		6D84DC3918EC768200963638 /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		6D84DC3818EC768200963638 /* SpellViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpellViewController.h; sourceTree = "<group>"; };
+		6D84DC3918EC768200963638 /* SpellViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpellViewController.m; sourceTree = "<group>"; };
+		6D84DC3B18ED36D300963638 /* Noun List.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Noun List.plist"; sourceTree = "<group>"; };
+		6D84DC3D18ED38EB00963638 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
+		6D84DC3E18ED38EB00963638 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,8 +95,8 @@
 		6D84DBF118EC737900963638 = {
 			isa = PBXGroup;
 			children = (
-				6D84DC0318EC737900963638 /* How Cool Is That? */,
-				6D84DC2518EC737900963638 /* How Cool Is That?Tests */,
+				6D84DC0318EC737900963638 /* Little Learners */,
+				6D84DC2518EC737900963638 /* Little Learners Tests */,
 				6D84DBFC18EC737900963638 /* Frameworks */,
 				6D84DBFB18EC737900963638 /* Products */,
 			);
@@ -100,8 +105,8 @@
 		6D84DBFB18EC737900963638 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6D84DBFA18EC737900963638 /* How Cool Is That?.app */,
-				6D84DC1E18EC737900963638 /* How Cool Is That?Tests.xctest */,
+				6D84DBFA18EC737900963638 /* Little Learners.app */,
+				6D84DC1E18EC737900963638 /* Little LearnersTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -117,49 +122,54 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		6D84DC0318EC737900963638 /* How Cool Is That? */ = {
+		6D84DC0318EC737900963638 /* Little Learners */ = {
 			isa = PBXGroup;
 			children = (
 				6D84DC0C18EC737900963638 /* AppDelegate.h */,
 				6D84DC0D18EC737900963638 /* AppDelegate.m */,
 				6D84DC0F18EC737900963638 /* Main_iPhone.storyboard */,
 				6D84DC1218EC737900963638 /* Main_iPad.storyboard */,
-				6D84DC3818EC768200963638 /* GameViewController.h */,
-				6D84DC3918EC768200963638 /* GameViewController.m */,
+				6D84DC3818EC768200963638 /* SpellViewController.h */,
+				6D84DC3918EC768200963638 /* SpellViewController.m */,
 				6D84DC1518EC737900963638 /* ViewController.h */,
 				6D84DC1618EC737900963638 /* ViewController.m */,
 				6D84DC3518EC754800963638 /* CategorySelectionViewController.h */,
 				6D84DC3618EC754800963638 /* CategorySelectionViewController.m */,
+				6D84DC3D18ED38EB00963638 /* Utils.h */,
+				6D84DC3E18ED38EB00963638 /* Utils.m */,
+				6D84DC3B18ED36D300963638 /* Noun List.plist */,
 				6D84DC1818EC737900963638 /* Images.xcassets */,
 				6D84DC0418EC737900963638 /* Supporting Files */,
 			);
+			name = "Little Learners";
 			path = "How Cool Is That?";
 			sourceTree = "<group>";
 		};
 		6D84DC0418EC737900963638 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				6D84DC0518EC737900963638 /* How Cool Is That?-Info.plist */,
+				6D84DC0518EC737900963638 /* Little Learners-Info.plist */,
 				6D84DC0618EC737900963638 /* InfoPlist.strings */,
 				6D84DC0918EC737900963638 /* main.m */,
-				6D84DC0B18EC737900963638 /* How Cool Is That?-Prefix.pch */,
+				6D84DC0B18EC737900963638 /* Little Learners-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		6D84DC2518EC737900963638 /* How Cool Is That?Tests */ = {
+		6D84DC2518EC737900963638 /* Little Learners Tests */ = {
 			isa = PBXGroup;
 			children = (
-				6D84DC2B18EC737900963638 /* How_Cool_Is_That_Tests.m */,
+				6D84DC2B18EC737900963638 /* Little_Learners_Tests.m */,
 				6D84DC2618EC737900963638 /* Supporting Files */,
 			);
+			name = "Little Learners Tests";
 			path = "How Cool Is That?Tests";
 			sourceTree = "<group>";
 		};
 		6D84DC2618EC737900963638 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				6D84DC2718EC737900963638 /* How Cool Is That?Tests-Info.plist */,
+				6D84DC2718EC737900963638 /* Little LearnersTests-Info.plist */,
 				6D84DC2818EC737900963638 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -168,9 +178,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		6D84DBF918EC737900963638 /* How Cool Is That? */ = {
+		6D84DBF918EC737900963638 /* Little Learners */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6D84DC2F18EC737900963638 /* Build configuration list for PBXNativeTarget "How Cool Is That?" */;
+			buildConfigurationList = 6D84DC2F18EC737900963638 /* Build configuration list for PBXNativeTarget "Little Learners" */;
 			buildPhases = (
 				6D84DBF618EC737900963638 /* Sources */,
 				6D84DBF718EC737900963638 /* Frameworks */,
@@ -180,14 +190,14 @@
 			);
 			dependencies = (
 			);
-			name = "How Cool Is That?";
+			name = "Little Learners";
 			productName = "How Cool Is That?";
-			productReference = 6D84DBFA18EC737900963638 /* How Cool Is That?.app */;
+			productReference = 6D84DBFA18EC737900963638 /* Little Learners.app */;
 			productType = "com.apple.product-type.application";
 		};
-		6D84DC1D18EC737900963638 /* How Cool Is That?Tests */ = {
+		6D84DC1D18EC737900963638 /* Little LearnersTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6D84DC3218EC737900963638 /* Build configuration list for PBXNativeTarget "How Cool Is That?Tests" */;
+			buildConfigurationList = 6D84DC3218EC737900963638 /* Build configuration list for PBXNativeTarget "Little LearnersTests" */;
 			buildPhases = (
 				6D84DC1A18EC737900963638 /* Sources */,
 				6D84DC1B18EC737900963638 /* Frameworks */,
@@ -198,9 +208,9 @@
 			dependencies = (
 				6D84DC2418EC737900963638 /* PBXTargetDependency */,
 			);
-			name = "How Cool Is That?Tests";
+			name = "Little LearnersTests";
 			productName = "How Cool Is That?Tests";
-			productReference = 6D84DC1E18EC737900963638 /* How Cool Is That?Tests.xctest */;
+			productReference = 6D84DC1E18EC737900963638 /* Little LearnersTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -220,7 +230,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 6D84DBF518EC737900963638 /* Build configuration list for PBXProject "How Cool Is That?" */;
+			buildConfigurationList = 6D84DBF518EC737900963638 /* Build configuration list for PBXProject "Little Learners" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -233,8 +243,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6D84DBF918EC737900963638 /* How Cool Is That? */,
-				6D84DC1D18EC737900963638 /* How Cool Is That?Tests */,
+				6D84DBF918EC737900963638 /* Little Learners */,
+				6D84DC1D18EC737900963638 /* Little LearnersTests */,
 			);
 		};
 /* End PBXProject section */
@@ -244,6 +254,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D84DC3C18ED36D300963638 /* Noun List.plist in Resources */,
 				6D84DC1418EC737900963638 /* Main_iPad.storyboard in Resources */,
 				6D84DC1918EC737900963638 /* Images.xcassets in Resources */,
 				6D84DC1118EC737900963638 /* Main_iPhone.storyboard in Resources */,
@@ -266,9 +277,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6D84DC3A18EC768200963638 /* GameViewController.m in Sources */,
+				6D84DC3A18EC768200963638 /* SpellViewController.m in Sources */,
 				6D84DC1718EC737900963638 /* ViewController.m in Sources */,
 				6D84DC3718EC754800963638 /* CategorySelectionViewController.m in Sources */,
+				6D84DC3F18ED38EB00963638 /* Utils.m in Sources */,
 				6D84DC0E18EC737900963638 /* AppDelegate.m in Sources */,
 				6D84DC0A18EC737900963638 /* main.m in Sources */,
 			);
@@ -278,7 +290,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6D84DC2C18EC737900963638 /* How_Cool_Is_That_Tests.m in Sources */,
+				6D84DC2C18EC737900963638 /* Little_Learners_Tests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,7 +299,7 @@
 /* Begin PBXTargetDependency section */
 		6D84DC2418EC737900963638 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 6D84DBF918EC737900963638 /* How Cool Is That? */;
+			target = 6D84DBF918EC737900963638 /* Little Learners */;
 			targetProxy = 6D84DC2318EC737900963638 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -407,9 +419,9 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "How Cool Is That?/How Cool Is That?-Prefix.pch";
-				INFOPLIST_FILE = "How Cool Is That?/How Cool Is That?-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "How Cool Is That?/Little Learners-Prefix.pch";
+				INFOPLIST_FILE = "How Cool Is That?/Little Learners-Info.plist";
+				PRODUCT_NAME = "Little Learners";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -421,9 +433,9 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "How Cool Is That?/How Cool Is That?-Prefix.pch";
-				INFOPLIST_FILE = "How Cool Is That?/How Cool Is That?-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "How Cool Is That?/Little Learners-Prefix.pch";
+				INFOPLIST_FILE = "How Cool Is That?/Little Learners-Info.plist";
+				PRODUCT_NAME = "Little Learners";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -443,8 +455,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "How Cool Is That?Tests/How Cool Is That?Tests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "How Cool Is That?Tests/Little LearnersTests-Info.plist";
+				PRODUCT_NAME = "Little LearnersTests";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -461,8 +473,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "How Cool Is That?/How Cool Is That?-Prefix.pch";
-				INFOPLIST_FILE = "How Cool Is That?Tests/How Cool Is That?Tests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "How Cool Is That?Tests/Little LearnersTests-Info.plist";
+				PRODUCT_NAME = "Little LearnersTests";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -471,7 +483,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6D84DBF518EC737900963638 /* Build configuration list for PBXProject "How Cool Is That?" */ = {
+		6D84DBF518EC737900963638 /* Build configuration list for PBXProject "Little Learners" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6D84DC2D18EC737900963638 /* Debug */,
@@ -480,7 +492,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6D84DC2F18EC737900963638 /* Build configuration list for PBXNativeTarget "How Cool Is That?" */ = {
+		6D84DC2F18EC737900963638 /* Build configuration list for PBXNativeTarget "Little Learners" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6D84DC3018EC737900963638 /* Debug */,
@@ -488,7 +500,7 @@
 			);
 			defaultConfigurationIsVisible = 0;
 		};
-		6D84DC3218EC737900963638 /* Build configuration list for PBXNativeTarget "How Cool Is That?Tests" */ = {
+		6D84DC3218EC737900963638 /* Build configuration list for PBXNativeTarget "Little LearnersTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6D84DC3318EC737900963638 /* Debug */,

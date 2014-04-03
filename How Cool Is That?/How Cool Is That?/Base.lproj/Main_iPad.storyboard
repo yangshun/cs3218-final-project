@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="IMv-8d-Z1X">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="orW-Ee-NUb">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -19,7 +19,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SnH-mj-ybd">
                                 <rect key="frame" x="363" y="719" width="118" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Start Game">
+                                <state key="normal" title="Learn to Spell">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -90,10 +90,10 @@
             </objects>
             <point key="canvasLocation" x="940" y="-163"/>
         </scene>
-        <!--Game View Controller-->
+        <!--Spell View Controller-->
         <scene sceneID="fHR-vo-07s">
             <objects>
-                <viewController id="IMv-8d-Z1X" customClass="GameViewController" sceneMemberID="viewController">
+                <viewController id="IMv-8d-Z1X" customClass="SpellViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1My-y4-p5f"/>
                         <viewControllerLayoutGuide type="bottom" id="XPV-Fm-NBU"/>
@@ -113,9 +113,9 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cZ7-Eo-to8">
-                                <rect key="frame" x="67" y="464" width="635" height="321"/>
+                                <rect key="frame" x="67" y="574.5" width="635" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.92622314132586914" green="1" blue="0.78568538994208781" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.0094377130379999993" green="0.01502451456" blue="0.025510204080000001" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8lu-kB-pII">
                                 <rect key="frame" x="333" y="836" width="103" height="58"/>
@@ -127,11 +127,31 @@
                                     <action selector="scramble:" destination="IMv-8d-Z1X" eventType="touchUpInside" id="W3t-nw-1Qs"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vSS-sO-4pj">
+                                <rect key="frame" x="648" y="850" width="32" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Next">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="nextWord:" destination="IMv-8d-Z1X" eventType="touchUpInside" id="Mdf-F5-hZK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nMj-hH-KZj">
+                                <rect key="frame" x="94" y="850" width="59" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Previous">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="previousWord:" destination="IMv-8d-Z1X" eventType="touchUpInside" id="IbW-mO-tH1"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="entityNameArea" destination="cZ7-Eo-to8" id="bCQ-x7-wie"/>
+                        <outlet property="blackBoard" destination="cZ7-Eo-to8" id="SDk-TY-jzp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MI7-64-F2o" userLabel="First Responder" sceneMemberID="firstResponder"/>
