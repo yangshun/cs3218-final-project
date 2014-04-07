@@ -7,9 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LevelViewController.h"
 
-@interface SpellViewController : UIViewController
-
-@property NSArray *wordsArray;
+@interface SpellViewController : LevelViewController
 
 @end

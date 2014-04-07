@@ -7,24 +7,17 @@
 //
 
 #import "SpellViewController.h"
-#import "GameAudioManager.h"
-
-#define HEIGHT_OF_LETTER 100.0f
+#import "Constants.h"
 
 @interface SpellViewController () {
     IBOutlet UIView *blackBoard;
     IBOutlet UIImageView *wordImage;
 
     NSMutableArray *lettersArray;
-    NSString *originalWord;
+
     BOOL letterIsDragged;
     UILabel *letterBeingDragged;
     float letterWidth;
-    int currentWordIndex;
-    
-    AVAudioPlayer *cheerPlayer;
-    AVAudioPlayer *booPlayer;
-    NSMutableArray *imagesArray;
 }
 
 
@@ -44,47 +37,30 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    currentWordIndex = 0;
-    cheerPlayer = [[GameAudioManager sharedInstance] playSoundWithPath:@"audio/cheer" type:@"caf"];
-    booPlayer = [[GameAudioManager sharedInstance] playSoundWithPath:@"audio/boo" type:@"caf"];
-
-    imagesArray = [NSMutableArray new];
-    NSString *path = [[NSBundle mainBundle] pathForResource:
-                      @"Noun List" ofType:@"plist"];
-    
-    NSDictionary *plistDict = [[NSDictionary alloc] initWithContentsOfFile:path];
-    for (NSString *s in self.wordsArray) {
-        UIImage *img = [UIImage imageNamed:plistDict[s]];
-        [imagesArray addObject:img];
-    }
-    [self setUpViewForWordIndex:currentWordIndex];
+    [self setUpViewForWordIndex:super.currentWordIndex];
 }
 
 - (void)setUpViewForWordIndex:(int)index {
-    originalWord = self.wordsArray[index];
+    self.currentWord = self.wordsArray[index];
     
     lettersArray = [NSMutableArray new];
-    letterWidth = blackBoard.frame.size.width/originalWord.length;
+    letterWidth = blackBoard.frame.size.width/self.currentWord.length;
     letterBeingDragged = nil;
     letterIsDragged = NO;
-    wordImage.image = imagesArray[index];
-    [self generateLetterFramesForWord:originalWord];
+    wordImage.image = super.imagesArray[index];
+    [self generateLetterFramesForWord:self.currentWord];
 }
 
 - (IBAction)nextWord:(id)sender {
-    if (currentWordIndex < self.wordsArray.count - 1) {
-        currentWordIndex++;
-    }
+    [super nextWord];
     [self clearBlackBoard];
-    [self setUpViewForWordIndex:currentWordIndex];
+    [self setUpViewForWordIndex:self.currentWordIndex];
 }
 
 - (IBAction)previousWord:(id)sender {
-    if (currentWordIndex > 0) {
-        currentWordIndex--;
-    }
+    [super previousWord];
     [self clearBlackBoard];
-    [self setUpViewForWordIndex:currentWordIndex];
+    [self setUpViewForWordIndex:self.currentWordIndex];
 }
 
 #pragma mark - Letter Shuffling Methods
@@ -136,9 +112,9 @@
                               panningStartPoint.y + translation.y);
     int draggedLetterCurrentIndex = (int)letter.center.x / (int)letterWidth;
     draggedLetterCurrentIndex = MAX(0, draggedLetterCurrentIndex);
-    draggedLetterCurrentIndex = MIN(draggedLetterCurrentIndex, originalWord.length - 1);
+    draggedLetterCurrentIndex = MIN(draggedLetterCurrentIndex, self.currentWord.length - 1);
 
-    for (int i = 0; i < originalWord.length - 1; i++) {
+    for (int i = 0; i < self.currentWord.length - 1; i++) {
         UIView *l = lettersArray[i];
         int num = 0;
         if (i < draggedLetterCurrentIndex) {
@@ -161,7 +137,7 @@
         [self snapLettersToFinalPosition];
         if ([self compareWord]) {
             self.view.userInteractionEnabled = NO;
-            [cheerPlayer play];
+            [self.cheerPlayer play];
             [self performSelector:@selector(nextWord:)
                     withObject:nil
                        afterDelay:1.f];
@@ -208,12 +184,11 @@
     for (UILabel *l in lettersArray) {
         [word appendString:[NSString stringWithFormat:@"%@", l.text]];
     }
-    BOOL correct = [word isEqualToString:originalWord];
-    return correct;
+    return [word isEqualToString:self.currentWord];
 }
 
 - (IBAction)scramble:(id)sender {
-    [self generateLetterFramesForWord:[self scrambleLettersArray:originalWord]];
+    [self generateLetterFramesForWord:[self scrambleLettersArray:self.currentWord]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -222,9 +197,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)dismiss {
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
 
 /*
 #pragma mark - Navigation

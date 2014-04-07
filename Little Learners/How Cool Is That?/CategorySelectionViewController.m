@@ -9,6 +9,7 @@
 #import "CategorySelectionViewController.h"
 #import "SpellViewController.h"
 #import "Utils.h"
+#import "Constants.h"
 
 @interface CategorySelectionViewController ()
 
@@ -50,10 +51,8 @@
     SpellViewController *vc = [segue destinationViewController];
     
     NSArray *items = @[@"APPLE", @"BANANA", @"CHERRY", @"STRAWBERRY", @"BLUEBERRY", @"PEAR", @"ORANGE", @"LEMON", @"LIME", @"PEACH", @"WATERMELON", @"COCONUT", @"PINEAPPLE"];
-    NSArray *fiveRandomItems = [[[Utils sharedManager] shuffle:items] subarrayWithRange:NSMakeRange(0, 5)];
+    NSArray *fiveRandomItems = [[[Utils sharedManager] shuffle:items] subarrayWithRange:NSMakeRange(0, NUMBER_OF_WORDS_IN_LEVEL)];
     vc.wordsArray = fiveRandomItems;
-    
-    // Pass the selected object to the new view controller.
     
 }
 
