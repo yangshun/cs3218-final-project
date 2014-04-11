@@ -11,7 +11,9 @@
 #import "Utils.h"
 #import "Constants.h"
 
-@interface CategorySelectionViewController ()
+@interface CategorySelectionViewController () {
+    OpenEarsVoiceManager *openEarsVoiceManager;
+}
 
 @end
 
@@ -29,7 +31,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning
@@ -54,6 +55,8 @@
     NSArray *fiveRandomItems = [[[Utils sharedManager] shuffle:items] subarrayWithRange:NSMakeRange(0, NUMBER_OF_WORDS_IN_LEVEL)];
     vc.wordsArray = fiveRandomItems;
     
+    openEarsVoiceManager = [OpenEarsVoiceManager sharedOpenEarsVoiceManager];
+    [openEarsVoiceManager changeWordList:items];
 }
 
 

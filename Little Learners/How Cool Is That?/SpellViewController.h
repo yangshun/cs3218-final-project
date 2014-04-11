@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "LevelViewController.h"
+#import "OpenEarsVoiceManager.h"
 
-@interface SpellViewController : LevelViewController
+@interface SpellViewController : LevelViewController 
 
 @end

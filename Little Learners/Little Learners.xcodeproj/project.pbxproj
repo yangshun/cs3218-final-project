@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1050FEC218F804DC007F9F6A /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1050FEC118F804DC007F9F6A /* AudioToolbox.framework */; };
+		1050FEC818F8051A007F9F6A /* AcousticModelEnglish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1050FEC418F8051A007F9F6A /* AcousticModelEnglish.bundle */; };
+		1050FEC918F8051A007F9F6A /* AcousticModelSpanish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1050FEC518F8051A007F9F6A /* AcousticModelSpanish.bundle */; };
+		1050FECA18F8051A007F9F6A /* OpenEars.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1050FEC618F8051A007F9F6A /* OpenEars.framework */; };
+		1050FECB18F8051A007F9F6A /* Slt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1050FEC718F8051A007F9F6A /* Slt.framework */; };
+		1050FECE18F809AA007F9F6A /* OpenEarsVoiceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1050FECD18F809AA007F9F6A /* OpenEarsVoiceManager.m */; };
 		6D7DD51518F3287100769D82 /* LevelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7DD51418F3287100769D82 /* LevelViewController.m */; };
 		6D84DBFE18EC737900963638 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D84DBFD18EC737900963638 /* Foundation.framework */; };
 		6D84DC0018EC737900963638 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D84DBFF18EC737900963638 /* CoreGraphics.framework */; };
@@ -57,6 +63,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1050FEC118F804DC007F9F6A /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		1050FEC418F8051A007F9F6A /* AcousticModelEnglish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AcousticModelEnglish.bundle; sourceTree = "<group>"; };
+		1050FEC518F8051A007F9F6A /* AcousticModelSpanish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AcousticModelSpanish.bundle; sourceTree = "<group>"; };
+		1050FEC618F8051A007F9F6A /* OpenEars.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OpenEars.framework; sourceTree = "<group>"; };
+		1050FEC718F8051A007F9F6A /* Slt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Slt.framework; sourceTree = "<group>"; };
+		1050FECC18F809AA007F9F6A /* OpenEarsVoiceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenEarsVoiceManager.h; sourceTree = "<group>"; };
+		1050FECD18F809AA007F9F6A /* OpenEarsVoiceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenEarsVoiceManager.m; sourceTree = "<group>"; };
 		6D7DD51318F3287100769D82 /* LevelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelViewController.h; sourceTree = "<group>"; };
 		6D7DD51418F3287100769D82 /* LevelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelViewController.m; sourceTree = "<group>"; };
 		6D7DD51618F32CBD00769D82 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
@@ -112,10 +125,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1050FEC218F804DC007F9F6A /* AudioToolbox.framework in Frameworks */,
+				1050FECB18F8051A007F9F6A /* Slt.framework in Frameworks */,
 				6D84DC4418ED46BE00963638 /* AVFoundation.framework in Frameworks */,
 				6D84DC0018EC737900963638 /* CoreGraphics.framework in Frameworks */,
 				6D84DC0218EC737900963638 /* UIKit.framework in Frameworks */,
 				6D84DBFE18EC737900963638 /* Foundation.framework in Frameworks */,
+				1050FECA18F8051A007F9F6A /* OpenEars.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,6 +148,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1050FEC318F8051A007F9F6A /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				1050FEC418F8051A007F9F6A /* AcousticModelEnglish.bundle */,
+				1050FEC518F8051A007F9F6A /* AcousticModelSpanish.bundle */,
+				1050FEC618F8051A007F9F6A /* OpenEars.framework */,
+				1050FEC718F8051A007F9F6A /* Slt.framework */,
+			);
+			path = Framework;
+			sourceTree = "<group>";
+		};
 		6D84DBF118EC737900963638 = {
 			isa = PBXGroup;
 			children = (
@@ -154,6 +181,7 @@
 		6D84DBFC18EC737900963638 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1050FEC118F804DC007F9F6A /* AudioToolbox.framework */,
 				6D84DC4318ED46BE00963638 /* AVFoundation.framework */,
 				6D84DBFD18EC737900963638 /* Foundation.framework */,
 				6D84DBFF18EC737900963638 /* CoreGraphics.framework */,
@@ -183,11 +211,14 @@
 				6D84DC3E18ED38EB00963638 /* Utils.m */,
 				6D84DC4018ED46AB00963638 /* GameAudioManager.h */,
 				6D84DC4118ED46AB00963638 /* GameAudioManager.m */,
+				1050FECC18F809AA007F9F6A /* OpenEarsVoiceManager.h */,
+				1050FECD18F809AA007F9F6A /* OpenEarsVoiceManager.m */,
 				6D84DC3B18ED36D300963638 /* Noun List.plist */,
 				6D84DC6518ED53DA00963638 /* Images */,
 				6D84DC4518ED473800963638 /* audio */,
 				6D84DC1818EC737900963638 /* Images.xcassets */,
 				6D84DC0418EC737900963638 /* Supporting Files */,
+				1050FEC318F8051A007F9F6A /* Framework */,
 			);
 			name = "Little Learners";
 			path = "How Cool Is That?";
@@ -292,7 +323,7 @@
 				ORGANIZATIONNAME = YangShun;
 				TargetAttributes = {
 					6D84DBF918EC737900963638 = {
-						DevelopmentTeam = 3P69678SU8;
+						DevelopmentTeam = EJ664WY4CE;
 					};
 					6D84DC1D18EC737900963638 = {
 						TestTargetID = 6D84DBF918EC737900963638;
@@ -329,10 +360,12 @@
 				6D84DC1918EC737900963638 /* Images.xcassets in Resources */,
 				6D84DC5D18ED53CC00963638 /* fruit-lemon.png in Resources */,
 				6D84DC4618ED473800963638 /* audio in Resources */,
+				1050FEC818F8051A007F9F6A /* AcousticModelEnglish.bundle in Resources */,
 				6D84DC6218ED53CC00963638 /* fruit-pineapple.png in Resources */,
 				6D84DC6418ED53CC00963638 /* fruit-watermelon.png in Resources */,
 				6D84DC6118ED53CC00963638 /* fruit-pear.png in Resources */,
 				6D84DC5F18ED53CC00963638 /* fruit-orange.png in Resources */,
+				1050FEC918F8051A007F9F6A /* AcousticModelSpanish.bundle in Resources */,
 				6D84DC5A18ED53CC00963638 /* fruit-blueberry.png in Resources */,
 				6D84DC1118EC737900963638 /* Main_iPhone.storyboard in Resources */,
 				6D84DC5C18ED53CC00963638 /* fruit-coconut.png in Resources */,
@@ -362,6 +395,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D84DC3A18EC768200963638 /* SpellViewController.m in Sources */,
+				1050FECE18F809AA007F9F6A /* OpenEarsVoiceManager.m in Sources */,
 				6D84DC1718EC737900963638 /* ViewController.m in Sources */,
 				6D84DC3718EC754800963638 /* CategorySelectionViewController.m in Sources */,
 				6D84DC3F18ED38EB00963638 /* Utils.m in Sources */,
@@ -504,10 +538,19 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/How",
+					Cool,
+					Is,
+					"That?/Framework",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "How Cool Is That?/Little Learners-Prefix.pch";
 				INFOPLIST_FILE = "How Cool Is That?/Little Learners-Info.plist";
 				PRODUCT_NAME = "Little Learners";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -518,10 +561,19 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/How",
+					Cool,
+					Is,
+					"That?/Framework",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "How Cool Is That?/Little Learners-Prefix.pch";
 				INFOPLIST_FILE = "How Cool Is That?/Little Learners-Info.plist";
 				PRODUCT_NAME = "Little Learners";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

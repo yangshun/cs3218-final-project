@@ -18,8 +18,9 @@
     BOOL letterIsDragged;
     UILabel *letterBeingDragged;
     float letterWidth;
+    
+    OpenEarsVoiceManager *openEarsVoiceManager;
 }
-
 
 @end
 
@@ -37,11 +38,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    openEarsVoiceManager = [OpenEarsVoiceManager sharedOpenEarsVoiceManager];
     [self setUpViewForWordIndex:super.currentWordIndex];
 }
 
 - (void)setUpViewForWordIndex:(int)index {
     self.currentWord = self.wordsArray[index];
+    
+    [openEarsVoiceManager stopListening];
+    NSLog(@"Current word %@", self.currentWord);
+    [openEarsVoiceManager setCurrentWordToMatch:self.currentWord];
+    [openEarsVoiceManager startListening];
     
     lettersArray = [NSMutableArray new];
     letterWidth = blackBoard.frame.size.width/self.currentWord.length;
@@ -197,6 +204,15 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Voice Control
+
+- (IBAction)listenBtnPressed {
+    [openEarsVoiceManager readCurrentWord];
+}
+
+- (IBAction)readBtnPressed {
+    [openEarsVoiceManager resumeListening];
+}
 
 /*
 #pragma mark - Navigation
