@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		1050FEC218F804DC007F9F6A /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1050FEC118F804DC007F9F6A /* AudioToolbox.framework */; };
-		1050FEC818F8051A007F9F6A /* AcousticModelEnglish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1050FEC418F8051A007F9F6A /* AcousticModelEnglish.bundle */; };
-		1050FEC918F8051A007F9F6A /* AcousticModelSpanish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1050FEC518F8051A007F9F6A /* AcousticModelSpanish.bundle */; };
-		1050FECA18F8051A007F9F6A /* OpenEars.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1050FEC618F8051A007F9F6A /* OpenEars.framework */; };
-		1050FECB18F8051A007F9F6A /* Slt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1050FEC718F8051A007F9F6A /* Slt.framework */; };
 		1050FECE18F809AA007F9F6A /* OpenEarsVoiceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1050FECD18F809AA007F9F6A /* OpenEarsVoiceManager.m */; };
+		108FD9BE18FA603700AF742D /* AcousticModelEnglish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 108FD9BA18FA603700AF742D /* AcousticModelEnglish.bundle */; };
+		108FD9BF18FA603700AF742D /* AcousticModelSpanish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 108FD9BB18FA603700AF742D /* AcousticModelSpanish.bundle */; };
+		108FD9C018FA603700AF742D /* OpenEars.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 108FD9BC18FA603700AF742D /* OpenEars.framework */; };
+		108FD9C118FA603700AF742D /* Slt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 108FD9BD18FA603700AF742D /* Slt.framework */; };
 		6D7DD51518F3287100769D82 /* LevelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7DD51418F3287100769D82 /* LevelViewController.m */; };
 		6D84DBFE18EC737900963638 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D84DBFD18EC737900963638 /* Foundation.framework */; };
 		6D84DC0018EC737900963638 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D84DBFF18EC737900963638 /* CoreGraphics.framework */; };
@@ -64,12 +64,12 @@
 
 /* Begin PBXFileReference section */
 		1050FEC118F804DC007F9F6A /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		1050FEC418F8051A007F9F6A /* AcousticModelEnglish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AcousticModelEnglish.bundle; sourceTree = "<group>"; };
-		1050FEC518F8051A007F9F6A /* AcousticModelSpanish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AcousticModelSpanish.bundle; sourceTree = "<group>"; };
-		1050FEC618F8051A007F9F6A /* OpenEars.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OpenEars.framework; sourceTree = "<group>"; };
-		1050FEC718F8051A007F9F6A /* Slt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Slt.framework; sourceTree = "<group>"; };
 		1050FECC18F809AA007F9F6A /* OpenEarsVoiceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenEarsVoiceManager.h; sourceTree = "<group>"; };
 		1050FECD18F809AA007F9F6A /* OpenEarsVoiceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenEarsVoiceManager.m; sourceTree = "<group>"; };
+		108FD9BA18FA603700AF742D /* AcousticModelEnglish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AcousticModelEnglish.bundle; sourceTree = "<group>"; };
+		108FD9BB18FA603700AF742D /* AcousticModelSpanish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AcousticModelSpanish.bundle; sourceTree = "<group>"; };
+		108FD9BC18FA603700AF742D /* OpenEars.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OpenEars.framework; sourceTree = "<group>"; };
+		108FD9BD18FA603700AF742D /* Slt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Slt.framework; sourceTree = "<group>"; };
 		6D7DD51318F3287100769D82 /* LevelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelViewController.h; sourceTree = "<group>"; };
 		6D7DD51418F3287100769D82 /* LevelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelViewController.m; sourceTree = "<group>"; };
 		6D7DD51618F32CBD00769D82 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
@@ -126,12 +126,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				1050FEC218F804DC007F9F6A /* AudioToolbox.framework in Frameworks */,
-				1050FECB18F8051A007F9F6A /* Slt.framework in Frameworks */,
+				108FD9C118FA603700AF742D /* Slt.framework in Frameworks */,
 				6D84DC4418ED46BE00963638 /* AVFoundation.framework in Frameworks */,
 				6D84DC0018EC737900963638 /* CoreGraphics.framework in Frameworks */,
 				6D84DC0218EC737900963638 /* UIKit.framework in Frameworks */,
 				6D84DBFE18EC737900963638 /* Foundation.framework in Frameworks */,
-				1050FECA18F8051A007F9F6A /* OpenEars.framework in Frameworks */,
+				108FD9C018FA603700AF742D /* OpenEars.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,13 +148,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1050FEC318F8051A007F9F6A /* Framework */ = {
+		108FD9B918FA603700AF742D /* Framework */ = {
 			isa = PBXGroup;
 			children = (
-				1050FEC418F8051A007F9F6A /* AcousticModelEnglish.bundle */,
-				1050FEC518F8051A007F9F6A /* AcousticModelSpanish.bundle */,
-				1050FEC618F8051A007F9F6A /* OpenEars.framework */,
-				1050FEC718F8051A007F9F6A /* Slt.framework */,
+				108FD9BA18FA603700AF742D /* AcousticModelEnglish.bundle */,
+				108FD9BB18FA603700AF742D /* AcousticModelSpanish.bundle */,
+				108FD9BC18FA603700AF742D /* OpenEars.framework */,
+				108FD9BD18FA603700AF742D /* Slt.framework */,
 			);
 			path = Framework;
 			sourceTree = "<group>";
@@ -162,6 +162,7 @@
 		6D84DBF118EC737900963638 = {
 			isa = PBXGroup;
 			children = (
+				108FD9B918FA603700AF742D /* Framework */,
 				6D84DC0318EC737900963638 /* Little Learners */,
 				6D84DC2518EC737900963638 /* Little Learners Tests */,
 				6D84DBFC18EC737900963638 /* Frameworks */,
@@ -218,7 +219,6 @@
 				6D84DC4518ED473800963638 /* audio */,
 				6D84DC1818EC737900963638 /* Images.xcassets */,
 				6D84DC0418EC737900963638 /* Supporting Files */,
-				1050FEC318F8051A007F9F6A /* Framework */,
 			);
 			name = "Little Learners";
 			path = "How Cool Is That?";
@@ -360,12 +360,12 @@
 				6D84DC1918EC737900963638 /* Images.xcassets in Resources */,
 				6D84DC5D18ED53CC00963638 /* fruit-lemon.png in Resources */,
 				6D84DC4618ED473800963638 /* audio in Resources */,
-				1050FEC818F8051A007F9F6A /* AcousticModelEnglish.bundle in Resources */,
+				108FD9BE18FA603700AF742D /* AcousticModelEnglish.bundle in Resources */,
 				6D84DC6218ED53CC00963638 /* fruit-pineapple.png in Resources */,
 				6D84DC6418ED53CC00963638 /* fruit-watermelon.png in Resources */,
 				6D84DC6118ED53CC00963638 /* fruit-pear.png in Resources */,
 				6D84DC5F18ED53CC00963638 /* fruit-orange.png in Resources */,
-				1050FEC918F8051A007F9F6A /* AcousticModelSpanish.bundle in Resources */,
+				108FD9BF18FA603700AF742D /* AcousticModelSpanish.bundle in Resources */,
 				6D84DC5A18ED53CC00963638 /* fruit-blueberry.png in Resources */,
 				6D84DC1118EC737900963638 /* Main_iPhone.storyboard in Resources */,
 				6D84DC5C18ED53CC00963638 /* fruit-coconut.png in Resources */,
@@ -545,6 +545,7 @@
 					Cool,
 					Is,
 					"That?/Framework",
+					"$(PROJECT_DIR)/Framework",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "How Cool Is That?/Little Learners-Prefix.pch";
@@ -568,6 +569,7 @@
 					Cool,
 					Is,
 					"That?/Framework",
+					"$(PROJECT_DIR)/Framework",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "How Cool Is That?/Little Learners-Prefix.pch";
