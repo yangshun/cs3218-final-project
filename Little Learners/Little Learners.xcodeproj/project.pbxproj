@@ -58,6 +58,18 @@
 		6DD0C1F618FD185F00FF384C /* polaroid-frames-animals.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DD0C1F418FD185F00FF384C /* polaroid-frames-animals.png */; };
 		6DD0C1F718FD185F00FF384C /* polaroid-frames-fruits.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DD0C1F518FD185F00FF384C /* polaroid-frames-fruits.png */; };
 		6DD0C1F918FD198100FF384C /* title-select-category.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DD0C1F818FD198100FF384C /* title-select-category.png */; };
+		6DD0C22618FDAB7400FF384C /* animal-bear.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DD0C21A18FDAB7400FF384C /* animal-bear.png */; };
+		6DD0C22718FDAB7400FF384C /* animal-bull.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DD0C21B18FDAB7400FF384C /* animal-bull.png */; };
+		6DD0C22818FDAB7400FF384C /* animal-elephant.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DD0C21C18FDAB7400FF384C /* animal-elephant.png */; };
+		6DD0C22918FDAB7400FF384C /* animal-giraffe.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DD0C21D18FDAB7400FF384C /* animal-giraffe.png */; };
+		6DD0C22A18FDAB7400FF384C /* animal-leopard.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DD0C21E18FDAB7400FF384C /* animal-leopard.png */; };
+		6DD0C22B18FDAB7400FF384C /* animal-lion.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DD0C21F18FDAB7400FF384C /* animal-lion.png */; };
+		6DD0C22C18FDAB7400FF384C /* animal-monkey.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DD0C22018FDAB7400FF384C /* animal-monkey.png */; };
+		6DD0C22D18FDAB7400FF384C /* animal-reindeer.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DD0C22118FDAB7400FF384C /* animal-reindeer.png */; };
+		6DD0C22E18FDAB7400FF384C /* animal-rhino.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DD0C22218FDAB7400FF384C /* animal-rhino.png */; };
+		6DD0C22F18FDAB7400FF384C /* animal-snake.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DD0C22318FDAB7400FF384C /* animal-snake.png */; };
+		6DD0C23018FDAB7400FF384C /* animal-wolf.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DD0C22418FDAB7400FF384C /* animal-wolf.png */; };
+		6DD0C23118FDAB7400FF384C /* animal-zebra.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DD0C22518FDAB7400FF384C /* animal-zebra.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -134,6 +146,18 @@
 		6DD0C1F418FD185F00FF384C /* polaroid-frames-animals.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "polaroid-frames-animals.png"; path = "Images/polaroid-frames-animals.png"; sourceTree = "<group>"; };
 		6DD0C1F518FD185F00FF384C /* polaroid-frames-fruits.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "polaroid-frames-fruits.png"; path = "Images/polaroid-frames-fruits.png"; sourceTree = "<group>"; };
 		6DD0C1F818FD198100FF384C /* title-select-category.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "title-select-category.png"; path = "Images/title-select-category.png"; sourceTree = "<group>"; };
+		6DD0C21A18FDAB7400FF384C /* animal-bear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "animal-bear.png"; path = "Images/animal-bear.png"; sourceTree = "<group>"; };
+		6DD0C21B18FDAB7400FF384C /* animal-bull.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "animal-bull.png"; path = "Images/animal-bull.png"; sourceTree = "<group>"; };
+		6DD0C21C18FDAB7400FF384C /* animal-elephant.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "animal-elephant.png"; path = "Images/animal-elephant.png"; sourceTree = "<group>"; };
+		6DD0C21D18FDAB7400FF384C /* animal-giraffe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "animal-giraffe.png"; path = "Images/animal-giraffe.png"; sourceTree = "<group>"; };
+		6DD0C21E18FDAB7400FF384C /* animal-leopard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "animal-leopard.png"; path = "Images/animal-leopard.png"; sourceTree = "<group>"; };
+		6DD0C21F18FDAB7400FF384C /* animal-lion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "animal-lion.png"; path = "Images/animal-lion.png"; sourceTree = "<group>"; };
+		6DD0C22018FDAB7400FF384C /* animal-monkey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "animal-monkey.png"; path = "Images/animal-monkey.png"; sourceTree = "<group>"; };
+		6DD0C22118FDAB7400FF384C /* animal-reindeer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "animal-reindeer.png"; path = "Images/animal-reindeer.png"; sourceTree = "<group>"; };
+		6DD0C22218FDAB7400FF384C /* animal-rhino.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "animal-rhino.png"; path = "Images/animal-rhino.png"; sourceTree = "<group>"; };
+		6DD0C22318FDAB7400FF384C /* animal-snake.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "animal-snake.png"; path = "Images/animal-snake.png"; sourceTree = "<group>"; };
+		6DD0C22418FDAB7400FF384C /* animal-wolf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "animal-wolf.png"; path = "Images/animal-wolf.png"; sourceTree = "<group>"; };
+		6DD0C22518FDAB7400FF384C /* animal-zebra.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "animal-zebra.png"; path = "Images/animal-zebra.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -273,6 +297,18 @@
 		6D84DC6518ED53DA00963638 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				6DD0C21A18FDAB7400FF384C /* animal-bear.png */,
+				6DD0C21B18FDAB7400FF384C /* animal-bull.png */,
+				6DD0C21C18FDAB7400FF384C /* animal-elephant.png */,
+				6DD0C21D18FDAB7400FF384C /* animal-giraffe.png */,
+				6DD0C21E18FDAB7400FF384C /* animal-leopard.png */,
+				6DD0C21F18FDAB7400FF384C /* animal-lion.png */,
+				6DD0C22018FDAB7400FF384C /* animal-monkey.png */,
+				6DD0C22118FDAB7400FF384C /* animal-reindeer.png */,
+				6DD0C22218FDAB7400FF384C /* animal-rhino.png */,
+				6DD0C22318FDAB7400FF384C /* animal-snake.png */,
+				6DD0C22418FDAB7400FF384C /* animal-wolf.png */,
+				6DD0C22518FDAB7400FF384C /* animal-zebra.png */,
 				6DD0C1F818FD198100FF384C /* title-select-category.png */,
 				6DD0C1F418FD185F00FF384C /* polaroid-frames-animals.png */,
 				6DD0C1F518FD185F00FF384C /* polaroid-frames-fruits.png */,
@@ -378,26 +414,37 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DD0C22918FDAB7400FF384C /* animal-giraffe.png in Resources */,
+				6DD0C22D18FDAB7400FF384C /* animal-reindeer.png in Resources */,
 				6D84DC5718ED53CC00963638 /* background-kitchen.jpg in Resources */,
 				6DD0C1F618FD185F00FF384C /* polaroid-frames-animals.png in Resources */,
 				6D84DC3C18ED36D300963638 /* Noun List.plist in Resources */,
 				6D84DC1418EC737900963638 /* Main_iPad.storyboard in Resources */,
 				6D84DC1918EC737900963638 /* Images.xcassets in Resources */,
 				6D84DC5D18ED53CC00963638 /* fruit-lemon.png in Resources */,
+				6DD0C22A18FDAB7400FF384C /* animal-leopard.png in Resources */,
 				6D84DC4618ED473800963638 /* audio in Resources */,
 				1050FEC818F8051A007F9F6A /* AcousticModelEnglish.bundle in Resources */,
 				6D84DC6218ED53CC00963638 /* fruit-pineapple.png in Resources */,
 				6D84DC6418ED53CC00963638 /* fruit-watermelon.png in Resources */,
+				6DD0C22C18FDAB7400FF384C /* animal-monkey.png in Resources */,
+				6DD0C22618FDAB7400FF384C /* animal-bear.png in Resources */,
 				6D84DC6118ED53CC00963638 /* fruit-pear.png in Resources */,
 				6D84DC5F18ED53CC00963638 /* fruit-orange.png in Resources */,
 				1050FEC918F8051A007F9F6A /* AcousticModelSpanish.bundle in Resources */,
 				6D84DC5A18ED53CC00963638 /* fruit-blueberry.png in Resources */,
 				6D84DC1118EC737900963638 /* Main_iPhone.storyboard in Resources */,
+				6DD0C23118FDAB7400FF384C /* animal-zebra.png in Resources */,
+				6DD0C22718FDAB7400FF384C /* animal-bull.png in Resources */,
+				6DD0C23018FDAB7400FF384C /* animal-wolf.png in Resources */,
 				6D84DC5C18ED53CC00963638 /* fruit-coconut.png in Resources */,
 				6D84DC0818EC737900963638 /* InfoPlist.strings in Resources */,
 				6D84DC5818ED53CC00963638 /* fruit-apple.png in Resources */,
 				6D84DC6018ED53CC00963638 /* fruit-peach.png in Resources */,
+				6DD0C22B18FDAB7400FF384C /* animal-lion.png in Resources */,
+				6DD0C22E18FDAB7400FF384C /* animal-rhino.png in Resources */,
 				6DD0C1F318FD102600FF384C /* button-back.png in Resources */,
+				6DD0C22F18FDAB7400FF384C /* animal-snake.png in Resources */,
 				6DD0C1F918FD198100FF384C /* title-select-category.png in Resources */,
 				6DD0C1F118FD0A9900FF384C /* button-learn-to-spell.png in Resources */,
 				6DD0C1EA18FD03EC00FF384C /* background-main.jpg in Resources */,
@@ -405,6 +452,7 @@
 				6DD0C1EB18FD03EC00FF384C /* logo.png in Resources */,
 				6DD0C1F018FD0A9900FF384C /* button-learn-to-speak.png in Resources */,
 				6D84DC5B18ED53CC00963638 /* fruit-cherry.png in Resources */,
+				6DD0C22818FDAB7400FF384C /* animal-elephant.png in Resources */,
 				6D84DC5E18ED53CC00963638 /* fruit-lime.png in Resources */,
 				6DD0C1F718FD185F00FF384C /* polaroid-frames-fruits.png in Resources */,
 				6D84DC6318ED53CC00963638 /* fruit-strawberry.png in Resources */,

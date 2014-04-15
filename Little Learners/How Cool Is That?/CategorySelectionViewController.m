@@ -50,8 +50,18 @@
 {
     // Get the new view controller using
     SpellViewController *vc = [segue destinationViewController];
-    
-    NSArray *items = @[@"APPLE", @"BANANA", @"CHERRY", @"STRAWBERRY", @"BLUEBERRY", @"PEAR", @"ORANGE", @"LEMON", @"LIME", @"PEACH", @"WATERMELON", @"COCONUT", @"PINEAPPLE"];
+    UIButton *btn = sender;
+    NSArray *items;
+    switch (btn.tag) {
+        case 0:
+            items = @[@"APPLE", @"BANANA", @"CHERRY", @"STRAWBERRY", @"BLUEBERRY", @"PEAR", @"ORANGE", @"LEMON", @"LIME", @"PEACH", @"WATERMELON", @"COCONUT", @"PINEAPPLE"];
+            break;
+        case 1:
+            items = @[@"BEAR", @"BULL", @"ELEPHANT", @"GIRAFFE", @"LEOPARD", @"LION", @"MONKEY", @"REINDEER", @"RHINO", @"SNAKE", @"WOLF", @"ZEBRA"];
+        default:
+            break;
+    }
+
     NSArray *fiveRandomItems = [[[Utils sharedManager] shuffle:items] subarrayWithRange:NSMakeRange(0, NUMBER_OF_WORDS_IN_LEVEL)];
     vc.wordsArray = fiveRandomItems;
     
