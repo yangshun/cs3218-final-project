@@ -29,15 +29,15 @@
 #pragma mark Initialization
 
 
-+ (id)sharedOpenEarsVoiceManager {
-    static OpenEarsVoiceManager *sharedOpenEarsVoiceManager = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        NSLog(@"openEarsVoiceManager created for the first time");
-        sharedOpenEarsVoiceManager = [[self alloc] init];
-    });
-    return sharedOpenEarsVoiceManager;
-}
+//+ (id)sharedOpenEarsVoiceManager {
+//    static OpenEarsVoiceManager *sharedOpenEarsVoiceManager = nil;
+//    static dispatch_once_t onceToken;
+//    dispatch_once(&onceToken, ^{
+//        NSLog(@"openEarsVoiceManager created for the first time");
+//        sharedOpenEarsVoiceManager = [[self alloc] init];
+//    });
+//    return sharedOpenEarsVoiceManager;
+//}
 
 - (id)init {
     if (self = [super init]) {

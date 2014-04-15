@@ -65,8 +65,8 @@
     NSArray *fiveRandomItems = [[[Utils sharedManager] shuffle:items] subarrayWithRange:NSMakeRange(0, NUMBER_OF_WORDS_IN_LEVEL)];
     vc.wordsArray = fiveRandomItems;
     
-    openEarsVoiceManager = [OpenEarsVoiceManager sharedOpenEarsVoiceManager];
-    openEarsVoiceManager.wordList = items;
+//    openEarsVoiceManager = [OpenEarsVoiceManager sharedOpenEarsVoiceManager];
+//    openEarsVoiceManager.wordList = items;
 }
 
 

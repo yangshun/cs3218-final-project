@@ -12,13 +12,18 @@
 @interface SpellViewController () {
     IBOutlet UIView *blackBoard;
     IBOutlet UIImageView *wordImage;
+    IBOutlet UIButton *prevButton;
+    IBOutlet UIButton *nextButton;
+    IBOutlet UILabel *progressLabel;
 
     NSMutableArray *lettersArray;
 
     BOOL letterIsDragged;
     UILabel *letterBeingDragged;
     float letterWidth;
-    
+    NSMutableArray *solvedWords;
+    NSMutableArray *seenWords;
+
     OpenEarsVoiceManager *openEarsVoiceManager;
 }
 
@@ -36,15 +41,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    openEarsVoiceManager = [OpenEarsVoiceManager sharedOpenEarsVoiceManager];
+    solvedWords = [NSMutableArray new];
+    seenWords = [NSMutableArray new];
+    openEarsVoiceManager = [OpenEarsVoiceManager new];
     [openEarsVoiceManager.openEarsEventsObserver setDelegate: self];
+    openEarsVoiceManager.wordList = self.wordsArray;
     [openEarsVoiceManager startListening];
-    
-    [self setUpViewForWordIndex:super.currentWordIndex];
+    [self setUpButtonDisplay];
 }
 
-- (void)setUpViewForWordIndex:(int)index {
+- (void)setUpViewForWordIndex:(int)index
+                      natural:(BOOL)nat {
     self.currentWord = self.wordsArray[index];
     
     openEarsVoiceManager.currentWordToMatch = self.currentWord;
@@ -55,26 +62,41 @@
     letterIsDragged = NO;
     wordImage.image = super.imagesArray[index];
     [self generateLetterFramesForWord:self.currentWord];
+    if (nat || ![seenWords containsObject:self.currentWord]) {
+        [openEarsVoiceManager readCurrentWord];
+        [seenWords addObject:self.currentWord];
+    }
+    [self scramble:nil];
+    [self setUpButtonDisplay];
+    progressLabel.text = [NSString stringWithFormat:@"%d / 5", self.currentWordIndex + 1];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [self setUpViewForWordIndex:super.currentWordIndex natural:YES];
+}
+
+- (void)setUpButtonDisplay {
+    prevButton.hidden = NO;
+    nextButton.hidden = NO;
+    if (self.currentWordIndex == 0) {
+        prevButton.hidden = YES;
+    } else if (self.currentWordIndex == 4) {
+        nextButton.hidden = YES;
+    }
 }
 
 - (IBAction)nextWord:(id)sender {
     [super nextWord];
     [self clearBlackBoard];
-    [self setUpViewForWordIndex:self.currentWordIndex];
+    [self setUpViewForWordIndex:self.currentWordIndex
+                        natural:NO];
 }
 
 - (IBAction)previousWord:(id)sender {
     [super previousWord];
     [self clearBlackBoard];
-    [self setUpViewForWordIndex:self.currentWordIndex];
-}
-
-- (void)cheer {
-    self.view.userInteractionEnabled = NO;
-    [self.cheerPlayer play];
-    [self performSelector:@selector(nextWord:)
-               withObject:nil
-               afterDelay:1.f];
+    [self setUpViewForWordIndex:self.currentWordIndex
+                        natural:NO];
 }
 
 #pragma mark - Letter Shuffling Methods
@@ -150,9 +172,18 @@
         [lettersArray insertObject:letter atIndex:draggedLetterCurrentIndex];
         [self snapLettersToFinalPosition];
         if ([self compareWordSpelling]) {
-            [self cheer];
+            [self correctWordDetected];
         }
     }
+}
+
+- (void)correctWordDetected {
+    [solvedWords addObject:self.currentWord];
+    self.view.userInteractionEnabled = NO;
+    [self.cheerPlayer play];
+    [self performSelector:@selector(nextWord:)
+               withObject:nil
+               afterDelay:4.f];
 }
 
 - (void)snapLettersToFinalPosition {
@@ -219,10 +250,12 @@
 #pragma mark -
 #pragma mark Open Ears Delegate Methods
 
-- (void) pocketsphinxDidReceiveHypothesis:(NSString *)hypothesis recognitionScore:(NSString *)recognitionScore utteranceID:(NSString *)utteranceID {
+- (void) pocketsphinxDidReceiveHypothesis:(NSString *)hypothesis
+                         recognitionScore:(NSString *)recognitionScore
+                              utteranceID:(NSString *)utteranceID {
 	NSLog(@"Heard %@, score %@", hypothesis, recognitionScore);
     if ([self compareWordReading:hypothesis]) {
-        [self cheer];
+        [self correctWordDetected];
         [openEarsVoiceManager pauseListening];
     }
 }

@@ -71,6 +71,10 @@
 		6DD0C23118FDAB7400FF384C /* animal-zebra.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DD0C22518FDAB7400FF384C /* animal-zebra.png */; };
 		6DD0C23318FDAC8200FF384C /* Slt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DD0C23218FDAC8200FF384C /* Slt.framework */; };
 		6DD0C23518FDB4E400FF384C /* button-play.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DD0C23418FDB4E400FF384C /* button-play.png */; };
+		6DD0C25218FDBD1000FF384C /* button-speak.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DD0C24E18FDBD1000FF384C /* button-speak.png */; };
+		6DD0C25318FDBD1000FF384C /* button-prev.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DD0C24F18FDBD1000FF384C /* button-prev.png */; };
+		6DD0C25418FDBD1000FF384C /* button-next.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DD0C25018FDBD1000FF384C /* button-next.png */; };
+		6DD0C25518FDBD1000FF384C /* button-listen.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DD0C25118FDBD1000FF384C /* button-listen.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -160,6 +164,10 @@
 		6DD0C22518FDAB7400FF384C /* animal-zebra.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "animal-zebra.png"; path = "Images/animal-zebra.png"; sourceTree = "<group>"; };
 		6DD0C23218FDAC8200FF384C /* Slt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Slt.framework; path = Framework/Slt.framework; sourceTree = SOURCE_ROOT; };
 		6DD0C23418FDB4E400FF384C /* button-play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "button-play.png"; path = "Images/button-play.png"; sourceTree = "<group>"; };
+		6DD0C24E18FDBD1000FF384C /* button-speak.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "button-speak.png"; path = "Images/button-speak.png"; sourceTree = "<group>"; };
+		6DD0C24F18FDBD1000FF384C /* button-prev.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "button-prev.png"; path = "Images/button-prev.png"; sourceTree = "<group>"; };
+		6DD0C25018FDBD1000FF384C /* button-next.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "button-next.png"; path = "Images/button-next.png"; sourceTree = "<group>"; };
+		6DD0C25118FDBD1000FF384C /* button-listen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "button-listen.png"; path = "Images/button-listen.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -299,6 +307,10 @@
 		6D84DC6518ED53DA00963638 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				6DD0C24E18FDBD1000FF384C /* button-speak.png */,
+				6DD0C24F18FDBD1000FF384C /* button-prev.png */,
+				6DD0C25018FDBD1000FF384C /* button-next.png */,
+				6DD0C25118FDBD1000FF384C /* button-listen.png */,
 				6DD0C23418FDB4E400FF384C /* button-play.png */,
 				6DD0C21A18FDAB7400FF384C /* animal-bear.png */,
 				6DD0C21B18FDAB7400FF384C /* animal-bull.png */,
@@ -430,6 +442,7 @@
 				1050FEC818F8051A007F9F6A /* AcousticModelEnglish.bundle in Resources */,
 				6D84DC6218ED53CC00963638 /* fruit-pineapple.png in Resources */,
 				6D84DC6418ED53CC00963638 /* fruit-watermelon.png in Resources */,
+				6DD0C25318FDBD1000FF384C /* button-prev.png in Resources */,
 				6DD0C22C18FDAB7400FF384C /* animal-monkey.png in Resources */,
 				6DD0C22618FDAB7400FF384C /* animal-bear.png in Resources */,
 				6DD0C23518FDB4E400FF384C /* button-play.png in Resources */,
@@ -444,6 +457,7 @@
 				6D84DC5C18ED53CC00963638 /* fruit-coconut.png in Resources */,
 				6D84DC0818EC737900963638 /* InfoPlist.strings in Resources */,
 				6D84DC5818ED53CC00963638 /* fruit-apple.png in Resources */,
+				6DD0C25418FDBD1000FF384C /* button-next.png in Resources */,
 				6D84DC6018ED53CC00963638 /* fruit-peach.png in Resources */,
 				6DD0C22B18FDAB7400FF384C /* animal-lion.png in Resources */,
 				6DD0C22E18FDAB7400FF384C /* animal-rhino.png in Resources */,
@@ -454,9 +468,11 @@
 				6DD0C1EA18FD03EC00FF384C /* background-main.jpg in Resources */,
 				6D84DC5918ED53CC00963638 /* fruit-banana.png in Resources */,
 				6DD0C1EB18FD03EC00FF384C /* logo.png in Resources */,
+				6DD0C25518FDBD1000FF384C /* button-listen.png in Resources */,
 				6DD0C1F018FD0A9900FF384C /* button-learn-to-speak.png in Resources */,
 				6D84DC5B18ED53CC00963638 /* fruit-cherry.png in Resources */,
 				6DD0C22818FDAB7400FF384C /* animal-elephant.png in Resources */,
+				6DD0C25218FDBD1000FF384C /* button-speak.png in Resources */,
 				6D84DC5E18ED53CC00963638 /* fruit-lime.png in Resources */,
 				6DD0C1F718FD185F00FF384C /* polaroid-frames-fruits.png in Resources */,
 				6D84DC6318ED53CC00963638 /* fruit-strawberry.png in Resources */,
