@@ -11,7 +11,6 @@
 		1050FEC818F8051A007F9F6A /* AcousticModelEnglish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1050FEC418F8051A007F9F6A /* AcousticModelEnglish.bundle */; };
 		1050FEC918F8051A007F9F6A /* AcousticModelSpanish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1050FEC518F8051A007F9F6A /* AcousticModelSpanish.bundle */; };
 		1050FECA18F8051A007F9F6A /* OpenEars.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1050FEC618F8051A007F9F6A /* OpenEars.framework */; };
-		1050FECB18F8051A007F9F6A /* Slt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1050FEC718F8051A007F9F6A /* Slt.framework */; };
 		1050FECE18F809AA007F9F6A /* OpenEarsVoiceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1050FECD18F809AA007F9F6A /* OpenEarsVoiceManager.m */; };
 		6D7DD51518F3287100769D82 /* LevelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7DD51418F3287100769D82 /* LevelViewController.m */; };
 		6D84DBFE18EC737900963638 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D84DBFD18EC737900963638 /* Foundation.framework */; };
@@ -50,6 +49,15 @@
 		6D84DC6218ED53CC00963638 /* fruit-pineapple.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D84DC5418ED53CC00963638 /* fruit-pineapple.png */; };
 		6D84DC6318ED53CC00963638 /* fruit-strawberry.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D84DC5518ED53CC00963638 /* fruit-strawberry.png */; };
 		6D84DC6418ED53CC00963638 /* fruit-watermelon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D84DC5618ED53CC00963638 /* fruit-watermelon.png */; };
+		6DD0C1EA18FD03EC00FF384C /* background-main.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DD0C1E818FD03EC00FF384C /* background-main.jpg */; };
+		6DD0C1EB18FD03EC00FF384C /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DD0C1E918FD03EC00FF384C /* logo.png */; };
+		6DD0C1ED18FD055D00FF384C /* Slt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DD0C1EC18FD055D00FF384C /* Slt.framework */; };
+		6DD0C1F018FD0A9900FF384C /* button-learn-to-speak.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DD0C1EE18FD0A9900FF384C /* button-learn-to-speak.png */; };
+		6DD0C1F118FD0A9900FF384C /* button-learn-to-spell.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DD0C1EF18FD0A9900FF384C /* button-learn-to-spell.png */; };
+		6DD0C1F318FD102600FF384C /* button-back.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DD0C1F218FD102600FF384C /* button-back.png */; };
+		6DD0C1F618FD185F00FF384C /* polaroid-frames-animals.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DD0C1F418FD185F00FF384C /* polaroid-frames-animals.png */; };
+		6DD0C1F718FD185F00FF384C /* polaroid-frames-fruits.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DD0C1F518FD185F00FF384C /* polaroid-frames-fruits.png */; };
+		6DD0C1F918FD198100FF384C /* title-select-category.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DD0C1F818FD198100FF384C /* title-select-category.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,7 +75,6 @@
 		1050FEC418F8051A007F9F6A /* AcousticModelEnglish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AcousticModelEnglish.bundle; sourceTree = "<group>"; };
 		1050FEC518F8051A007F9F6A /* AcousticModelSpanish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AcousticModelSpanish.bundle; sourceTree = "<group>"; };
 		1050FEC618F8051A007F9F6A /* OpenEars.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OpenEars.framework; sourceTree = "<group>"; };
-		1050FEC718F8051A007F9F6A /* Slt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Slt.framework; sourceTree = "<group>"; };
 		1050FECC18F809AA007F9F6A /* OpenEarsVoiceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenEarsVoiceManager.h; sourceTree = "<group>"; };
 		1050FECD18F809AA007F9F6A /* OpenEarsVoiceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenEarsVoiceManager.m; sourceTree = "<group>"; };
 		6D7DD51318F3287100769D82 /* LevelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelViewController.h; sourceTree = "<group>"; };
@@ -118,6 +125,15 @@
 		6D84DC5418ED53CC00963638 /* fruit-pineapple.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "fruit-pineapple.png"; path = "images/fruit-pineapple.png"; sourceTree = "<group>"; };
 		6D84DC5518ED53CC00963638 /* fruit-strawberry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "fruit-strawberry.png"; path = "images/fruit-strawberry.png"; sourceTree = "<group>"; };
 		6D84DC5618ED53CC00963638 /* fruit-watermelon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "fruit-watermelon.png"; path = "images/fruit-watermelon.png"; sourceTree = "<group>"; };
+		6DD0C1E818FD03EC00FF384C /* background-main.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "background-main.jpg"; path = "Images/background-main.jpg"; sourceTree = "<group>"; };
+		6DD0C1E918FD03EC00FF384C /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo.png; path = Images/logo.png; sourceTree = "<group>"; };
+		6DD0C1EC18FD055D00FF384C /* Slt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Slt.framework; sourceTree = "<group>"; };
+		6DD0C1EE18FD0A9900FF384C /* button-learn-to-speak.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "button-learn-to-speak.png"; path = "Images/button-learn-to-speak.png"; sourceTree = "<group>"; };
+		6DD0C1EF18FD0A9900FF384C /* button-learn-to-spell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "button-learn-to-spell.png"; path = "Images/button-learn-to-spell.png"; sourceTree = "<group>"; };
+		6DD0C1F218FD102600FF384C /* button-back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "button-back.png"; path = "Images/button-back.png"; sourceTree = "<group>"; };
+		6DD0C1F418FD185F00FF384C /* polaroid-frames-animals.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "polaroid-frames-animals.png"; path = "Images/polaroid-frames-animals.png"; sourceTree = "<group>"; };
+		6DD0C1F518FD185F00FF384C /* polaroid-frames-fruits.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "polaroid-frames-fruits.png"; path = "Images/polaroid-frames-fruits.png"; sourceTree = "<group>"; };
+		6DD0C1F818FD198100FF384C /* title-select-category.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "title-select-category.png"; path = "Images/title-select-category.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,7 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1050FEC218F804DC007F9F6A /* AudioToolbox.framework in Frameworks */,
-				1050FECB18F8051A007F9F6A /* Slt.framework in Frameworks */,
+				6DD0C1ED18FD055D00FF384C /* Slt.framework in Frameworks */,
 				6D84DC4418ED46BE00963638 /* AVFoundation.framework in Frameworks */,
 				6D84DC0018EC737900963638 /* CoreGraphics.framework in Frameworks */,
 				6D84DC0218EC737900963638 /* UIKit.framework in Frameworks */,
@@ -151,10 +167,10 @@
 		1050FEC318F8051A007F9F6A /* Framework */ = {
 			isa = PBXGroup;
 			children = (
+				6DD0C1EC18FD055D00FF384C /* Slt.framework */,
 				1050FEC418F8051A007F9F6A /* AcousticModelEnglish.bundle */,
 				1050FEC518F8051A007F9F6A /* AcousticModelSpanish.bundle */,
 				1050FEC618F8051A007F9F6A /* OpenEars.framework */,
-				1050FEC718F8051A007F9F6A /* Slt.framework */,
 			);
 			path = Framework;
 			sourceTree = "<group>";
@@ -257,6 +273,14 @@
 		6D84DC6518ED53DA00963638 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				6DD0C1F818FD198100FF384C /* title-select-category.png */,
+				6DD0C1F418FD185F00FF384C /* polaroid-frames-animals.png */,
+				6DD0C1F518FD185F00FF384C /* polaroid-frames-fruits.png */,
+				6DD0C1F218FD102600FF384C /* button-back.png */,
+				6DD0C1EE18FD0A9900FF384C /* button-learn-to-speak.png */,
+				6DD0C1EF18FD0A9900FF384C /* button-learn-to-spell.png */,
+				6DD0C1E818FD03EC00FF384C /* background-main.jpg */,
+				6DD0C1E918FD03EC00FF384C /* logo.png */,
 				6D84DC4918ED53CC00963638 /* background-kitchen.jpg */,
 				6D84DC4A18ED53CC00963638 /* fruit-apple.png */,
 				6D84DC4B18ED53CC00963638 /* fruit-banana.png */,
@@ -355,6 +379,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D84DC5718ED53CC00963638 /* background-kitchen.jpg in Resources */,
+				6DD0C1F618FD185F00FF384C /* polaroid-frames-animals.png in Resources */,
 				6D84DC3C18ED36D300963638 /* Noun List.plist in Resources */,
 				6D84DC1418EC737900963638 /* Main_iPad.storyboard in Resources */,
 				6D84DC1918EC737900963638 /* Images.xcassets in Resources */,
@@ -372,9 +397,16 @@
 				6D84DC0818EC737900963638 /* InfoPlist.strings in Resources */,
 				6D84DC5818ED53CC00963638 /* fruit-apple.png in Resources */,
 				6D84DC6018ED53CC00963638 /* fruit-peach.png in Resources */,
+				6DD0C1F318FD102600FF384C /* button-back.png in Resources */,
+				6DD0C1F918FD198100FF384C /* title-select-category.png in Resources */,
+				6DD0C1F118FD0A9900FF384C /* button-learn-to-spell.png in Resources */,
+				6DD0C1EA18FD03EC00FF384C /* background-main.jpg in Resources */,
 				6D84DC5918ED53CC00963638 /* fruit-banana.png in Resources */,
+				6DD0C1EB18FD03EC00FF384C /* logo.png in Resources */,
+				6DD0C1F018FD0A9900FF384C /* button-learn-to-speak.png in Resources */,
 				6D84DC5B18ED53CC00963638 /* fruit-cherry.png in Resources */,
 				6D84DC5E18ED53CC00963638 /* fruit-lime.png in Resources */,
+				6DD0C1F718FD185F00FF384C /* polaroid-frames-fruits.png in Resources */,
 				6D84DC6318ED53CC00963638 /* fruit-strawberry.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -545,6 +577,10 @@
 					Cool,
 					Is,
 					"That?/Framework",
+					"$(PROJECT_DIR)/How",
+					Cool,
+					Is,
+					"That?/Framework",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "How Cool Is That?/Little Learners-Prefix.pch";
@@ -564,6 +600,10 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(PROJECT_DIR)/How",
+					Cool,
+					Is,
+					"That?/Framework",
 					"$(PROJECT_DIR)/How",
 					Cool,
 					Is,
