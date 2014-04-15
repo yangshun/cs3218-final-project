@@ -13,7 +13,7 @@
 @class PocketsphinxController;
 @class FliteController;
 
-@interface OpenEarsVoiceManager : NSObject <OpenEarsEventsObserverDelegate> {
+@interface OpenEarsVoiceManager : NSObject {
    
     Slt *slt;
 	OpenEarsEventsObserver *openEarsEventsObserver;
@@ -37,9 +37,6 @@
 @property (nonatomic, copy) NSString *pathToDynamicallyGeneratedLanguageModel;
 @property (nonatomic, copy) NSString *pathToDynamicallyGeneratedDictionary;
 
-@property (nonatomic, assign) int restartAttemptsDueToPermissionRequests;
-@property (nonatomic, assign) BOOL startupFailedDueToLackOfPermissions;
-
 + (id)sharedOpenEarsVoiceManager;
 
 - (void) startListening;
@@ -47,7 +44,6 @@
 - (void) pauseListening;
 - (void) resumeListening;
 - (void) resumeListeningToMatch:(NSString *)word;
-- (void) changeWordList:(NSArray *)words;
 - (void) readCurrentWord;
 - (void) readWord:(NSString *)word;
 

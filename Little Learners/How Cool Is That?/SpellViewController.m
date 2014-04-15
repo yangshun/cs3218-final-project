@@ -26,11 +26,9 @@
 
 @implementation SpellViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
     }
     return self;
 }
@@ -38,18 +36,19 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     openEarsVoiceManager = [OpenEarsVoiceManager sharedOpenEarsVoiceManager];
+    [openEarsVoiceManager.openEarsEventsObserver setDelegate: self];
+    [openEarsVoiceManager startListening];
+    
     [self setUpViewForWordIndex:super.currentWordIndex];
 }
 
 - (void)setUpViewForWordIndex:(int)index {
     self.currentWord = self.wordsArray[index];
     
-    [openEarsVoiceManager stopListening];
-    NSLog(@"Current word %@", self.currentWord);
-    [openEarsVoiceManager setCurrentWordToMatch:self.currentWord];
-    [openEarsVoiceManager startListening];
-    
+    openEarsVoiceManager.currentWordToMatch = self.currentWord;
+
     lettersArray = [NSMutableArray new];
     letterWidth = blackBoard.frame.size.width/self.currentWord.length;
     letterBeingDragged = nil;
@@ -68,6 +67,14 @@
     [super previousWord];
     [self clearBlackBoard];
     [self setUpViewForWordIndex:self.currentWordIndex];
+}
+
+- (void)cheer {
+    self.view.userInteractionEnabled = NO;
+    [self.cheerPlayer play];
+    [self performSelector:@selector(nextWord:)
+               withObject:nil
+               afterDelay:1.f];
 }
 
 #pragma mark - Letter Shuffling Methods
@@ -142,12 +149,8 @@
         letterIsDragged = NO;
         [lettersArray insertObject:letter atIndex:draggedLetterCurrentIndex];
         [self snapLettersToFinalPosition];
-        if ([self compareWord]) {
-            self.view.userInteractionEnabled = NO;
-            [self.cheerPlayer play];
-            [self performSelector:@selector(nextWord:)
-                    withObject:nil
-                       afterDelay:1.f];
+        if ([self compareWordSpelling]) {
+            [self cheer];
         }
     }
 }
@@ -186,7 +189,7 @@
     return scrambledWord;
 }
 
-- (BOOL)compareWord {
+- (BOOL)compareWordSpelling {
     NSMutableString *word = [NSMutableString string];
     for (UILabel *l in lettersArray) {
         [word appendString:[NSString stringWithFormat:@"%@", l.text]];
@@ -198,13 +201,12 @@
     [self generateLetterFramesForWord:[self scrambleLettersArray:self.currentWord]];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 #pragma mark - Voice Control
+
+- (BOOL)compareWordReading:(NSString*) heard {
+    return [[heard componentsSeparatedByString:@" "] containsObject:self.currentWord];
+}
 
 - (IBAction)listenBtnPressed {
     [openEarsVoiceManager readCurrentWord];
@@ -214,15 +216,104 @@
     [openEarsVoiceManager resumeListening];
 }
 
-/*
-#pragma mark - Navigation
+#pragma mark -
+#pragma mark Open Ears Delegate Methods
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void) pocketsphinxDidReceiveHypothesis:(NSString *)hypothesis recognitionScore:(NSString *)recognitionScore utteranceID:(NSString *)utteranceID {
+	NSLog(@"Heard %@, score %@", hypothesis, recognitionScore);
+    if ([self compareWordReading:hypothesis]) {
+        [self cheer];
+        [openEarsVoiceManager pauseListening];
+    }
 }
-*/
+
+- (void) pocketsphinxRecognitionLoopDidStart {
+	NSLog(@"Pocketsphinx is starting up.");
+}
+
+- (void) pocketsphinxDidStartCalibration {
+	NSLog(@"Pocketsphinx calibration has started.");
+}
+
+- (void) pocketsphinxDidCompleteCalibration {
+	NSLog(@"Pocketsphinx calibration is complete.");
+}
+
+- (void) pocketsphinxDidStartListening {
+	NSLog(@"Pocketsphinx is now listening.");
+    [openEarsVoiceManager pauseListening];
+}
+
+- (void) pocketsphinxDidSuspendRecognition {
+	NSLog(@"Pocketsphinx has suspended recognition.");
+}
+
+- (void) pocketsphinxDidResumeRecognition {
+	NSLog(@"Pocketsphinx has resumed recognition.");
+}
+
+- (void) pocketsphinxDidStopListening {
+	NSLog(@"Pocketsphinx has stopped listening.");
+}
+
+- (void) audioSessionInterruptionDidBegin {
+	NSLog(@"AudioSession interruption began.");
+	[openEarsVoiceManager stopListening];
+}
+
+- (void) audioSessionInterruptionDidEnd {
+	NSLog(@"AudioSession interruption ended.");
+    [openEarsVoiceManager startListening];
+}
+
+- (void) audioInputDidBecomeUnavailable {
+	NSLog(@"The audio input has become unavailable");
+	[openEarsVoiceManager stopListening];
+}
+
+- (void) audioInputDidBecomeAvailable {
+	NSLog(@"The audio input is available");
+    [openEarsVoiceManager startListening];
+}
+
+- (void) audioRouteDidChangeToRoute:(NSString *)newRoute {
+	NSLog(@"Audio route change. The new audio route is %@", newRoute);
+	[openEarsVoiceManager stopListening];
+    [openEarsVoiceManager startListening];
+}
+
+- (void) pocketsphinxDidChangeLanguageModelToFile:(NSString *)newLanguageModelPathAsString andDictionary:(NSString *)newDictionaryPathAsString {
+	NSLog(@"Pocketsphinx is now using the following language model: \n%@ and the following dictionary: %@",newLanguageModelPathAsString,newDictionaryPathAsString);
+}
+
+- (void) pocketSphinxContinuousSetupDidFail {
+	NSLog(@"Setting up the continuous recognition loop has failed for some reason, please turn on [OpenEarsLogging startOpenEarsLogging] in OpenEarsConfig.h to learn more.");
+}
+
+- (void) testRecognitionCompleted {
+	NSLog(@"A test file which was submitted for direct recognition via the audio driver is done.");
+    [openEarsVoiceManager stopListening];
+    
+}
+
+- (void) pocketsphinxFailedNoMicPermissions {
+    NSLog(@"The user has never set mic permissions or denied permission to this app's mic, so listening will not start.");
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+/*
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+ {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

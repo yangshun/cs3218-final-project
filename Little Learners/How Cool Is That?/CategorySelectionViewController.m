@@ -56,7 +56,7 @@
     vc.wordsArray = fiveRandomItems;
     
     openEarsVoiceManager = [OpenEarsVoiceManager sharedOpenEarsVoiceManager];
-    [openEarsVoiceManager changeWordList:items];
+    openEarsVoiceManager.wordList = items;
 }
 
 
