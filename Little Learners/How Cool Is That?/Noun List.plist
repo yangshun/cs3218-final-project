@@ -28,5 +28,29 @@
 	<string>fruit-strawberry.png</string>
 	<key>WATERMELON</key>
 	<string>fruit-watermelon.png</string>
+	<key>BEAR</key>
+	<string>animal-bear.png</string>
+	<key>BULL</key>
+	<string>animal-bull.png</string>
+	<key>ELEPHANT</key>
+	<string>animal-elephant.png</string>
+	<key>GIRAFFE</key>
+	<string>animal-giraffe.png</string>
+	<key>LEOPARD</key>
+	<string>animal-leopard.png</string>
+	<key>LION</key>
+	<string>animal-lion.png</string>
+	<key>MONKEY</key>
+	<string>animal-monkey.png</string>
+	<key>REINDEER</key>
+	<string>animal-reindeer.png</string>
+	<key>RHINOCEROS</key>
+	<string>animal-rhino.png</string>
+	<key>SNAKE</key>
+	<string>animal-snake.png</string>
+	<key>WOLF</key>
+	<string>animal-wolf.png</string>
+	<key>ZEBRA</key>
+	<string>animal-zebra.png</string>
 </dict>
 </plist>

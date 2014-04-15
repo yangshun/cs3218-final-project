@@ -25,21 +25,14 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SnH-mj-ybd">
-                                <rect key="frame" x="286" y="614" width="452" height="53"/>
+                                <rect key="frame" x="221" y="539" width="583" height="53"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Learn to Spell" image="button-learn-to-spell.png">
+                                <state key="normal" title="Learn to Spell" image="button-play.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="orW-Ee-NUb" kind="modal" modalTransitionStyle="flipHorizontal" id="9dq-oP-Py4"/>
                                 </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ux9-rZ-I0J">
-                                <rect key="frame" x="286" y="535" width="452" height="53"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Learn to Spell" image="button-learn-to-speak.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -73,7 +66,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5px-eS-z6t">
-                                <rect key="frame" x="54" y="316" width="300" height="300"/>
+                                <rect key="frame" x="152" y="316" width="300" height="300"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <size key="titleShadowOffset" width="15" height="15"/>
                                 <state key="normal" title="Fruits" image="polaroid-frames-fruits.png">
@@ -94,7 +87,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RF3-du-vcn">
-                                <rect key="frame" x="362" y="316" width="300" height="300"/>
+                                <rect key="frame" x="521" y="309" width="300" height="300"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Animals" image="polaroid-frames-animals.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -102,13 +95,6 @@
                                 <connections>
                                     <segue destination="IMv-8d-Z1X" kind="modal" id="xHq-nS-Dgg"/>
                                 </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="veY-TI-iiU">
-                                <rect key="frame" x="670" y="316" width="300" height="300"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Animals" image="polaroid-frames-animals.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -233,8 +219,7 @@
         <image name="background-kitchen.jpg" width="960" height="540"/>
         <image name="background-main.jpg" width="1086" height="768"/>
         <image name="button-back.png" width="512" height="512"/>
-        <image name="button-learn-to-speak.png" width="800" height="110"/>
-        <image name="button-learn-to-spell.png" width="800" height="110"/>
+        <image name="button-play.png" width="1000" height="110"/>
         <image name="logo.png" width="1089" height="614"/>
         <image name="polaroid-frames-animals.png" width="1162" height="1200"/>
         <image name="polaroid-frames-fruits.png" width="1162" height="1200"/>

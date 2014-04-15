@@ -116,13 +116,18 @@
     [self initLanguageModel];
     
     if (exist) {
-        [self.pocketsphinxController changeLanguageModelToFile:self.pathToDynamicallyGeneratedLanguageModel withDictionary:self.pathToDynamicallyGeneratedDictionary];
+        [self.pocketsphinxController changeLanguageModelToFile:self.pathToDynamicallyGeneratedLanguageModel
+                                                withDictionary:self.pathToDynamicallyGeneratedDictionary];
     }
 }
 
 - (void) startListening {
     
-    [self.pocketsphinxController startListeningWithLanguageModelAtPath:self.pathToDynamicallyGeneratedLanguageModel dictionaryAtPath:self.pathToDynamicallyGeneratedDictionary acousticModelAtPath:[AcousticModel pathToModel:@"AcousticModelEnglish"] languageModelIsJSGF:FALSE];
+    [self.pocketsphinxController startListeningWithLanguageModelAtPath:self.pathToDynamicallyGeneratedLanguageModel
+                                                      dictionaryAtPath:self.pathToDynamicallyGeneratedDictionary
+                                                   acousticModelAtPath:[AcousticModel
+                                                           pathToModel:@"AcousticModelEnglish"]
+                                                   languageModelIsJSGF:FALSE];
 }
 
 - (void) stopListening {

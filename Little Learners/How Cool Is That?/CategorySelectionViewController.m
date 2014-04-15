@@ -57,7 +57,7 @@
             items = @[@"APPLE", @"BANANA", @"CHERRY", @"STRAWBERRY", @"BLUEBERRY", @"PEAR", @"ORANGE", @"LEMON", @"LIME", @"PEACH", @"WATERMELON", @"COCONUT", @"PINEAPPLE"];
             break;
         case 1:
-            items = @[@"BEAR", @"BULL", @"ELEPHANT", @"GIRAFFE", @"LEOPARD", @"LION", @"MONKEY", @"REINDEER", @"RHINO", @"SNAKE", @"WOLF", @"ZEBRA"];
+            items = @[@"BEAR", @"BULL", @"ELEPHANT", @"GIRAFFE", @"LEOPARD", @"LION", @"MONKEY", @"REINDEER", @"RHINOCEROS", @"SNAKE", @"WOLF", @"ZEBRA"];
         default:
             break;
     }
