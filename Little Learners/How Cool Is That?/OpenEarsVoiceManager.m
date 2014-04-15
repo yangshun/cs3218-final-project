@@ -147,7 +147,13 @@
 }
 
 - (void) readCurrentWord {
-    [self.fliteController say:self.currentWordToMatch withVoice:self.slt];
+    AVSpeechUtterance *utterance = [AVSpeechUtterance
+                                    speechUtteranceWithString:self.currentWordToMatch];
+    AVSpeechSynthesizer *synth = [[AVSpeechSynthesizer alloc] init];
+    
+    [utterance setRate:AVSpeechUtteranceMinimumSpeechRate];
+    [synth speakUtterance:utterance];
+//    [self.fliteController say:self.currentWordToMatch withVoice:self.slt];
 }
 
 - (void) readWord:(NSString *)word {
