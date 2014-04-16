@@ -7,15 +7,12 @@
 //
 
 #import "ViewController.h"
-#import "GameAudioManager.h"
 #import "Constants.h"
 
 @interface LevelViewController : ViewController
 
 @property NSArray *wordsArray;
 @property int currentWordIndex;
-@property AVAudioPlayer *cheerPlayer;
-@property AVAudioPlayer *booPlayer;
 @property NSMutableArray *imagesArray;
 @property NSString *currentWord;
 

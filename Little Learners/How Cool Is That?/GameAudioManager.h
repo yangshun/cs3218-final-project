@@ -14,6 +14,14 @@
 @property (nonatomic, readwrite) float gameVolume;
 
 + (GameAudioManager *)sharedInstance;
-- (AVAudioPlayer *)playSoundWithPath:(NSString *)path type:(NSString *)type;
+- (AVAudioPlayer *)loadSoundWithPath:(NSString *)path type:(NSString *)type;
+
+- (void)playPlaySound;
+- (void)playExitSound;
+- (void)playCategorySound;
+- (void)playCheerSound;
+- (void)playBooSound;
+- (void)playNavSound;
+- (void)playHintSound;
 
 @end

@@ -8,6 +8,7 @@
 
 #import "SpellViewController.h"
 #import "Constants.h"
+#import "GameAudioManager.h"
 
 @interface SpellViewController () {
     IBOutlet UIView *blackBoard;
@@ -90,6 +91,7 @@
     [self clearBlackBoard];
     [self setUpViewForWordIndex:self.currentWordIndex
                         natural:NO];
+    [[GameAudioManager sharedInstance] playNavSound];
 }
 
 - (IBAction)previousWord:(id)sender {
@@ -97,6 +99,7 @@
     [self clearBlackBoard];
     [self setUpViewForWordIndex:self.currentWordIndex
                         natural:NO];
+    [[GameAudioManager sharedInstance] playNavSound];
 }
 
 #pragma mark - Letter Shuffling Methods
@@ -180,7 +183,7 @@
 - (void)correctWordDetected {
     [solvedWords addObject:self.currentWord];
     self.view.userInteractionEnabled = NO;
-    [self.cheerPlayer play];
+    [[GameAudioManager sharedInstance] playCheerSound];
     [self performSelector:@selector(nextWord:)
                withObject:nil
                afterDelay:4.f];

@@ -10,9 +10,11 @@
 #import "SpellViewController.h"
 #import "Utils.h"
 #import "Constants.h"
+#import "GameAudioManager.h"
 
 @interface CategorySelectionViewController () {
     OpenEarsVoiceManager *openEarsVoiceManager;
+    AVAudioPlayer *exitSound;
 }
 
 @end
@@ -40,6 +42,7 @@
 }
 
 - (IBAction)dismiss {
+    [[GameAudioManager sharedInstance] playExitSound];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -49,6 +52,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     // Get the new view controller using
+    [[GameAudioManager sharedInstance] playCategorySound];
     SpellViewController *vc = [segue destinationViewController];
     UIButton *btn = sender;
     NSArray *items;

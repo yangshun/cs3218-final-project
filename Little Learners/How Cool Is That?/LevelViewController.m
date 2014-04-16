@@ -7,6 +7,7 @@
 //
 
 #import "LevelViewController.h"
+#import "GameAudioManager.h"
 
 @interface LevelViewController () {
     
@@ -28,8 +29,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.cheerPlayer = [[GameAudioManager sharedInstance] playSoundWithPath:@"audio/cheer" type:@"caf"];
-    self.booPlayer = [[GameAudioManager sharedInstance] playSoundWithPath:@"audio/boo" type:@"caf"];
     
     self.currentWordIndex = 0;
     self.imagesArray = [NSMutableArray new];
@@ -63,6 +62,7 @@
 }
 
 - (IBAction)dismiss {
+    [[GameAudioManager sharedInstance] playExitSound];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

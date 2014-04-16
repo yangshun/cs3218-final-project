@@ -7,8 +7,11 @@
 //
 
 #import "ViewController.h"
+#import "GameAudioManager.h"
 
-@interface ViewController ()
+@interface ViewController () {
+    AVAudioPlayer *playSound;
+}
 
 @end
 
@@ -18,6 +21,11 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    [GameAudioManager sharedInstance];
+}
+
+- (IBAction)play:(id)sender {
+    [[GameAudioManager sharedInstance] playPlaySound];
 }
 
 - (void)didReceiveMemoryWarning

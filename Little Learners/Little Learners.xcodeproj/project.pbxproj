@@ -398,7 +398,7 @@
 				ORGANIZATIONNAME = YangShun;
 				TargetAttributes = {
 					6D84DBF918EC737900963638 = {
-						DevelopmentTeam = EJ664WY4CE;
+						DevelopmentTeam = 3P69678SU8;
 					};
 					6D84DC1D18EC737900963638 = {
 						TestTargetID = 6D84DBF918EC737900963638;
