@@ -59,15 +59,19 @@
     switch (btn.tag) {
         case 0:
             items = @[@"APPLE", @"BANANA", @"CHERRY", @"STRAWBERRY", @"BLUEBERRY", @"PEAR", @"ORANGE", @"LEMON", @"LIME", @"PEACH", @"WATERMELON", @"COCONUT", @"PINEAPPLE"];
+            vc.type = Fruits;
             break;
         case 1:
             items = @[@"BEAR", @"BULL", @"ELEPHANT", @"GIRAFFE", @"LEOPARD", @"LION", @"MONKEY", @"REINDEER", @"RHINOCEROS", @"SNAKE", @"WOLF", @"ZEBRA"];
+            vc.type = Animals;
         default:
             break;
     }
 
     NSArray *fiveRandomItems = [[[Utils sharedManager] shuffle:items] subarrayWithRange:NSMakeRange(0, NUMBER_OF_WORDS_IN_LEVEL)];
     vc.wordsArray = fiveRandomItems;
+    
+
     
 //    openEarsVoiceManager = [OpenEarsVoiceManager sharedOpenEarsVoiceManager];
 //    openEarsVoiceManager.wordList = items;

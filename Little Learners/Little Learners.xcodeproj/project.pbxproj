@@ -75,6 +75,7 @@
 		6DD0C25318FDBD1000FF384C /* button-prev.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DD0C24F18FDBD1000FF384C /* button-prev.png */; };
 		6DD0C25418FDBD1000FF384C /* button-next.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DD0C25018FDBD1000FF384C /* button-next.png */; };
 		6DD0C25518FDBD1000FF384C /* button-listen.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DD0C25118FDBD1000FF384C /* button-listen.png */; };
+		6DD0C25718FE452B00FF384C /* background-jungle.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DD0C25618FE452B00FF384C /* background-jungle.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -168,6 +169,7 @@
 		6DD0C24F18FDBD1000FF384C /* button-prev.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "button-prev.png"; path = "Images/button-prev.png"; sourceTree = "<group>"; };
 		6DD0C25018FDBD1000FF384C /* button-next.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "button-next.png"; path = "Images/button-next.png"; sourceTree = "<group>"; };
 		6DD0C25118FDBD1000FF384C /* button-listen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "button-listen.png"; path = "Images/button-listen.png"; sourceTree = "<group>"; };
+		6DD0C25618FE452B00FF384C /* background-jungle.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "background-jungle.jpg"; path = "Images/background-jungle.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -331,6 +333,7 @@
 				6DD0C1EE18FD0A9900FF384C /* button-learn-to-speak.png */,
 				6DD0C1EF18FD0A9900FF384C /* button-learn-to-spell.png */,
 				6DD0C1E818FD03EC00FF384C /* background-main.jpg */,
+				6DD0C25618FE452B00FF384C /* background-jungle.jpg */,
 				6DD0C1E918FD03EC00FF384C /* logo.png */,
 				6D84DC4918ED53CC00963638 /* background-kitchen.jpg */,
 				6D84DC4A18ED53CC00963638 /* fruit-apple.png */,
@@ -435,6 +438,7 @@
 				6DD0C1F618FD185F00FF384C /* polaroid-frames-animals.png in Resources */,
 				6D84DC3C18ED36D300963638 /* Noun List.plist in Resources */,
 				6D84DC1418EC737900963638 /* Main_iPad.storyboard in Resources */,
+				6DD0C25718FE452B00FF384C /* background-jungle.jpg in Resources */,
 				6D84DC1918EC737900963638 /* Images.xcassets in Resources */,
 				6D84DC5D18ED53CC00963638 /* fruit-lemon.png in Resources */,
 				6DD0C22A18FDAB7400FF384C /* animal-leopard.png in Resources */,

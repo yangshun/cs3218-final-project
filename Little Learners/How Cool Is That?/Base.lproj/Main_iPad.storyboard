@@ -198,6 +198,7 @@
                     <navigationItem key="navigationItem" id="1uq-9P-c4M"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
+                        <outlet property="backgroundImage" destination="Oyw-fr-Zhu" id="115-41-nFA"/>
                         <outlet property="blackBoard" destination="cZ7-Eo-to8" id="SDk-TY-jzp"/>
                         <outlet property="nextButton" destination="Jpx-Ua-chS" id="K91-28-aPx"/>
                         <outlet property="prevButton" destination="nMj-hH-KZj" id="Que-UA-vuA"/>

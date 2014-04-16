@@ -16,7 +16,7 @@
     IBOutlet UIButton *prevButton;
     IBOutlet UIButton *nextButton;
     IBOutlet UILabel *progressLabel;
-
+    
     NSMutableArray *lettersArray;
 
     BOOL letterIsDragged;

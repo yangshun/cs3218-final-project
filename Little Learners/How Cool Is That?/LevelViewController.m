@@ -10,7 +10,7 @@
 #import "GameAudioManager.h"
 
 @interface LevelViewController () {
-    
+    IBOutlet UIImageView *backgroundImage;
 }
 
 @end
@@ -40,6 +40,17 @@
     for (NSString *s in self.wordsArray) {
         UIImage *img = [UIImage imageNamed:plistDict[s]];
         [self.imagesArray addObject:img];
+    }
+    
+    switch (self.type) {
+        case Fruits:
+            backgroundImage.image = [UIImage imageNamed:@"background-kitchen.jpg"];
+            break;
+        case Animals:
+            backgroundImage.image = [UIImage imageNamed:@"background-jungle.jpg"];
+            break;
+        default:
+            break;
     }
 }
 

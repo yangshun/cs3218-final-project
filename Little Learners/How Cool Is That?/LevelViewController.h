@@ -11,6 +11,12 @@
 
 @interface LevelViewController : ViewController
 
+typedef enum {
+    Fruits,
+    Animals
+} LevelType;
+
+@property LevelType type;
 @property NSArray *wordsArray;
 @property int currentWordIndex;
 @property NSMutableArray *imagesArray;
