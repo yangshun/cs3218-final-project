@@ -24,7 +24,8 @@
     float letterWidth;
     NSMutableArray *solvedWords;
     NSMutableArray *seenWords;
-
+    UIView *overlay;
+    
     OpenEarsVoiceManager *openEarsVoiceManager;
 }
 
@@ -44,6 +45,23 @@
     [super viewDidLoad];
     solvedWords = [NSMutableArray new];
     seenWords = [NSMutableArray new];
+    
+    overlay = [[UIView alloc] initWithFrame:CGRectMake(0, 0,
+                                                       self.view.frame.size.height,
+                                                       self.view.frame.size.width)];
+    overlay.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.75];
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissOverlay)];
+    [overlay addGestureRecognizer:tap];
+    
+    UILabel *label = [UILabel new];
+    label.text = [NSString stringWithFormat:@"Say the name of the %@!", self.type == Fruits ? @"fruit" : @"animal"];;
+    label.textColor = [UIColor whiteColor];
+    label.font = [UIFont fontWithName:@"Marker Felt" size:56.f];
+    [label sizeToFit];
+    [overlay addSubview:label];
+    label.center = overlay.center;
+    
+//    openEarsVoiceManager = [OpenEarsVoiceManager sharedOpenEarsVoiceManager];
     openEarsVoiceManager = [OpenEarsVoiceManager new];
     [openEarsVoiceManager.openEarsEventsObserver setDelegate: self];
     openEarsVoiceManager.wordList = self.wordsArray;
@@ -220,7 +238,11 @@
     
     // caution, autoreleased. Allocate explicitly above or retain below to
     // keep the string.
-    return scrambledWord;
+    if (![scrambledWord isEqualToString:inputString]) {
+        return scrambledWord;
+    } else {
+        return [self scrambleLettersArray:inputString];
+    }
 }
 
 - (BOOL)compareWordSpelling {
@@ -248,9 +270,16 @@
 
 - (IBAction)readBtnPressed {
     [openEarsVoiceManager resumeListening];
+    [self.view addSubview:overlay];
 }
 
-#pragma mark -
+#pragma mark - Overlay 
+
+- (void)dismissOverlay {
+    [openEarsVoiceManager pauseListening];
+    [overlay removeFromSuperview];
+}
+
 #pragma mark Open Ears Delegate Methods
 
 - (void) pocketsphinxDidReceiveHypothesis:(NSString *)hypothesis
@@ -259,8 +288,10 @@
 	NSLog(@"Heard %@, score %@", hypothesis, recognitionScore);
     if ([self compareWordReading:hypothesis]) {
         [self correctWordDetected];
-        [openEarsVoiceManager pauseListening];
+    } else {
+        [[GameAudioManager sharedInstance] playBooSound];
     }
+    [self dismissOverlay];
 }
 
 - (void) pocketsphinxRecognitionLoopDidStart {

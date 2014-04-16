@@ -21,7 +21,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    [GameAudioManager sharedInstance];
+    [[GameAudioManager sharedInstance] playBackgroundMusic];
 }
 
 - (IBAction)play:(id)sender {

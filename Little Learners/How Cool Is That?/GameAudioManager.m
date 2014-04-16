@@ -18,6 +18,7 @@ static GameAudioManager *sharedGameAudioManager;
     AVAudioPlayer *categorySound;
     AVAudioPlayer *navSound;
     AVAudioPlayer *hintSound;
+    AVAudioPlayer *backgroundMusic;
 }
 
 @synthesize gameVolume;
@@ -40,6 +41,8 @@ static GameAudioManager *sharedGameAudioManager;
     categorySound = [self loadSoundWithPath:@"audio/button-category" type:@"caf"];
     navSound = [self loadSoundWithPath:@"audio/button-nav" type:@"caf"];
     hintSound = [self loadSoundWithPath:@"audio/button-hint" type:@"caf"];
+    backgroundMusic = [self loadSoundWithPath:@"audio/acoustic-sunrise" type:@"caf"];
+    backgroundMusic.numberOfLoops = INFINITY;
 }
 
 - (AVAudioPlayer *)loadSoundWithPath:(NSString *)path type:(NSString *)type {
@@ -81,6 +84,15 @@ static GameAudioManager *sharedGameAudioManager;
 
 - (void)playHintSound {
     [hintSound play];
+}
+
+- (void)playBackgroundMusic {
+    backgroundMusic.volume = 1;
+//    [backgroundMusic play];
+}
+
+- (void)stopBackgroundMusic {
+//    backgroundMusic.volume = 0.2;
 }
 
 @end

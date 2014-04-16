@@ -33,6 +33,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [[GameAudioManager sharedInstance] playBackgroundMusic];
 }
 
 - (void)didReceiveMemoryWarning
@@ -52,6 +53,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     // Get the new view controller using
+    [[GameAudioManager sharedInstance] stopBackgroundMusic];
     [[GameAudioManager sharedInstance] playCategorySound];
     SpellViewController *vc = [segue destinationViewController];
     UIButton *btn = sender;
@@ -70,9 +72,7 @@
 
     NSArray *fiveRandomItems = [[[Utils sharedManager] shuffle:items] subarrayWithRange:NSMakeRange(0, NUMBER_OF_WORDS_IN_LEVEL)];
     vc.wordsArray = fiveRandomItems;
-    
 
-    
 //    openEarsVoiceManager = [OpenEarsVoiceManager sharedOpenEarsVoiceManager];
 //    openEarsVoiceManager.wordList = items;
 }

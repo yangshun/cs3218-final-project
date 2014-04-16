@@ -23,5 +23,7 @@
 - (void)playBooSound;
 - (void)playNavSound;
 - (void)playHintSound;
+- (void)playBackgroundMusic;
+- (void)stopBackgroundMusic;
 
 @end
