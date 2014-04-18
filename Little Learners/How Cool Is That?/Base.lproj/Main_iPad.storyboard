@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -33,6 +33,16 @@
                                 <connections>
                                     <action selector="play:" destination="BYZ-38-t0r" eventType="touchUpInside" id="86p-tI-fpW"/>
                                     <segue destination="orW-Ee-NUb" kind="modal" identifier="play" id="DAQ-Ye-JuW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="100" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1HS-CG-0Yd">
+                                <rect key="frame" x="237" y="617" width="550" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="button-competition.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="DG9-85-9Vm" kind="modal" id="ke5-Yp-dz7"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -107,6 +117,56 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cDk-Rm-bLr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1170" y="-169"/>
+        </scene>
+        <!--Game View Controller-->
+        <scene sceneID="lQU-m0-VH1">
+            <objects>
+                <viewController id="DG9-85-9Vm" customClass="GameViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="53m-nO-Mba"/>
+                        <viewControllerLayoutGuide type="bottom" id="nEP-m8-gni"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2G8-UG-hny">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background-kitchen.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="DfB-Q7-vgZ">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dZZ-HC-RkX">
+                                <rect key="frame" x="28" y="37" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Back" image="button-back.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="dismiss" destination="DG9-85-9Vm" eventType="touchUpInside" id="TuD-hy-A0f"/>
+                                </connections>
+                            </button>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="text-ready.png" translatesAutoresizingMaskIntoConstraints="NO" id="Put-zl-XrF">
+                                <rect key="frame" x="224" y="250" width="3" height="1"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p7V-oa-4XY">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Amm-29-zJp"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <connections>
+                        <outlet property="readyGoImageView" destination="Put-zl-XrF" id="2CZ-Vb-OWe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MER-UY-BGY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1182" y="810"/>
         </scene>
         <!--Spell View Controller-->
         <scene sceneID="fHR-vo-07s">
@@ -208,13 +268,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MI7-64-F2o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2410" y="-181"/>
+            <point key="canvasLocation" x="2716" y="-169"/>
         </scene>
     </scenes>
     <resources>
         <image name="background-kitchen.jpg" width="960" height="540"/>
         <image name="background-main.jpg" width="1086" height="768"/>
         <image name="button-back.png" width="512" height="512"/>
+        <image name="button-competition.png" width="1000" height="110"/>
         <image name="button-listen.png" width="512" height="512"/>
         <image name="button-next.png" width="512" height="512"/>
         <image name="button-play.png" width="1000" height="110"/>
@@ -223,6 +284,7 @@
         <image name="logo.png" width="1089" height="614"/>
         <image name="polaroid-frames-animals.png" width="1162" height="1200"/>
         <image name="polaroid-frames-fruits.png" width="1162" height="1200"/>
+        <image name="text-ready.png" width="372" height="98"/>
         <image name="title-select-category.png" width="1000" height="110"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -231,6 +293,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="xHq-nS-Dgg"/>
+        <segue reference="ync-Lp-77k"/>
     </inferredMetricsTieBreakers>
 </document>

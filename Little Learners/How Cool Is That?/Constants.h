@@ -15,3 +15,9 @@
 #define HEIGHT_OF_LETTER 100.0f
 
 // Speaking Game
+
+
+// Source
+#define FRUITS [NSArray arrayWithObjects: @"APPLE", @"BANANA", @"CHERRY", @"STRAWBERRY", @"BLUEBERRY", @"PEAR", @"ORANGE", @"LEMON", @"LIME", @"PEACH", @"WATERMELON", @"COCONUT", @"PINEAPPLE", nil]
+
+#define ANIMALS [NSArray arrayWithObjects: @"BEAR", @"BULL", @"ELEPHANT", @"GIRAFFE", @"LEOPARD", @"LION", @"MONKEY", @"REINDEER", @"RHINOCEROS", @"SNAKE", @"WOLF", @"ZEBRA", nil]

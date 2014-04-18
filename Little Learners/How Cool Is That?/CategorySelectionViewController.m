@@ -49,23 +49,25 @@
 
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+
     [[GameAudioManager sharedInstance] stopBackgroundMusic];
     [[GameAudioManager sharedInstance] playCategorySound];
+    
     SpellViewController *vc = [segue destinationViewController];
+
     UIButton *btn = sender;
     NSArray *items;
     switch (btn.tag) {
+            
         case 0:
-            items = @[@"APPLE", @"BANANA", @"CHERRY", @"STRAWBERRY", @"BLUEBERRY", @"PEAR", @"ORANGE", @"LEMON", @"LIME", @"PEACH", @"WATERMELON", @"COCONUT", @"PINEAPPLE"];
+            items = FRUITS;
             vc.type = Fruits;
             break;
         case 1:
-            items = @[@"BEAR", @"BULL", @"ELEPHANT", @"GIRAFFE", @"LEOPARD", @"LION", @"MONKEY", @"REINDEER", @"RHINOCEROS", @"SNAKE", @"WOLF", @"ZEBRA"];
+            items = ANIMALS;
             vc.type = Animals;
+            break;
         default:
             break;
     }

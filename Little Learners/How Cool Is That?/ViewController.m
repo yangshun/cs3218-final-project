@@ -8,6 +8,8 @@
 
 #import "ViewController.h"
 #import "GameAudioManager.h"
+#import "GameViewController.h"
+#import "Constants.h"
 
 @interface ViewController () {
     AVAudioPlayer *playSound;
@@ -33,5 +35,16 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    [[GameAudioManager sharedInstance] stopBackgroundMusic];
+    UIButton *btn = sender;
+    if (btn.tag == 100) {
+        GameViewController *gvc = [segue destinationViewController];
+        gvc.categoryArray = [NSArray arrayWithObjects:FRUITS, ANIMALS, nil];
+    }
+}
+
 
 @end

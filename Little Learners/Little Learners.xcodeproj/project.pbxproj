@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1009ED6719019947001C2A49 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1009ED6619019947001C2A49 /* GameViewController.m */; };
+		1009ED711901C288001C2A49 /* button-competition.png in Resources */ = {isa = PBXBuildFile; fileRef = 1009ED6E1901C288001C2A49 /* button-competition.png */; };
+		1009ED721901C288001C2A49 /* text-go.png in Resources */ = {isa = PBXBuildFile; fileRef = 1009ED6F1901C288001C2A49 /* text-go.png */; };
+		1009ED731901C288001C2A49 /* text-ready.png in Resources */ = {isa = PBXBuildFile; fileRef = 1009ED701901C288001C2A49 /* text-ready.png */; };
 		1050FEC218F804DC007F9F6A /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1050FEC118F804DC007F9F6A /* AudioToolbox.framework */; };
 		1050FEC818F8051A007F9F6A /* AcousticModelEnglish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1050FEC418F8051A007F9F6A /* AcousticModelEnglish.bundle */; };
 		1050FEC918F8051A007F9F6A /* AcousticModelSpanish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1050FEC518F8051A007F9F6A /* AcousticModelSpanish.bundle */; };
@@ -89,6 +93,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1009ED6519019947001C2A49 /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		1009ED6619019947001C2A49 /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		1009ED6E1901C288001C2A49 /* button-competition.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "button-competition.png"; path = "Images/button-competition.png"; sourceTree = "<group>"; };
+		1009ED6F1901C288001C2A49 /* text-go.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "text-go.png"; path = "Images/text-go.png"; sourceTree = "<group>"; };
+		1009ED701901C288001C2A49 /* text-ready.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "text-ready.png"; path = "Images/text-ready.png"; sourceTree = "<group>"; };
 		1050FEC118F804DC007F9F6A /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		1050FEC418F8051A007F9F6A /* AcousticModelEnglish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AcousticModelEnglish.bundle; path = ../../Framework/AcousticModelEnglish.bundle; sourceTree = "<group>"; };
 		1050FEC518F8051A007F9F6A /* AcousticModelSpanish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AcousticModelSpanish.bundle; path = ../../Framework/AcousticModelSpanish.bundle; sourceTree = "<group>"; };
@@ -251,6 +260,8 @@
 				6D7DD51618F32CBD00769D82 /* Constants.h */,
 				6D84DC0F18EC737900963638 /* Main_iPhone.storyboard */,
 				6D84DC1218EC737900963638 /* Main_iPad.storyboard */,
+				1009ED6519019947001C2A49 /* GameViewController.h */,
+				1009ED6619019947001C2A49 /* GameViewController.m */,
 				6D84DC3818EC768200963638 /* SpellViewController.h */,
 				6D84DC3918EC768200963638 /* SpellViewController.m */,
 				6D7DD51318F3287100769D82 /* LevelViewController.h */,
@@ -314,6 +325,9 @@
 				6DD0C25018FDBD1000FF384C /* button-next.png */,
 				6DD0C25118FDBD1000FF384C /* button-listen.png */,
 				6DD0C23418FDB4E400FF384C /* button-play.png */,
+				1009ED6E1901C288001C2A49 /* button-competition.png */,
+				1009ED6F1901C288001C2A49 /* text-go.png */,
+				1009ED701901C288001C2A49 /* text-ready.png */,
 				6DD0C21A18FDAB7400FF384C /* animal-bear.png */,
 				6DD0C21B18FDAB7400FF384C /* animal-bull.png */,
 				6DD0C21C18FDAB7400FF384C /* animal-elephant.png */,
@@ -401,7 +415,7 @@
 				ORGANIZATIONNAME = YangShun;
 				TargetAttributes = {
 					6D84DBF918EC737900963638 = {
-						DevelopmentTeam = 3P69678SU8;
+						DevelopmentTeam = EJ664WY4CE;
 					};
 					6D84DC1D18EC737900963638 = {
 						TestTargetID = 6D84DBF918EC737900963638;
@@ -432,11 +446,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1009ED731901C288001C2A49 /* text-ready.png in Resources */,
 				6DD0C22918FDAB7400FF384C /* animal-giraffe.png in Resources */,
 				6DD0C22D18FDAB7400FF384C /* animal-reindeer.png in Resources */,
 				6D84DC5718ED53CC00963638 /* background-kitchen.jpg in Resources */,
 				6DD0C1F618FD185F00FF384C /* polaroid-frames-animals.png in Resources */,
 				6D84DC3C18ED36D300963638 /* Noun List.plist in Resources */,
+				1009ED711901C288001C2A49 /* button-competition.png in Resources */,
 				6D84DC1418EC737900963638 /* Main_iPad.storyboard in Resources */,
 				6DD0C25718FE452B00FF384C /* background-jungle.jpg in Resources */,
 				6D84DC1918EC737900963638 /* Images.xcassets in Resources */,
@@ -460,6 +476,7 @@
 				6DD0C23018FDAB7400FF384C /* animal-wolf.png in Resources */,
 				6D84DC5C18ED53CC00963638 /* fruit-coconut.png in Resources */,
 				6D84DC0818EC737900963638 /* InfoPlist.strings in Resources */,
+				1009ED721901C288001C2A49 /* text-go.png in Resources */,
 				6D84DC5818ED53CC00963638 /* fruit-apple.png in Resources */,
 				6DD0C25418FDBD1000FF384C /* button-next.png in Resources */,
 				6D84DC6018ED53CC00963638 /* fruit-peach.png in Resources */,
@@ -498,6 +515,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1009ED6719019947001C2A49 /* GameViewController.m in Sources */,
 				6D84DC3A18EC768200963638 /* SpellViewController.m in Sources */,
 				1050FECE18F809AA007F9F6A /* OpenEarsVoiceManager.m in Sources */,
 				6D84DC1718EC737900963638 /* ViewController.m in Sources */,
