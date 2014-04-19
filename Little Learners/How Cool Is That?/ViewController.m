@@ -42,7 +42,8 @@
     UIButton *btn = sender;
     if (btn.tag == 100) {
         GameViewController *gvc = [segue destinationViewController];
-        gvc.categoryArray = [NSArray arrayWithObjects:FRUITS, ANIMALS, nil];
+        NSMutableArray *array = [NSMutableArray arrayWithArray:FRUITS];
+        gvc.wordArray = [array arrayByAddingObjectsFromArray:ANIMALS];
     }
 }
 

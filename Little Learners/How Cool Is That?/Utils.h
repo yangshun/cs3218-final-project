@@ -12,5 +12,6 @@
 
 + (id)sharedManager;
 - (NSArray *)shuffle:(NSArray *)original;
+- (NSString *)scrambleLettersArray:(NSString *)inputString;
 
 @end

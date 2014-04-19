@@ -11,6 +11,14 @@
 		1009ED711901C288001C2A49 /* button-competition.png in Resources */ = {isa = PBXBuildFile; fileRef = 1009ED6E1901C288001C2A49 /* button-competition.png */; };
 		1009ED721901C288001C2A49 /* text-go.png in Resources */ = {isa = PBXBuildFile; fileRef = 1009ED6F1901C288001C2A49 /* text-go.png */; };
 		1009ED731901C288001C2A49 /* text-ready.png in Resources */ = {isa = PBXBuildFile; fileRef = 1009ED701901C288001C2A49 /* text-ready.png */; };
+		1009ED761901C957001C2A49 /* text-player1.png in Resources */ = {isa = PBXBuildFile; fileRef = 1009ED741901C957001C2A49 /* text-player1.png */; };
+		1009ED771901C957001C2A49 /* text-player2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1009ED751901C957001C2A49 /* text-player2.png */; };
+		1009ED7A1901CAEE001C2A49 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 1009ED781901CAEE001C2A49 /* star.png */; };
+		1009ED7B1901CAEE001C2A49 /* text-guess-the-word.png in Resources */ = {isa = PBXBuildFile; fileRef = 1009ED791901CAEE001C2A49 /* text-guess-the-word.png */; };
+		1009ED7D1901CF6C001C2A49 /* star-holder.png in Resources */ = {isa = PBXBuildFile; fileRef = 1009ED7C1901CF6C001C2A49 /* star-holder.png */; };
+		1009ED8019026F32001C2A49 /* text-congrats.png in Resources */ = {isa = PBXBuildFile; fileRef = 1009ED7E19026F32001C2A49 /* text-congrats.png */; };
+		1009ED8119026F32001C2A49 /* text-well-done.png in Resources */ = {isa = PBXBuildFile; fileRef = 1009ED7F19026F32001C2A49 /* text-well-done.png */; };
+		1009ED83190276A5001C2A49 /* text-skip.png in Resources */ = {isa = PBXBuildFile; fileRef = 1009ED82190276A5001C2A49 /* text-skip.png */; };
 		1050FEC218F804DC007F9F6A /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1050FEC118F804DC007F9F6A /* AudioToolbox.framework */; };
 		1050FEC818F8051A007F9F6A /* AcousticModelEnglish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1050FEC418F8051A007F9F6A /* AcousticModelEnglish.bundle */; };
 		1050FEC918F8051A007F9F6A /* AcousticModelSpanish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1050FEC518F8051A007F9F6A /* AcousticModelSpanish.bundle */; };
@@ -98,6 +106,14 @@
 		1009ED6E1901C288001C2A49 /* button-competition.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "button-competition.png"; path = "Images/button-competition.png"; sourceTree = "<group>"; };
 		1009ED6F1901C288001C2A49 /* text-go.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "text-go.png"; path = "Images/text-go.png"; sourceTree = "<group>"; };
 		1009ED701901C288001C2A49 /* text-ready.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "text-ready.png"; path = "Images/text-ready.png"; sourceTree = "<group>"; };
+		1009ED741901C957001C2A49 /* text-player1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "text-player1.png"; path = "Images/text-player1.png"; sourceTree = "<group>"; };
+		1009ED751901C957001C2A49 /* text-player2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "text-player2.png"; path = "Images/text-player2.png"; sourceTree = "<group>"; };
+		1009ED781901CAEE001C2A49 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = star.png; path = Images/star.png; sourceTree = "<group>"; };
+		1009ED791901CAEE001C2A49 /* text-guess-the-word.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "text-guess-the-word.png"; path = "Images/text-guess-the-word.png"; sourceTree = "<group>"; };
+		1009ED7C1901CF6C001C2A49 /* star-holder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "star-holder.png"; path = "Images/star-holder.png"; sourceTree = "<group>"; };
+		1009ED7E19026F32001C2A49 /* text-congrats.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "text-congrats.png"; path = "Images/text-congrats.png"; sourceTree = "<group>"; };
+		1009ED7F19026F32001C2A49 /* text-well-done.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "text-well-done.png"; path = "Images/text-well-done.png"; sourceTree = "<group>"; };
+		1009ED82190276A5001C2A49 /* text-skip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "text-skip.png"; path = "Images/text-skip.png"; sourceTree = "<group>"; };
 		1050FEC118F804DC007F9F6A /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		1050FEC418F8051A007F9F6A /* AcousticModelEnglish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AcousticModelEnglish.bundle; path = ../../Framework/AcousticModelEnglish.bundle; sourceTree = "<group>"; };
 		1050FEC518F8051A007F9F6A /* AcousticModelSpanish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AcousticModelSpanish.bundle; path = ../../Framework/AcousticModelSpanish.bundle; sourceTree = "<group>"; };
@@ -320,6 +336,14 @@
 		6D84DC6518ED53DA00963638 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				1009ED82190276A5001C2A49 /* text-skip.png */,
+				1009ED7C1901CF6C001C2A49 /* star-holder.png */,
+				1009ED781901CAEE001C2A49 /* star.png */,
+				1009ED7E19026F32001C2A49 /* text-congrats.png */,
+				1009ED7F19026F32001C2A49 /* text-well-done.png */,
+				1009ED791901CAEE001C2A49 /* text-guess-the-word.png */,
+				1009ED741901C957001C2A49 /* text-player1.png */,
+				1009ED751901C957001C2A49 /* text-player2.png */,
 				6DD0C24E18FDBD1000FF384C /* button-speak.png */,
 				6DD0C24F18FDBD1000FF384C /* button-prev.png */,
 				6DD0C25018FDBD1000FF384C /* button-next.png */,
@@ -461,20 +485,26 @@
 				6D84DC4618ED473800963638 /* audio in Resources */,
 				1050FEC818F8051A007F9F6A /* AcousticModelEnglish.bundle in Resources */,
 				6D84DC6218ED53CC00963638 /* fruit-pineapple.png in Resources */,
+				1009ED761901C957001C2A49 /* text-player1.png in Resources */,
 				6D84DC6418ED53CC00963638 /* fruit-watermelon.png in Resources */,
 				6DD0C25318FDBD1000FF384C /* button-prev.png in Resources */,
+				1009ED8019026F32001C2A49 /* text-congrats.png in Resources */,
 				6DD0C22C18FDAB7400FF384C /* animal-monkey.png in Resources */,
 				6DD0C22618FDAB7400FF384C /* animal-bear.png in Resources */,
 				6DD0C23518FDB4E400FF384C /* button-play.png in Resources */,
 				6D84DC6118ED53CC00963638 /* fruit-pear.png in Resources */,
+				1009ED771901C957001C2A49 /* text-player2.png in Resources */,
+				1009ED8119026F32001C2A49 /* text-well-done.png in Resources */,
 				6D84DC5F18ED53CC00963638 /* fruit-orange.png in Resources */,
 				1050FEC918F8051A007F9F6A /* AcousticModelSpanish.bundle in Resources */,
 				6D84DC5A18ED53CC00963638 /* fruit-blueberry.png in Resources */,
 				6D84DC1118EC737900963638 /* Main_iPhone.storyboard in Resources */,
 				6DD0C23118FDAB7400FF384C /* animal-zebra.png in Resources */,
 				6DD0C22718FDAB7400FF384C /* animal-bull.png in Resources */,
+				1009ED7A1901CAEE001C2A49 /* star.png in Resources */,
 				6DD0C23018FDAB7400FF384C /* animal-wolf.png in Resources */,
 				6D84DC5C18ED53CC00963638 /* fruit-coconut.png in Resources */,
+				1009ED7B1901CAEE001C2A49 /* text-guess-the-word.png in Resources */,
 				6D84DC0818EC737900963638 /* InfoPlist.strings in Resources */,
 				1009ED721901C288001C2A49 /* text-go.png in Resources */,
 				6D84DC5818ED53CC00963638 /* fruit-apple.png in Resources */,
@@ -483,6 +513,7 @@
 				6DD0C22B18FDAB7400FF384C /* animal-lion.png in Resources */,
 				6DD0C22E18FDAB7400FF384C /* animal-rhino.png in Resources */,
 				6DD0C1F318FD102600FF384C /* button-back.png in Resources */,
+				1009ED83190276A5001C2A49 /* text-skip.png in Resources */,
 				6DD0C22F18FDAB7400FF384C /* animal-snake.png in Resources */,
 				6DD0C1F918FD198100FF384C /* title-select-category.png in Resources */,
 				6DD0C1F118FD0A9900FF384C /* button-learn-to-spell.png in Resources */,
@@ -497,6 +528,7 @@
 				6D84DC5E18ED53CC00963638 /* fruit-lime.png in Resources */,
 				6DD0C1F718FD185F00FF384C /* polaroid-frames-fruits.png in Resources */,
 				6D84DC6318ED53CC00963638 /* fruit-strawberry.png in Resources */,
+				1009ED7D1901CF6C001C2A49 /* star-holder.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

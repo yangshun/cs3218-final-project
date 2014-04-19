@@ -7,9 +7,13 @@
 //
 
 #import "ViewController.h"
+#import "OpenEarsVoiceManager.h"
 
-@interface GameViewController : ViewController
+@interface GameViewController : ViewController <OpenEarsEventsObserverDelegate>
 
-@property NSArray *categoryArray;
+@property NSArray *wordArray;
+
+@property (strong, nonatomic) IBOutletCollection(UIImageView) NSArray *leftStarCollection;
+@property (strong, nonatomic) IBOutletCollection(UIImageView) NSArray *rightStartCollection;
 
 @end
