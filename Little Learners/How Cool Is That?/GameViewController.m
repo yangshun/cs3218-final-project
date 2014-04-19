@@ -37,6 +37,8 @@
 
 @implementation GameViewController
 
+BOOL rotated = NO;
+
 @synthesize readyGoImageView;
 @synthesize gamePanelView;
 @synthesize leftWordView;
@@ -79,10 +81,12 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 - (IBAction)leftSkip {
+    [usedWords removeObject:leftCurrentWord];
     [self next:YES];
 }
 
 - (IBAction)rightSkip {
+    [usedWords removeObject:leftCurrentWord];
     [self next:NO];
 }
 
@@ -149,12 +153,26 @@
     [openEarsVoiceManager stopListening];
     [[GameAudioManager sharedInstance] playCheerSound];
     result.hidden = NO;
+    
+    [self performSelector:@selector(shake:) withObject:result afterDelay:0.2];
+    [self performSelector:@selector(dismiss) withObject:nil afterDelay:6];
 }
+
+-(void) shake:(UIImageView *)congratsView {
+    [UIView beginAnimations:@"shake" context:nil];
+    congratsView.transform = rotated ? CGAffineTransformMakeRotation(0.06): CGAffineTransformMakeRotation(-0.06);
+    rotated = !rotated;
+    [UIView commitAnimations];
+    [self performSelector:@selector(shake:) withObject:congratsView afterDelay:0.2];
+}
+
 
 -(NSString *)nextWord {
     NSString *word = [self.wordArray objectAtIndex: arc4random() % [self.wordArray count]];
-    while ([usedWords containsObject:word]) {
+    int i = 0;
+    while ([usedWords containsObject:word] && i < 8) {
         word = [self.wordArray objectAtIndex: arc4random() % [self.wordArray count]];
+        i++;
     }
     [usedWords addObject:word];
     return word;
@@ -203,42 +221,37 @@
 }
 
 - (void)letterDrag:(UIPanGestureRecognizer *)panGesture {
-    //    UILabel *letter = (UILabel *)panGesture.view;
-    //    if (![letterBeingDragged isEqual:letter] && letterIsDragged) {
-    //        return;
-    //    }
-    //
-    //    letterBeingDragged = letter;
-    //    letterIsDragged = YES;
-    //    [lettersArray removeObject:letter];
-    //    CGPoint translation = [panGesture translationInView:letter.superview];
-    //
-    //    CGPoint panningStartPoint = letter.center;
-    //    letter.center = CGPointMake(panningStartPoint.x + translation.x,
-    //                                panningStartPoint.y + translation.y);
-    //    int draggedLetterCurrentIndex = (int)letter.center.x / (int)letterWidth;
-    //    draggedLetterCurrentIndex = MAX(0, draggedLetterCurrentIndex);
-    //    draggedLetterCurrentIndex = MIN(draggedLetterCurrentIndex, self.currentWord.length - 1);
-    //
-    //    for (int i = 0; i < self.currentWord.length - 1; i++) {
-    //        UIView *l = lettersArray[i];
-    //        int num = 0;
-    //        if (i < draggedLetterCurrentIndex) {
-    //            num = i;
-    //        } else {
-    //            num = i + 1;
-    //        }
-    //        [UIView animateWithDuration:0.3f animations:^{
-    //            l.center = CGPointMake(num * letterWidth + letterWidth/2, HEIGHT_OF_LETTER/2);
-    //        }];
-    //    }
-    //
-    //    [panGesture setTranslation:CGPointMake(0, 0)
-    //                        inView:letter.superview];
-}
-
--(void)announceWinner {
-    
+//    UILabel *letter = (UILabel *)panGesture.view;
+//    if (![letterBeingDragged isEqual:letter] && letterIsDragged) {
+//        return;
+//    }
+//
+//    letterBeingDragged = letter;
+//    letterIsDragged = YES;
+//    [lettersArray removeObject:letter];
+//    CGPoint translation = [panGesture translationInView:letter.superview];
+//
+//    CGPoint panningStartPoint = letter.center;
+//    letter.center = CGPointMake(panningStartPoint.x + translation.x,
+//                                panningStartPoint.y + translation.y);
+//    int draggedLetterCurrentIndex = (int)letter.center.x / (int)letterWidth;
+//    draggedLetterCurrentIndex = MAX(0, draggedLetterCurrentIndex);
+//    draggedLetterCurrentIndex = MIN(draggedLetterCurrentIndex, self.currentWord.length - 1);
+//
+//    for (int i = 0; i < self.currentWord.length - 1; i++) {
+//        UIView *l = lettersArray[i];
+//        int num = 0;
+//        if (i < draggedLetterCurrentIndex) {
+//            num = i;
+//        } else {
+//            num = i + 1;
+//        }
+//        [UIView animateWithDuration:0.3f animations:^{
+//            l.center = CGPointMake(num * letterWidth + letterWidth/2, HEIGHT_OF_LETTER/2);
+//        }];
+//    }
+//
+//    [panGesture setTranslation:CGPointMake(0, 0) inView:letter.superview];
 }
 
 #pragma mark Open Ears Delegate Methods
