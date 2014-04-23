@@ -165,5 +165,12 @@
     [self.fliteController say:word withVoice:self.slt];
 }
 
+- (BOOL) isListening {
+    return [self.pocketsphinxController isListening];
+}
+- (BOOL) isSuspended {
+    return [self.pocketsphinxController isSuspended];
+}
+
 
 @end

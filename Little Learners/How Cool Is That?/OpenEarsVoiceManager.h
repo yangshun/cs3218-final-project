@@ -46,5 +46,7 @@
 - (void) resumeListeningToMatch:(NSString *)word;
 - (void) readCurrentWord;
 - (void) readWord:(NSString *)word;
+- (BOOL) isListening;
+- (BOOL) isSuspended;
 
 @end
