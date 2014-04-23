@@ -13,6 +13,7 @@
 
 @interface ViewController () {
     AVAudioPlayer *playSound;
+    IBOutlet UIImageView *logo;
 }
 
 @end
@@ -24,7 +25,29 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     [[GameAudioManager sharedInstance] playBackgroundMusic];
+    logo.alpha = 0.f;
+    logo.center = CGPointMake(logo.center.x,
+                              logo.center.y - 440);
 }
+
+- (void)viewDidAppear:(BOOL)animated {
+    
+    [UIView animateWithDuration:1.0f animations:^{
+        logo.center = CGPointMake(logo.center.x,
+                                  logo.center.y + 440);
+        logo.alpha = 1.f;
+    } completion:^(BOOL finished) {
+        [UIView animateWithDuration:0.3f
+                              delay:0.f
+                            options:UIViewAnimationOptionAutoreverse | UIViewAnimationOptionRepeat
+                         animations:^{
+                             logo.transform = CGAffineTransformRotate(logo.transform, 0.06f);
+                         } completion:^(BOOL finished) {
+                             
+                         }];
+    }];
+}
+
 
 - (IBAction)play:(id)sender {
     [[GameAudioManager sharedInstance] playPlaySound];

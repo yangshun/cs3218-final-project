@@ -439,7 +439,7 @@
 				ORGANIZATIONNAME = YangShun;
 				TargetAttributes = {
 					6D84DBF918EC737900963638 = {
-						DevelopmentTeam = EJ664WY4CE;
+						DevelopmentTeam = 3P69678SU8;
 					};
 					6D84DC1D18EC737900963638 = {
 						TestTargetID = 6D84DBF918EC737900963638;
@@ -708,6 +708,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "How Cool Is That?/Little Learners-Prefix.pch";
 				INFOPLIST_FILE = "How Cool Is That?/Little Learners-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "Little Learners";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
@@ -736,6 +737,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "How Cool Is That?/Little Learners-Prefix.pch";
 				INFOPLIST_FILE = "How Cool Is That?/Little Learners-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "Little Learners";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
