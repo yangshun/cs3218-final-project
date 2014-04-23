@@ -11,9 +11,15 @@
 
 @implementation AppDelegate
 
+void uncaughtExceptionHandler(NSException *exception) {
+    NSLog(@"CRASH: %@", exception);
+    NSLog(@"Stack Trace: %@", [exception callStackSymbols]);
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
 
+    NSSetUncaughtExceptionHandler(&uncaughtExceptionHandler);
     UIStoryboard *storyboard;
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
         storyboard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];

@@ -15,10 +15,12 @@
     
     OpenEarsVoiceManager *openEarsVoiceManager;
     
-    NSMutableArray *leftLettersArray;
-    NSMutableArray *rightLettersArray;
+    NSMutableArray *leftLetterLabels;
+    NSMutableArray *rightLetterLabels;
     NSString *leftCurrentWord;
     NSString *rightCurrentWord;
+    BOOL leftLetterIsDragged;
+    UILabel *leftLetterBeingDragged;
     NSMutableArray *usedWords;
     
     int leftLevel;
@@ -180,8 +182,8 @@ BOOL rotated = NO;
 
 -(void)display: (NSString *)word onLeft:(BOOL)isLeft {
     [self clearBlackBoard:isLeft];
-    if (isLeft) leftLettersArray = [NSMutableArray array];
-    else rightLettersArray = [NSMutableArray array];
+    if (isLeft) leftLetterLabels = [NSMutableArray array];
+    else rightLetterLabels = [NSMutableArray array];
     
     word = [word uppercaseString];
     NSUInteger numberOfLetters = [word length];
@@ -197,62 +199,25 @@ BOOL rotated = NO;
         letter.userInteractionEnabled = YES;
         if (isLeft) {
             [leftWordView addSubview:letter];
-            [leftLettersArray addObject:letter];
+            [leftLetterLabels addObject:letter];
         } else {
             [rightWordView addSubview:letter];
-            [rightLettersArray addObject:letter];
+            [rightLetterLabels addObject:letter];
         }
-        
-        UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self
-                                                                                     action:@selector(letterDrag:)];
-        [letter addGestureRecognizer:panGesture];
     }
 }
 
 - (void)clearBlackBoard:(BOOL)isLeft {
     
-    NSMutableArray *lettersArray = rightLettersArray;
+    NSMutableArray *lettersArray = rightLetterLabels;
     if (isLeft)
-        lettersArray = leftLettersArray;
+        lettersArray = leftLetterLabels;
     for (UIView *sb in lettersArray) {
         [sb removeFromSuperview];
     }
     [lettersArray removeAllObjects];
 }
 
-- (void)letterDrag:(UIPanGestureRecognizer *)panGesture {
-//    UILabel *letter = (UILabel *)panGesture.view;
-//    if (![letterBeingDragged isEqual:letter] && letterIsDragged) {
-//        return;
-//    }
-//
-//    letterBeingDragged = letter;
-//    letterIsDragged = YES;
-//    [lettersArray removeObject:letter];
-//    CGPoint translation = [panGesture translationInView:letter.superview];
-//
-//    CGPoint panningStartPoint = letter.center;
-//    letter.center = CGPointMake(panningStartPoint.x + translation.x,
-//                                panningStartPoint.y + translation.y);
-//    int draggedLetterCurrentIndex = (int)letter.center.x / (int)letterWidth;
-//    draggedLetterCurrentIndex = MAX(0, draggedLetterCurrentIndex);
-//    draggedLetterCurrentIndex = MIN(draggedLetterCurrentIndex, self.currentWord.length - 1);
-//
-//    for (int i = 0; i < self.currentWord.length - 1; i++) {
-//        UIView *l = lettersArray[i];
-//        int num = 0;
-//        if (i < draggedLetterCurrentIndex) {
-//            num = i;
-//        } else {
-//            num = i + 1;
-//        }
-//        [UIView animateWithDuration:0.3f animations:^{
-//            l.center = CGPointMake(num * letterWidth + letterWidth/2, HEIGHT_OF_LETTER/2);
-//        }];
-//    }
-//
-//    [panGesture setTranslation:CGPointMake(0, 0) inView:letter.superview];
-}
 
 #pragma mark Open Ears Delegate Methods
 
