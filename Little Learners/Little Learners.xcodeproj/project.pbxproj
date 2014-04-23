@@ -27,6 +27,7 @@
 		6D5333021907A59C00A228D3 /* icon-76.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D5333001907A59C00A228D3 /* icon-76.png */; };
 		6D5333031907A59C00A228D3 /* icon-152.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D5333011907A59C00A228D3 /* icon-152.png */; };
 		6D5333071907A6F700A228D3 /* Images 15-43-20-885.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D5333061907A6F700A228D3 /* Images 15-43-20-885.xcassets */; };
+		6D5333091907AF3C00A228D3 /* background-jungle2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D5333081907AF3C00A228D3 /* background-jungle2.png */; };
 		6D7DD51518F3287100769D82 /* LevelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7DD51418F3287100769D82 /* LevelViewController.m */; };
 		6D84DBFE18EC737900963638 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D84DBFD18EC737900963638 /* Foundation.framework */; };
 		6D84DC0018EC737900963638 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D84DBFF18EC737900963638 /* CoreGraphics.framework */; };
@@ -125,6 +126,7 @@
 		6D5333001907A59C00A228D3 /* icon-76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-76.png"; path = "Images/icon-76.png"; sourceTree = "<group>"; };
 		6D5333011907A59C00A228D3 /* icon-152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-152.png"; path = "Images/icon-152.png"; sourceTree = "<group>"; };
 		6D5333061907A6F700A228D3 /* Images 15-43-20-885.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Images 15-43-20-885.xcassets"; sourceTree = "<group>"; };
+		6D5333081907AF3C00A228D3 /* background-jungle2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "background-jungle2.png"; path = "Images/background-jungle2.png"; sourceTree = "<group>"; };
 		6D7DD51318F3287100769D82 /* LevelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelViewController.h; sourceTree = "<group>"; };
 		6D7DD51418F3287100769D82 /* LevelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelViewController.m; sourceTree = "<group>"; };
 		6D7DD51618F32CBD00769D82 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
@@ -342,6 +344,7 @@
 		6D84DC6518ED53DA00963638 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				6D5333081907AF3C00A228D3 /* background-jungle2.png */,
 				1009ED82190276A5001C2A49 /* text-skip.png */,
 				1009ED7C1901CF6C001C2A49 /* star-holder.png */,
 				1009ED781901CAEE001C2A49 /* star.png */,
@@ -495,6 +498,7 @@
 				6DD0C25318FDBD1000FF384C /* button-prev.png in Resources */,
 				1009ED8019026F32001C2A49 /* text-congrats.png in Resources */,
 				6DD0C22C18FDAB7400FF384C /* animal-monkey.png in Resources */,
+				6D5333091907AF3C00A228D3 /* background-jungle2.png in Resources */,
 				6DD0C22618FDAB7400FF384C /* animal-bear.png in Resources */,
 				6DD0C23518FDB4E400FF384C /* button-play.png in Resources */,
 				6D84DC6118ED53CC00963638 /* fruit-pear.png in Resources */,

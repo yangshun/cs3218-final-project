@@ -121,7 +121,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background-kitchen.jpg" id="DfB-Q7-vgZ">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background-jungle2.png" id="DfB-Q7-vgZ">
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
@@ -375,6 +375,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="background-jungle2.png" width="1191" height="670"/>
         <image name="background-kitchen.jpg" width="960" height="540"/>
         <image name="background-main.jpg" width="1086" height="768"/>
         <image name="button-back.png" width="512" height="512"/>
