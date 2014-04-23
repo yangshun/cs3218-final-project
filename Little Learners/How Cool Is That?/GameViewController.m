@@ -100,12 +100,12 @@ BOOL rotated = NO;
 - (void)animateReadyGo {
     self.readyGoImageView.hidden = NO;
     [UIView animateWithDuration:0.9 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-        self.readyGoImageView.transform = CGAffineTransformMakeScale(200, 200);
+        self.readyGoImageView.transform = CGAffineTransformMakeScale(180, 180);
     } completion:^(BOOL finished) {
         self.readyGoImageView.transform = CGAffineTransformIdentity;
         self.readyGoImageView.image = [UIImage imageNamed: @"text-go.png"];
         [UIView animateWithDuration:1 delay:0.8 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-            self.readyGoImageView.transform = CGAffineTransformMakeScale(180, 180);
+            self.readyGoImageView.transform = CGAffineTransformMakeScale(170, 170);
         } completion:^(BOOL finished) {
             self.readyGoImageView.transform = CGAffineTransformIdentity;
             self.readyGoImageView.hidden = YES;

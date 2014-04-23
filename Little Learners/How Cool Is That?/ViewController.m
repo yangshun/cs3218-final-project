@@ -25,17 +25,18 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     [[GameAudioManager sharedInstance] playBackgroundMusic];
-    logo.alpha = 0.f;
-    logo.center = CGPointMake(logo.center.x,
-                              logo.center.y - 440);
+
+
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-    
-    [UIView animateWithDuration:1.0f animations:^{
-        logo.center = CGPointMake(logo.center.x,
-                                  logo.center.y + 440);
-        logo.alpha = 1.f;
+    [UIView animateWithDuration:1.0f
+                          delay:0.0f
+                        options:UIViewAnimationOptionCurveEaseOut
+                     animations:^{
+
+            logo.transform = CGAffineTransformMakeTranslation(0.0f, 280.0f);
+            logo.alpha = 1;
     } completion:^(BOOL finished) {
         [UIView animateWithDuration:0.3f
                               delay:0.f
