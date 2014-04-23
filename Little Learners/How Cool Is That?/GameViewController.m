@@ -19,8 +19,6 @@
     NSMutableArray *rightLetterLabels;
     NSString *leftCurrentWord;
     NSString *rightCurrentWord;
-    BOOL leftLetterIsDragged;
-    UILabel *leftLetterBeingDragged;
     NSMutableArray *usedWords;
     
     int leftLevel;
@@ -61,10 +59,14 @@ BOOL rotated = NO;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    openEarsVoiceManager = [OpenEarsVoiceManager new];
-    [openEarsVoiceManager.openEarsEventsObserver setDelegate: self];
-    openEarsVoiceManager.wordList = self.wordArray;
-    [openEarsVoiceManager startListening];
+    if (!openEarsVoiceManager) {
+        openEarsVoiceManager = [OpenEarsVoiceManager new];
+        [openEarsVoiceManager.openEarsEventsObserver setDelegate: self];
+        openEarsVoiceManager.wordList = self.wordArray;
+    }
+    if (![openEarsVoiceManager isSuspended] || ![openEarsVoiceManager isListening]) {
+        [openEarsVoiceManager startListening];
+    }
     
     usedWords = [NSMutableArray array];
     leftLevel = rightLevel = 0;
@@ -80,6 +82,9 @@ BOOL rotated = NO;
 
 - (IBAction)dismiss {
     [[GameAudioManager sharedInstance] playExitSound];
+    [openEarsVoiceManager stopListening];
+    openEarsVoiceManager.openEarsEventsObserver = nil;
+    openEarsVoiceManager = nil;
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 - (IBAction)leftSkip {
@@ -225,36 +230,37 @@ BOOL rotated = NO;
                          recognitionScore:(NSString *)recognitionScore
                               utteranceID:(NSString *)utteranceID {
 	NSLog(@"Heard %@, score %@", hypothesis, recognitionScore);
+    NSLog(@"leftLevel %d, rightLevel %d", leftLevel, rightLevel);
     [self giveAwardTo:[[hypothesis componentsSeparatedByString:@" "] containsObject:leftCurrentWord]
                   and:[[hypothesis componentsSeparatedByString:@" "] containsObject:rightCurrentWord]];
 }
 
 - (void) pocketsphinxRecognitionLoopDidStart {
-	NSLog(@"Pocketsphinx is starting up.");
+	NSLog(@"GameView Pocketsphinx is starting up.");
 }
 
 - (void) pocketsphinxDidStartCalibration {
-	NSLog(@"Pocketsphinx calibration has started.");
+	NSLog(@"GameView Pocketsphinx calibration has started.");
 }
 
 - (void) pocketsphinxDidCompleteCalibration {
-	NSLog(@"Pocketsphinx calibration is complete.");
+	NSLog(@"GameView Pocketsphinx calibration is complete.");
 }
 
 - (void) pocketsphinxDidStartListening {
-	NSLog(@"Pocketsphinx is now listening.");
+	NSLog(@"GameView Pocketsphinx is now listening.");
 }
 
 - (void) pocketsphinxDidSuspendRecognition {
-	NSLog(@"Pocketsphinx has suspended recognition.");
+	NSLog(@"GameView Pocketsphinx has suspended recognition.");
 }
 
 - (void) pocketsphinxDidResumeRecognition {
-	NSLog(@"Pocketsphinx has resumed recognition.");
+	NSLog(@"GameView Pocketsphinx has resumed recognition.");
 }
 
 - (void) pocketsphinxDidStopListening {
-	NSLog(@"Pocketsphinx has stopped listening.");
+	NSLog(@"GameView Pocketsphinx has stopped listening.");
 }
 
 - (void)didReceiveMemoryWarning {
